@@ -1,0 +1,291 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<title>Petit Bout de Famille — Fiches exemple</title>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:ital,wght@0,400;0,600;0,700;0,800;1,400;1,600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --creme:#FFF4E8; --blanc:#FFFFFF; --brun:#3D2B1F;
+  --terracotta:#B9502C; --brique:#8A3A1F; --soleil:#F9C74F; --abricot:#F6B48A;
+  --peche:#FCD9C4; --miel:#FBE3A1; --rose:#F8D5CF;
+  --framboise:#9E3D57; --canard:#2E6670; --brume:#D6E8EA;
+  --accent:var(--terracotta); --accent-surface:var(--peche);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+@page{size:A4;margin:0}
+body{background:#d9cfc6;font-family:'Nunito',sans-serif;color:var(--brun);font-size:10pt;line-height:1.55}
+.page{width:210mm;height:297mm;background:var(--creme);margin:10mm auto;position:relative;overflow:hidden;padding:16mm 16mm 18mm;page-break-after:always;break-after:page}
+@media print{body{background:none}.page{margin:0}}
+.parents-f{--accent:var(--framboise);--accent-surface:var(--rose)}
+.parents-c{--accent:var(--canard);--accent-surface:var(--brume)}
+
+/* décor */
+.circle{position:absolute;border-radius:50%;z-index:0}
+.dashed{position:absolute;border-radius:50%;border:2px dashed var(--accent);opacity:.6}
+.content{position:relative;z-index:1}
+
+/* typo */
+h1,h2,h3{font-family:'Fredoka',sans-serif;font-weight:700;line-height:1.1}
+.cover-title{font-size:46pt;margin:10mm 0 6mm;max-width:120mm}
+.cover-title em{font-style:normal;color:var(--accent)}
+.question{font-style:italic;font-size:13pt;max-width:110mm}
+h2{font-size:24pt;margin:3mm 0 5mm;max-width:150mm}
+h3{font-size:12.5pt;font-weight:600;margin-bottom:1.5mm}
+.kicker{font-weight:800;font-size:7pt;letter-spacing:.12em;text-transform:uppercase;margin-bottom:6mm}
+.badge{display:inline-block;background:var(--accent);color:#fff;font-weight:800;font-size:7.5pt;letter-spacing:.1em;text-transform:uppercase;padding:1.6mm 4mm;border-radius:999px}
+.badge.soleil{background:var(--soleil);color:var(--brun)}
+.sub{font-weight:700;font-size:8.5pt;margin-left:2mm}
+b,strong{font-weight:800}
+p+p{margin-top:2mm}
+ul{padding-left:4.5mm} li{margin:1mm 0}
+
+/* blocs */
+.card{border-radius:14px;padding:5mm 5.5mm;break-inside:avoid}
+.peche{background:var(--peche)}.miel{background:var(--miel)}.rose{background:var(--rose)}.blanc{background:var(--blanc)}.brume{background:var(--brume)}
+.acc-surf{background:var(--accent-surface)}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:4mm}
+.stack>*+*{margin-top:4mm}
+.tight>*+*{margin-top:3mm}.tight .card{padding:4mm 5mm}.tight li{margin:.5mm 0}
+.qbox{display:flex;gap:4mm;align-items:center;background:var(--accent-surface);border-radius:14px;padding:5mm 6mm;font-family:'Fredoka';font-weight:600;font-size:13pt;margin-bottom:5mm}
+.qbox .ico{flex:none;width:9mm;height:9mm;border-radius:50%;border:2px solid var(--accent);color:var(--accent);display:grid;place-items:center;font-size:12pt}
+.dark{background:var(--brun);color:#FFF4E8;border-radius:14px;padding:5mm 6mm}
+.dark h3{color:var(--soleil);margin-top:2mm}
+.pillar{display:flex;gap:3.5mm;align-items:flex-start}
+.pill-ico{flex:none;width:10mm;height:10mm;border-radius:50%;background:var(--blanc);display:grid;place-items:center}
+.pill-ico svg{width:6mm;height:6mm}
+.alert{background:var(--blanc);border:1.5px solid var(--accent);border-radius:14px;padding:4.5mm 5.5mm}
+.alert h3{color:var(--accent)}
+.tag{display:inline-block;font-weight:800;font-size:7pt;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);margin-bottom:1mm}
+
+/* couverture */
+.in-module{position:absolute;left:16mm;bottom:22mm;width:120mm;z-index:1}
+.in-module h4{font-family:'Nunito';font-weight:800;font-size:10pt;margin-bottom:3mm}
+.in-module .grid2{gap:3mm}
+.in-module .card{padding:3.5mm 4.5mm;font-weight:700;font-size:9pt;border-radius:12px}
+
+/* tableau */
+table{width:100%;border-collapse:separate;border-spacing:0 1.5mm;font-size:9pt}
+th{text-align:left;font-weight:800;font-size:8pt;padding:0 3mm}
+td{background:var(--blanc);padding:2.5mm 3mm}
+td:first-child{border-radius:10px 0 0 10px;font-weight:700}
+td:last-child{border-radius:0 10px 10px 0}
+
+/* fiche */
+.fiche-head{margin:-16mm -16mm 7mm;padding:16mm 16mm 7mm;background:var(--miel);border-radius:0 0 28px 28px;position:relative}
+.check{display:flex;gap:4mm;align-items:center;background:var(--blanc);border-radius:12px;padding:3.2mm 4.5mm;margin-bottom:2.5mm;font-size:9.5pt}
+.box{flex:none;width:5mm;height:5mm;border:1.8px solid var(--terracotta);border-radius:4px}
+.check small{display:block;font-size:8pt;opacity:.75}
+.age{flex:none;width:21mm;font-family:'Fredoka';font-weight:600;color:var(--terracotta);font-size:9.5pt}
+.lines div{border-bottom:1.5px dotted var(--abricot);padding:3.2mm 0 1mm;font-size:9pt}
+
+/* pied */
+.foot{position:absolute;left:16mm;right:16mm;bottom:9mm;display:flex;justify-content:space-between;align-items:center;font-size:7pt;z-index:1}
+.num{width:7mm;height:7mm;border-radius:50%;background:var(--accent);color:#fff;display:grid;place-items:center;font-weight:800;font-size:7.5pt}
+.deco-ico{position:absolute;z-index:1}
+</style>
+</head>
+<body>
+
+<!-- ============ 1. COUVERTURE D'ÉTAPE ============ -->
+<section class="page">
+  <div class="circle" style="width:150mm;height:150mm;background:var(--peche);right:-55mm;top:-30mm"></div>
+  <div class="circle" style="width:62mm;height:62mm;background:var(--miel);right:58mm;top:-26mm"></div>
+  <div class="circle" style="width:85mm;height:85mm;background:var(--rose);left:-38mm;bottom:-42mm"></div>
+  <div class="dashed" style="width:26mm;height:26mm;right:22mm;bottom:78mm"></div>
+
+  <!-- mobile -->
+  <svg class="deco-ico" style="right:14mm;top:92mm" width="70mm" height="62mm" viewBox="0 0 200 180" fill="none" stroke="#3D2B1F" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round">
+    <line x1="100" y1="0" x2="100" y2="22" stroke="#B9502C"/>
+    <path d="M18 40 Q100 4 182 40" stroke="#B9502C"/>
+    <line x1="30" y1="36" x2="30" y2="92" stroke="#B9502C" stroke-dasharray="4 5"/>
+    <line x1="100" y1="22" x2="100" y2="112" stroke="#B9502C" stroke-dasharray="4 5"/>
+    <line x1="170" y1="36" x2="170" y2="76" stroke="#B9502C" stroke-dasharray="4 5"/>
+    <path d="M30 92 l6 13 14 2 -10 10 2 14 -12 -7 -12 7 2 -14 -10 -10 14 -2z" fill="#F9C74F"/>
+    <path d="M112 116 a20 20 0 1 0 6 30 a16 16 0 1 1 -6 -30z" fill="#F6B48A"/>
+    <path d="M152 92 a10 10 0 0 1 10 -14 a13 13 0 0 1 24 4 a9 9 0 0 1 2 18 h-32 a8 8 0 0 1 -4 -8z" fill="#FFFFFF"/>
+  </svg>
+
+  <div class="content">
+    <span class="badge">Étape 1</span><span class="sub">De 0 à 3 mois</span>
+    <h1 class="cover-title">Le nouveau-<em>né</em></h1>
+    <p class="question">« Il pleure sans arrêt, c'est normal ? »</p>
+  </div>
+
+  <div class="in-module">
+    <h4>Dans cette étape</h4>
+    <div class="grid2">
+      <div class="card peche">Son développement</div>
+      <div class="card miel">Les soins et le bain</div>
+      <div class="card blanc">Nourrir bébé</div>
+      <div class="card rose">Les pleurs</div>
+      <div class="card miel">Le sommeil</div>
+      <div class="card blanc">Vous, les parents</div>
+    </div>
+  </div>
+  <div class="foot"><span>Petit Bout de Famille</span><span>Étape 1 · Le nouveau-né</span></div>
+</section>
+
+<!-- ============ 2. LEÇON DÉVELOPPEMENT ============ -->
+<section class="page">
+  <div class="circle" style="width:70mm;height:70mm;background:var(--miel);right:-24mm;top:-28mm"></div>
+  <div class="circle" style="width:16mm;height:16mm;background:var(--rose);right:44mm;top:10mm"></div>
+  <!-- étoile -->
+  <svg class="deco-ico" style="right:18mm;top:30mm" width="16mm" height="16mm" viewBox="0 0 48 48"><path d="M24 4 l6 13 14 2 -10 10 3 14 -13 -7 -13 7 3 -14 -10 -10 14 -2z" fill="#F9C74F" stroke="#3D2B1F" stroke-width="3" stroke-linejoin="round"/></svg>
+
+  <div class="content">
+    <div class="kicker">Étape 1 · Leçon 1 · Son développement</div>
+    <h2>Son développement<br>de 0 à 3 mois</h2>
+    <div class="qbox" style="margin-bottom:4mm"><span class="ico">?</span>Mon bébé ne tient pas encore sa tête : est-ce normal ?</div>
+
+    <div class="stack tight">
+      <div class="card peche pillar">
+        <span class="pill-ico"><svg viewBox="0 0 24 24" fill="none" stroke="#B9502C" stroke-width="2.2" stroke-linecap="round"><circle cx="12" cy="5" r="2.5"/><path d="M12 8v7M8 11h8M12 15l-3 6M12 15l3 6"/></svg></span>
+        <div><span class="tag">Moteur</span><h3>Des réflexes à la tête qui se tient</h3>
+        <p>À la naissance, bébé bouge surtout par <b>réflexes</b> : il tète, agrippe votre doigt, sursaute (réflexe de Moro). Ses bras et ses jambes sont toniques, son cou encore mou. Sur le ventre, il commence à <b>soulever la tête</b> ; vers 3 mois, il la tient presque seul.</p></div>
+      </div>
+      <div class="card miel pillar">
+        <span class="pill-ico"><svg viewBox="0 0 24 24" fill="none" stroke="#B9502C" stroke-width="2.2" stroke-linecap="round"><path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg></span>
+        <div><span class="tag">Sensoriel</span><h3>Il vous reconnaît déjà</h3>
+        <p>Il voit net à <b>20-30 cm</b>, la distance de votre visage quand il boit. Il préfère les visages et les contrastes forts, et suit du regard vers 1-2 mois. Il reconnaît votre <b>odeur</b> et votre <b>voix</b>, et se calme contre votre peau.</p></div>
+      </div>
+      <div class="card rose pillar">
+        <span class="pill-ico"><svg viewBox="0 0 24 24" fill="none" stroke="#B9502C" stroke-width="2.2" stroke-linejoin="round"><path d="M12 20s-7-4.5-7-10a4 4 0 0 1 7-2.5A4 4 0 0 1 19 10c0 5.5-7 10-7 10z"/></svg></span>
+        <div><span class="tag">Psychologique</span><h3>L'attachement se construit</h3>
+        <p>Répondre à ses pleurs ne lui donne pas de « mauvaises habitudes » : cela le <b>sécurise</b>. C'est vous qui l'aidez à se calmer. Récompense attendue : le <b>premier sourire</b> en réponse, vers 6 semaines.</p></div>
+      </div>
+
+      <div class="dark">
+        <span class="badge soleil">L'espace du kiné</span>
+        <h3>Le temps sur le ventre, chaque jour</h3>
+        <p>Quand il est éveillé et que vous êtes à côté, posez-le quelques minutes sur le ventre, sur un tapis ferme. Commencez par 1 à 2 minutes, plusieurs fois par jour. Il muscle son cou et son dos, et c'est la meilleure prévention de la tête plate.</p>
+      </div>
+
+      <div class="alert">
+        <h3>Parlez-en à votre médecin si votre bébé…</h3>
+        <ul>
+          <li>ne fixe pas et ne suit pas du regard à 2 mois ;</li>
+          <li>ne sourit pas en réponse à 3 mois ;</li>
+          <li>ne réagit pas aux bruits forts ;</li>
+          <li>paraît très mou ou très raide, ou tourne toujours la tête du même côté.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="foot"><span>Source : carnet de santé de l'enfant</span><span class="num">2</span></div>
+</section>
+
+<!-- ============ 3. VOUS, LES PARENTS — FRAMBOISE ============ -->
+<section class="page parents-f">
+  <div class="circle" style="width:78mm;height:78mm;background:var(--rose);right:-26mm;top:-30mm"></div>
+  <div class="circle" style="width:20mm;height:20mm;background:var(--miel);right:48mm;top:8mm"></div>
+  <!-- cœur -->
+  <svg class="deco-ico" style="right:18mm;top:30mm" width="16mm" height="16mm" viewBox="0 0 48 48"><path d="M24 42S6 31 6 18a9 9 0 0 1 18-4 9 9 0 0 1 18 4c0 13-18 24-18 24z" fill="#F6B48A" stroke="#3D2B1F" stroke-width="3" stroke-linejoin="round"/></svg>
+
+  <div class="content">
+    <span class="badge">Vous, les parents</span>
+    <div class="kicker" style="margin-top:5mm">Étape 1 · Leçon 9 · Le corps après l'accouchement</div>
+    <h2>Mon corps après<br>l'accouchement</h2>
+    <div class="qbox"><span class="ico">?</span>J'ai des petites fuites quand je tousse : est-ce normal ?</div>
+
+    <p style="margin-bottom:5mm;max-width:160mm">Votre corps a porté et mis au monde un bébé. Il lui faut <b>plusieurs mois</b> pour récupérer, et c'est normal. Certains signes sont fréquents ; d'autres doivent vous faire consulter.</p>
+
+    <table>
+      <tr><th></th><th>Fréquent les premières semaines</th><th>À signaler</th></tr>
+      <tr><td>Saignements</td><td>Jusqu'à 4-6 semaines, de moins en moins abondants</td><td>Saignements qui augmentent, caillots, mauvaise odeur</td></tr>
+      <tr><td>Périnée</td><td>Sensation de lourdeur, petites fuites à l'effort</td><td>Fuites qui persistent après la rééducation, boule dans le vagin</td></tr>
+      <tr><td>Ventre</td><td>Ventre encore rond, muscles relâchés</td><td>Bosse au milieu du ventre quand vous vous relevez</td></tr>
+      <tr><td>Cicatrice</td><td>Tiraillements, sensibilité</td><td>Rougeur, chaleur, écoulement, fièvre</td></tr>
+    </table>
+
+    <div class="grid2" style="margin-top:5mm">
+      <div class="card acc-surf"><h3>Protéger son périnée</h3>
+        <ul><li>Expirer en serrant le périnée avant de porter bébé</li><li>Se relever en passant par le côté</li><li>Pas de poussée aux toilettes</li></ul></div>
+      <div class="card miel"><h3>La rééducation</h3>
+        <p>Après la consultation postnatale (6 à 8 semaines), une rééducation du périnée avec une sage-femme ou un kiné est <b>prise en charge</b>.</p></div>
+    </div>
+
+    <div class="dark" style="margin-top:5mm">
+      <span class="badge soleil">L'espace du kiné</span>
+      <h3>Pas d'abdos classiques tout de suite</h3>
+      <p>Les crunchs poussent sur le périnée. On commence par la respiration et le réveil des abdominaux profonds, puis on renforce progressivement.</p>
+    </div>
+  </div>
+  <div class="foot"><span>Petit Bout de Famille · Vous, les parents</span><span class="num">9</span></div>
+</section>
+
+<!-- ============ 4. VOUS, LES PARENTS — BLEU CANARD ============ -->
+<section class="page parents-c">
+  <div class="circle" style="width:82mm;height:82mm;background:var(--brume);right:-28mm;top:-32mm"></div>
+  <div class="circle" style="width:18mm;height:18mm;background:var(--miel);right:52mm;top:10mm"></div>
+  <!-- soleil -->
+  <svg class="deco-ico" style="right:18mm;top:30mm" width="17mm" height="17mm" viewBox="0 0 48 48" fill="none" stroke="#3D2B1F" stroke-width="3" stroke-linecap="round"><circle cx="24" cy="24" r="9" fill="#F9C74F"/><path d="M24 4v6M24 38v6M4 24h6M38 24h6M10 10l4 4M34 34l4 4M38 10l-4 4M14 34l-4 4"/></svg>
+
+  <div class="content">
+    <span class="badge">Vous, les parents</span>
+    <div class="kicker" style="margin-top:5mm">Étape 1 · Leçon 9 · Le couple et l'organisation</div>
+    <h2>Trouver sa place<br>quand bébé arrive</h2>
+    <div class="qbox"><span class="ico">?</span>Elle allaite… mais moi, je sers à quoi ?</div>
+
+    <div class="grid2">
+      <div class="card acc-surf"><h3>Le lien se construit en s'occupant de bébé</h3>
+        <p>Le parent qui n'a pas porté l'enfant devient souvent parent « d'un coup ». Se sentir un peu à côté au début est <b>très courant</b>. Le bain, le change, le peau à peau, les promenades : chaque soin crée le lien.</p></div>
+      <div class="card blanc"><h3>Faire plutôt que proposer</h3>
+        <p>« Tu veux que je t'aide ? » oblige l'autre à penser et à demander. Prenez des sujets <b>entièrement</b> en charge : repas, courses, linge, rendez-vous, papiers.</p></div>
+    </div>
+
+    <div class="card miel" style="margin-top:4mm">
+      <h3>Se répartir les nuits</h3>
+      <div class="grid2" style="margin-top:2mm">
+        <div class="card blanc" style="padding:3.5mm 4.5mm"><span class="tag">Bébé allaité</span><p>Le partenaire se lève, change bébé et l'apporte pour la tétée, puis le recouche.</p></div>
+        <div class="card blanc" style="padding:3.5mm 4.5mm"><span class="tag">Bébé au biberon</span><p>Chacun une demi-nuit « de garde », l'autre dort avec des bouchons d'oreille.</p></div>
+      </div>
+    </div>
+
+    <div class="card brume" style="margin-top:4mm">
+      <h3>Le congé du second parent</h3>
+      <p><b>28 jours</b> au total (congé de naissance + congé de paternité), dont 7 jours obligatoires juste après la naissance. Le reste se prend dans les 6 mois. Prévenez votre employeur au moins un mois avant.</p>
+    </div>
+
+    <div class="alert" style="margin-top:4mm">
+      <h3>Vous aussi, vous pouvez craquer</h3>
+      <p>Irritabilité, fuite dans le travail ou les écrans, sentiment d'être inutile : jusqu'à <b>1 père sur 10</b> traverse une dépression autour de la naissance. Parlez-en à votre médecin.</p>
+    </div>
+  </div>
+  <div class="foot"><span>Petit Bout de Famille · Vous, les parents</span><span class="num">10</span></div>
+</section>
+
+<!-- ============ 5. FICHE PRATIQUE ============ -->
+<section class="page">
+  <div class="fiche-head">
+    <span class="badge">Fiche pratique</span>
+    <h2 style="margin:4mm 0 2mm">Les repères de mon bébé<br>de 0 à 3 mois</h2>
+    <p style="font-weight:700;font-size:9pt">À imprimer et à cocher au fil des semaines. Notez la date : c'est un joli souvenir.</p>
+    <!-- lune -->
+    <svg style="position:absolute;right:20mm;top:16mm" width="18mm" height="18mm" viewBox="0 0 48 48"><path d="M30 6a18 18 0 1 0 12 28A15 15 0 1 1 30 6z" fill="#F9C74F" stroke="#3D2B1F" stroke-width="3" stroke-linejoin="round"/></svg>
+  </div>
+  <div class="circle" style="width:70mm;height:70mm;background:var(--peche);left:-34mm;bottom:-38mm"></div>
+
+  <div class="content">
+    <div class="check"><span class="box"></span><span class="age">~ 1 mois</span><span>Fixe mon visage quand je lui parle<small>Le : ……………</small></span></div>
+    <div class="check"><span class="box"></span><span class="age">1-2 mois</span><span>Suit un objet du regard<small>Le : ……………</small></span></div>
+    <div class="check"><span class="box"></span><span class="age">~ 6 sem.</span><span>Premier sourire en réponse<small>Le : ……………</small></span></div>
+    <div class="check"><span class="box"></span><span class="age">~ 2 mois</span><span>Soulève la tête sur le ventre<small>Le : ……………</small></span></div>
+    <div class="check"><span class="box"></span><span class="age">2-3 mois</span><span>Gazouille, répond par des sons<small>Le : ……………</small></span></div>
+    <div class="check"><span class="box"></span><span class="age">2-3 mois</span><span>Découvre et regarde ses mains<small>Le : ……………</small></span></div>
+    <div class="check"><span class="box"></span><span class="age">~ 3 mois</span><span>Tient presque sa tête seul<small>Le : ……………</small></span></div>
+
+    <div class="card blanc" style="margin-top:5mm">
+      <h3>Mes questions pour le prochain rendez-vous</h3>
+      <div class="lines"><div>&nbsp;</div><div>&nbsp;</div><div>&nbsp;</div></div>
+    </div>
+
+    <div class="card rose" style="margin-top:4mm;font-size:9pt">
+      Ces âges sont des <b>fourchettes</b>, pas des dates limites. Chaque bébé a son rythme : ce qui compte, c'est qu'il progresse.
+    </div>
+  </div>
+  <div class="foot"><span>Petit Bout de Famille</span><span>Étape 1 · Le nouveau-né</span></div>
+</section>
+
+</body>
+</html>
