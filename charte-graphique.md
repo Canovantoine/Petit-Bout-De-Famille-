@@ -30,17 +30,19 @@ Charte établie à partir des modules déjà produits (PDF du dossier Drive « F
 | Highlight | Jaune soleil | `#F9C74F` | Titre et badge des encadrés sombres (« Le conseil de pro », « L'espace du kiné »), étoile, lune |
 | Highlight 2 | Abricot | `#F6B48A` | Remplissage des pictos (cœur, lune), petits détails |
 
-### Couleurs d'accent par parcours (anciens parcours)
+### Couleurs d'accent (organisation en 7 étapes, validée)
 
-La palette de base ne change pas ; seul l'accent (badge, mot-clé du titre, cercle principal) change.
+La palette de base ne change pas ; seul l'accent (badge, mot-clé du titre, cercle principal, numéros de page) change.
 
-| Parcours | Accent | Surface associée |
+| Contenu | Accent | Surface associée |
 |---|---|---|
-| Bébé | Terracotta `#B9502C` | Pêche `#FCD9C4` |
-| Maman | Framboise `#9E3D57` | Rose poudré `#F8D5CF` |
-| Papa | Bleu canard `#2E6670` | Bleu brume `#D6E8EA` |
+| **Toute la formation** (couvertures d'étape, leçons sur l'enfant) | Terracotta `#B9502C` | Pêche `#FCD9C4` |
+| **Leçons « Vous, les parents »** : corps de la mère (grossesse, post-partum, périnée, allaitement, reprise du sport) | Framboise `#9E3D57` | Rose poudré `#F8D5CF` |
+| **Leçons « Vous, les parents »** : les deux parents (couple, moral, place du partenaire, organisation, travail) | Bleu canard `#2E6670` | Bleu brume `#D6E8EA` |
 
-> **Proposition pour la nouvelle organisation en 7 étapes** : garder le terracotta comme accent unique de la formation et réutiliser framboise et bleu canard pour signaler les leçons « Vous, les parents » (badge ou bandeau), afin de ne pas perdre ces couleurs déjà installées. À valider.
+Le parent repère ainsi d'un coup d'œil les leçons qui parlent de lui plutôt que de l'enfant, sans revenir à des parcours « Maman » et « Papa » séparés. Dans une leçon qui couvre les deux sujets, prendre la couleur du sujet principal.
+
+Historique : dans les anciens modules, la framboise marquait le parcours Maman et le bleu canard le parcours Papa.
 
 ### Règles
 
@@ -162,7 +164,7 @@ Les 22 modules au format court (créés le 14/10) reprennent la charte, mais pr�
   --peche:        #FCD9C4;
   --miel:         #FBE3A1;
   --rose:         #F8D5CF;
-  /* Accents secondaires (anciens parcours Maman / Papa) */
+  /* Accents des leçons « Vous, les parents » */
   --framboise:    #9E3D57;
   --canard:       #2E6670;
   --brume:        #D6E8EA;
