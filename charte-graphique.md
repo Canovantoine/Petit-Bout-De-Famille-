@@ -30,13 +30,13 @@ Charte établie à partir des modules déjà produits (PDF du dossier Drive « F
 | Highlight | Jaune soleil | `#F9C74F` | Titre et badge des encadrés sombres (« Le conseil de pro », « L'espace du kiné »), étoile, lune |
 | Highlight 2 | Abricot | `#F6B48A` | Remplissage des pictos (cœur, lune), petits détails |
 
-### Couleurs d'accent (organisation en 7 étapes, validée)
+### Couleurs d'accent (organisation en 10 modules, validée)
 
 La palette de base ne change pas ; seul l'accent (badge, mot-clé du titre, cercle principal, numéros de page) change.
 
 | Contenu | Accent | Surface associée |
 |---|---|---|
-| **Toute la formation** (couvertures d'étape, leçons sur l'enfant) | Terracotta `#B9502C` | Pêche `#FCD9C4` |
+| **Toute la formation** (couvertures de module, chapitres sur l'enfant) | Terracotta `#B9502C` | Pêche `#FCD9C4` |
 | **Leçons « Vous, les parents »** : corps de la mère (grossesse, post-partum, périnée, allaitement, reprise du sport) | Framboise `#9E3D57` | Rose poudré `#F8D5CF` |
 | **Leçons « Vous, les parents »** : les deux parents (couple, moral, place du partenaire, organisation, travail) | Bleu canard `#2E6670` | Bleu brume `#D6E8EA` |
 
@@ -142,7 +142,7 @@ Les 22 modules au format court (créés le 14/10) reprennent la charte, mais pr�
 - Certains encadrés sont **coupés au changement de page** (ex. « L'espace du kiné » dans Bébé 7, « La culpabilité » dans Maman 3).
 - Le pied de page utilise une police de secours (**Liberation Sans**) au lieu de Nunito.
 - Polices exportées en Type 3 : texte moins net et moins bien copiable. Exporter avec les polices TrueType intégrées, comme Bébé 1.
-- Le sous-titre « Bébé de 0 à 3 ans » est à mettre à jour selon la nouvelle organisation par étapes.
+- Le sous-titre « Bébé de 0 à 3 ans » est à mettre à jour selon la nouvelle organisation par modules.
 
 ---
 
