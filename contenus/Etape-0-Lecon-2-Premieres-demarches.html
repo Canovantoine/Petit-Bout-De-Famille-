@@ -1,0 +1,831 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<title>Petit Bout de Famille — Étape 0 · Leçon 2 · Mon test est positif</title>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:ital,wght@0,400;0,600;0,700;0,800;1,400;1,600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --creme:#FFF4E8; --blanc:#FFFFFF; --brun:#3D2B1F;
+  --terracotta:#B9502C; --brique:#8A3A1F; --soleil:#F9C74F; --abricot:#F6B48A;
+  --peche:#FCD9C4; --miel:#FBE3A1; --rose:#F8D5CF;
+  --framboise:#9E3D57; --canard:#2E6670; --brume:#D6E8EA;
+  --accent:var(--terracotta); --accent-surface:var(--peche);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+@page{size:A4;margin:0}
+body{background:#d9cfc6;font-family:'Nunito',sans-serif;color:var(--brun);font-size:9.3pt;line-height:1.48}
+.page{width:210mm;height:297mm;background:var(--creme);margin:10mm auto;position:relative;overflow:hidden;padding:15mm 16mm 18mm;page-break-after:always;break-after:page}
+@media print{body{background:none}.page{margin:0}}
+
+.circle{position:absolute;border-radius:50%;z-index:0}
+.dashed{position:absolute;border-radius:50%;border:2px dashed var(--accent);opacity:.6}
+.content{position:relative;z-index:1}
+
+h1,h2,h3{font-family:'Fredoka',sans-serif;font-weight:700;line-height:1.12}
+.cover-title{font-size:44pt;margin:10mm 0 6mm;max-width:125mm}
+.cover-title em{font-style:normal;color:var(--accent)}
+.question{font-style:italic;font-size:13pt;max-width:110mm}
+h2{font-size:22pt;margin:2mm 0 4mm;max-width:145mm}
+h3{font-size:12pt;font-weight:600;margin-bottom:1.2mm}
+.kicker{font-weight:800;font-size:7pt;letter-spacing:.12em;text-transform:uppercase;margin-bottom:4mm}
+.badge{display:inline-block;background:var(--accent);color:#fff;font-weight:800;font-size:7.5pt;letter-spacing:.1em;text-transform:uppercase;padding:1.6mm 4mm;border-radius:999px}
+.badge.soleil{background:var(--soleil);color:var(--brun)}
+.sub{font-weight:700;font-size:8.5pt;margin-left:2mm}
+b,strong{font-weight:800}
+sup{line-height:0;font-size:.7em}
+p+p{margin-top:1.6mm}
+ul{padding-left:4.5mm} li{margin:.6mm 0}
+li::marker{color:var(--accent)}
+.lead{margin-bottom:4mm;max-width:165mm}
+.small{font-size:8.3pt}
+
+.card{border-radius:14px;padding:4mm 5mm;break-inside:avoid}
+.peche{background:var(--peche)}.miel{background:var(--miel)}.rose{background:var(--rose)}.blanc{background:var(--blanc)}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:3.5mm}
+.grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:3mm}
+.stack>*+*{margin-top:3.5mm}
+.qbox{display:flex;gap:4mm;align-items:center;background:var(--accent-surface);border-radius:14px;padding:4mm 6mm;font-family:'Fredoka';font-weight:600;font-size:12.5pt;margin-bottom:4mm}
+.qbox .ico{flex:none;width:9mm;height:9mm;border-radius:50%;border:2px solid var(--accent);color:var(--accent);display:grid;place-items:center;font-size:12pt}
+.dark{background:var(--brun);color:#FFF4E8;border-radius:14px;padding:4.5mm 6mm;break-inside:avoid}
+.dark h3{color:var(--soleil);margin-top:2mm}
+.dark li::marker{color:var(--soleil)}
+.alert{background:var(--blanc);border:1.5px solid var(--accent);border-radius:14px;padding:4mm 5.5mm;break-inside:avoid}
+.alert h3{color:var(--accent)}
+.urgence{background:var(--brique);color:#fff;border-radius:14px;padding:4.5mm 6mm;display:flex;gap:5mm;align-items:flex-start;break-inside:avoid}
+.urgence .num15{flex:none;width:19mm;height:19mm;border-radius:50%;background:#fff;color:var(--brique);display:grid;place-items:center;text-align:center;font-family:'Fredoka';font-weight:700;font-size:20pt;line-height:.9}
+.urgence .num15 small{display:block;font-family:'Nunito';font-size:6.5pt;font-weight:800}
+.urgence h3{color:#fff}
+.urgence li::marker{color:var(--soleil)}
+.tag{display:inline-block;font-weight:800;font-size:7pt;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);margin-bottom:.8mm}
+.rules{display:grid;grid-template-columns:1fr 1fr 1fr;gap:3mm}
+.rule{background:var(--blanc);border-radius:14px;padding:4mm}
+.rule .n{width:8mm;height:8mm;border-radius:50%;background:var(--accent);color:#fff;display:grid;place-items:center;font-weight:800;font-size:9pt;margin-bottom:2mm}
+
+.in-module{position:absolute;left:16mm;bottom:22mm;width:125mm;z-index:1}
+.in-module h4{font-family:'Nunito';font-weight:800;font-size:10pt;margin-bottom:3mm}
+.in-module .grid2{gap:3mm}
+.in-module .card{padding:3.2mm 4.5mm;font-weight:700;font-size:9pt;border-radius:12px}
+
+table{width:100%;border-collapse:separate;border-spacing:0 1.3mm;font-size:8.6pt;line-height:1.4}
+th{text-align:left;font-weight:800;font-size:7.8pt;padding:0 3mm;color:var(--accent);text-transform:uppercase;letter-spacing:.05em}
+td{background:var(--blanc);padding:2.2mm 3mm;vertical-align:top}
+td:first-child{border-radius:10px 0 0 10px;font-weight:800;background:var(--accent);color:#fff;width:30mm}
+td:last-child{border-radius:0 10px 10px 0}
+table.soft td:first-child{background:var(--peche);color:var(--brun)}
+table.soft tr:nth-child(odd) td:first-child{background:var(--miel)}
+
+.yesno{display:grid;grid-template-columns:1fr 1fr;gap:3.5mm}
+.yesno .col{border-radius:14px;padding:4mm 5mm}
+.pill-h{display:inline-block;color:#fff;font-weight:800;font-size:7.5pt;letter-spacing:.08em;text-transform:uppercase;padding:1.2mm 3.5mm;border-radius:999px;margin-bottom:2mm}
+
+.fiche-head{margin:-15mm -16mm 6mm;padding:15mm 16mm 6mm;background:var(--miel);border-radius:0 0 28px 28px;position:relative}
+.fiche-head.peche-h{background:var(--peche)}
+.check{display:flex;gap:4mm;align-items:center;background:var(--blanc);border-radius:12px;padding:2.3mm 4.5mm;margin-bottom:2mm;font-size:9.2pt}
+.box{flex:none;width:5mm;height:5mm;border:1.8px solid var(--terracotta);border-radius:4px}
+.check small{display:block;font-size:7.8pt;opacity:.75}
+.lines div{border-bottom:1.5px dotted var(--abricot);padding:3.4mm 0 1mm;font-size:9pt}
+
+.foot{position:absolute;left:16mm;right:16mm;bottom:8mm;display:flex;justify-content:space-between;align-items:center;font-size:7pt;z-index:1}
+.num{width:7mm;height:7mm;border-radius:50%;background:var(--accent);color:#fff;display:grid;place-items:center;font-weight:800;font-size:7.5pt}
+.deco-ico{position:absolute;z-index:1}
+.src{font-size:7.5pt;opacity:.85;margin-top:2.5mm}
+.mt{margin-top:3.5mm}
+</style>
+</head>
+<body>
+
+<!-- ============ 1. COUVERTURE ============ -->
+<section class="page">
+  <div class="circle" style="width:150mm;height:150mm;background:var(--peche);right:-55mm;top:-30mm"></div>
+  <div class="circle" style="width:62mm;height:62mm;background:var(--miel);right:58mm;top:-26mm"></div>
+  <div class="circle" style="width:85mm;height:85mm;background:var(--rose);left:-38mm;bottom:-42mm"></div>
+  <div class="dashed" style="width:26mm;height:26mm;right:22mm;bottom:96mm"></div>
+
+  <svg class="deco-ico" style="right:16mm;top:92mm" width="62mm" height="62mm" viewBox="0 0 48 48"><path d="M24 42S6 31 6 18a9 9 0 0 1 18-4 9 9 0 0 1 18 4c0 13-18 24-18 24z" fill="#F6B48A" stroke="#3D2B1F" stroke-width="2" stroke-linejoin="round"/><path d="M33 9 l1.6 3.4 3.7.5 -2.7 2.6.7 3.7 -3.3-1.8 -3.3 1.8.7-3.7 -2.7-2.6 3.7-.5z" fill="#F9C74F" stroke="#3D2B1F" stroke-width="1.4" stroke-linejoin="round"/></svg>
+
+  <div class="content">
+    <span class="badge">Étape 0 · Leçon 2</span><span class="sub">Avant la naissance</span>
+    <h1 class="cover-title">Mon test est positif : par où <em>commencer</em> ?</h1>
+    <p class="question">« Je viens d'apprendre que je suis enceinte. Qu'est-ce que je dois faire, et dans quel ordre ? »</p>
+  </div>
+
+  <div class="in-module">
+    <h4>Dans cette leçon</h4>
+    <div class="grid2">
+      <div class="card peche">Vos premières semaines, pas à pas</div>
+      <div class="card miel">Le premier rendez-vous</div>
+      <div class="card blanc">Médicaments et compléments</div>
+      <div class="card rose">Bien manger dès maintenant</div>
+      <div class="card miel">Travail, sport et quotidien</div>
+      <div class="card blanc">Suivi, démarches et droits</div>
+    </div>
+  </div>
+  <div class="foot"><span>Petit Bout de Famille</span><span>Étape 0 · Avant la naissance</span></div>
+</section>
+
+<!-- ============ 2. PAR OÙ COMMENCER ============ -->
+<section class="page">
+  <div class="circle" style="width:70mm;height:70mm;background:var(--miel);right:-24mm;top:-28mm"></div>
+  <div class="circle" style="width:16mm;height:16mm;background:var(--rose);right:44mm;top:10mm"></div>
+  <svg class="deco-ico" style="right:18mm;top:28mm" width="15mm" height="15mm" viewBox="0 0 48 48"><path d="M24 4 l6 13 14 2 -10 10 3 14 -13 -7 -13 7 3 -14 -10 -10 14 -2z" fill="#F9C74F" stroke="#3D2B1F" stroke-width="3" stroke-linejoin="round"/></svg>
+
+  <div class="content">
+    <div class="kicker">Étape 0 · Leçon 2 · Les premières démarches</div>
+    <h2>Le test est positif :<br>respirez, on avance pas à pas</h2>
+    <p class="lead">Joie, surprise, inquiétude… souvent tout à la fois. C'est normal. Un test urinaire positif indique très probablement une grossesse. <b>Vous n'avez pas besoin de tout organiser aujourd'hui</b> : quelques étapes simples suffisent pour bien démarrer, et le professionnel qui vous suivra vous aidera à planifier la suite.</p>
+
+    <div class="rules">
+      <div class="rule"><div class="n">1</div><h3>Prendre rendez-vous</h3><p>Avec une sage-femme, un médecin généraliste ou un gynécologue. La 1<sup>re</sup> consultation doit avoir lieu <b>avant la fin du 3<sup>e</sup> mois</b> ; idéalement vers 8 à 10 SA.</p></div>
+      <div class="rule"><div class="n">2</div><h3>Faire le point santé</h3><p>Traitements, compléments, alcool, tabac, alimentation : quelques réflexes à prendre <b>dès maintenant</b>, sans culpabiliser pour ce qui s'est passé avant.</p></div>
+      <div class="rule"><div class="n">3</div><h3>Déclarer la grossesse</h3><p>Avant la fin du 3<sup>e</sup> mois. Le plus souvent, c'est le professionnel qui l'envoie en ligne : elle <b>ouvre vos droits</b>.</p></div>
+    </div>
+
+    <div class="card peche mt">
+      <span class="tag">Bon à savoir</span>
+      <h3>SA, semaines de grossesse, mois : comment s'y retrouver ?</h3>
+      <p>Les professionnels comptent en <b>semaines d'aménorrhée (SA)</b>, c'est-à-dire depuis le 1<sup>er</sup> jour de vos dernières règles, et non depuis la conception. On ajoute donc environ 2 semaines aux « semaines de grossesse ». Le terme est fixé à <b>41 SA</b> ; la date exacte sera recalculée grâce à la 1<sup>re</sup> échographie.</p>
+      <table class="soft" style="margin-top:2mm">
+        <tr><td>1<sup>er</sup> trimestre</td><td>Jusqu'à 14 SA environ (fin du 3<sup>e</sup> mois)</td><td>Consultation, déclaration, 1<sup>re</sup> écho</td></tr>
+        <tr><td>2<sup>e</sup> trimestre</td><td>De 15 à 28 SA environ (4<sup>e</sup> au 6<sup>e</sup> mois)</td><td>Écho morphologique, 100 % dès le 6<sup>e</sup> mois</td></tr>
+        <tr><td>3<sup>e</sup> trimestre</td><td>De 29 SA à la naissance (7<sup>e</sup> au 9<sup>e</sup> mois)</td><td>3<sup>e</sup> écho, congé maternité, préparation</td></tr>
+      </table>
+    </div>
+
+    <div class="grid2 mt">
+      <div class="card miel"><h3>Et la prise de sang ?</h3><p>Une prise de sang de <b>bêta-hCG</b> n'est pas obligatoire après un test urinaire positif. Le professionnel la prescrira si elle est utile : doute sur les dates, saignements, douleurs, antécédents.</p></div>
+      <div class="card rose"><h3>Notez dès aujourd'hui</h3><p>La date du <b>1<sup>er</sup> jour de vos dernières règles</b> (si vous la connaissez), la durée habituelle de vos cycles, et les symptômes qui vous questionnent. Ces repères aident à dater la grossesse.</p></div>
+    </div>
+
+    <div class="alert mt">
+      <h3>Les petits maux du début sont fréquents</h3>
+      <p>Nausées, seins tendus, fatigue intense, envies fréquentes d'uriner, légers tiraillements dans le bas-ventre : ce sont des signes courants du 1<sup>er</sup> trimestre. Les signes qui doivent faire consulter rapidement sont détaillés page 13.</p>
+    </div>
+  </div>
+  <div class="foot"><span>Petit Bout de Famille · Étape 0 · Leçon 2</span><span class="num">2</span></div>
+</section>
+
+<!-- ============ 3. CALENDRIER DES PREMIÈRES SEMAINES + QUI CHOISIR ============ -->
+<section class="page">
+  <div class="circle" style="width:66mm;height:66mm;background:var(--peche);right:-24mm;top:-26mm"></div>
+  <div class="circle" style="width:14mm;height:14mm;background:var(--miel);right:42mm;top:12mm"></div>
+
+  <div class="content">
+    <div class="kicker">Étape 0 · Leçon 2 · Les premières démarches</div>
+    <h2>Vos premières semaines,<br>pas à pas</h2>
+
+    <table>
+      <tr><th>Quand</th><th>Ce que vous pouvez faire</th></tr>
+      <tr><td>Cette semaine</td><td>Prendre rendez-vous pour la 1<sup>re</sup> consultation. Commencer l'<b>acide folique</b> si ce n'est pas déjà fait. Arrêter l'alcool. Ne rien arrêter ni commencer comme traitement sans avis (appelez votre médecin si vous prenez un traitement régulier).</td></tr>
+      <tr><td>Avant 10 SA</td><td>1<sup>re</sup> consultation : datation, bilan de santé, prescription des prises de sang et de la 1<sup>re</sup> échographie. C'est aussi le bon moment pour adopter les précautions alimentaires.</td></tr>
+      <tr><td>De 11 à 13 SA + 6 j</td><td><b>1<sup>re</sup> échographie</b> : date de début de grossesse et terme, nombre de bébés, mesure de la nuque pour le dépistage de la trisomie 21 (si vous le souhaitez).</td></tr>
+      <tr><td>Avant la fin du 3<sup>e</sup> mois</td><td><b>Déclaration de grossesse</b> à l'Assurance Maladie et à la CAF/MSA. Vérifier qu'elle a bien été transmise.</td></tr>
+      <tr><td>Au 1<sup>er</sup> trimestre</td><td>S'inscrire à la <b>maternité</b> (tôt dans les grandes villes). Prévoir l'<b>entretien prénatal précoce</b>. Réfléchir au moment d'informer votre employeur.</td></tr>
+      <tr><td>Dès le 4<sup>e</sup> mois</td><td>Consultation chaque mois. Examen bucco-dentaire pris en charge. Penser au mode de garde (voir leçon 9).</td></tr>
+    </table>
+
+    <h3 class="mt" style="font-size:13pt">Qui peut suivre votre grossesse ?</h3>
+    <table class="soft">
+      <tr><td>Sage-femme</td><td>Toute grossesse qui se déroule normalement, de la 1<sup>re</sup> consultation à l'après-naissance : examens, échographies, préparation, rééducation du périnée. Elle oriente vers un médecin si besoin.</td></tr>
+      <tr><td>Médecin généraliste</td><td>Le début du suivi, souvent jusqu'au 6<sup>e</sup> ou 7<sup>e</sup> mois, si la grossesse est sans complication. Il connaît vos antécédents.</td></tr>
+      <tr><td>Gynécologue-obstétricien</td><td>Indispensable si la grossesse est à risque (maladie chronique, jumeaux, antécédents de complication, diabète, hypertension). Possible aussi pour une grossesse normale.</td></tr>
+      <tr><td>PMI</td><td>Centres de Protection maternelle et infantile : consultations et accompagnement gratuits, visites à domicile possibles. Une aide précieuse si vous vous sentez isolée.</td></tr>
+    </table>
+    <p class="small" style="margin-top:1.5mm">Les dernières consultations ont souvent lieu à la maternité où vous accoucherez.</p>
+
+    <div class="card miel mt">
+      <h3>S'inscrire à la maternité</h3>
+      <p>Les maternités sont classées selon les soins qu'elles peuvent donner aux nouveau-nés : <b>type 1</b> (grossesses sans risque particulier), <b>type 2</b> (avec néonatologie), <b>type 3</b> (avec réanimation néonatale, pour les grossesses à haut risque). Une grossesse normale se déroule très bien en type 1. Pensez aussi au <b>temps de trajet</b>, à la possibilité de visiter et aux approches proposées (salle nature, accompagnement de l'allaitement…).</p>
+    </div>
+  </div>
+  <div class="foot"><span>Source : ameli.fr · HAS, suivi des femmes enceintes</span><span class="num">3</span></div>
+</section>
+
+<!-- ============ 4. LE PREMIER RENDEZ-VOUS ============ -->
+<section class="page">
+  <div class="circle" style="width:70mm;height:70mm;background:var(--rose);right:-24mm;top:-28mm"></div>
+  <div class="circle" style="width:16mm;height:16mm;background:var(--miel);right:44mm;top:10mm"></div>
+  <svg class="deco-ico" style="right:18mm;top:28mm" width="15mm" height="15mm" viewBox="0 0 48 48" fill="none" stroke="#3D2B1F" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><rect x="8" y="10" width="32" height="30" rx="5" fill="#FBE3A1"/><path d="M8 19h32M16 6v8M32 6v8"/><circle cx="24" cy="29" r="3" fill="#F6B48A"/></svg>
+
+  <div class="content">
+    <div class="kicker">Étape 0 · Leçon 2 · Le premier rendez-vous</div>
+    <h2>Le premier rendez-vous :<br>à quoi s'attendre ?</h2>
+    <div class="qbox"><span class="ico">?</span>Qu'est-ce qu'on va me demander ? Est-ce que je dois préparer quelque chose ?</div>
+
+    <p class="lead">Ce rendez-vous, un peu plus long que les autres, sert à <b>confirmer et dater la grossesse</b>, faire le point sur votre santé et organiser le suivi. Vous pouvez venir accompagnée.</p>
+
+    <div class="grid2">
+      <div class="card peche"><span class="tag">On parle de vous</span><h3>Votre santé et votre histoire</h3>
+        <ul><li>Date des dernières règles, régularité des cycles</li><li>Antécédents médicaux, chirurgicaux, grossesses précédentes</li><li>Allergies, traitements, vaccinations</li><li>Maladies dans la famille (diabète, maladies génétiques…)</li><li>Travail, mode de vie, entourage</li></ul></div>
+      <div class="card miel"><span class="tag">On vous examine</span><h3>Un examen simple</h3>
+        <ul><li>Poids, taille, tension artérielle</li><li>Examen clinique selon le contexte (pas toujours gynécologique)</li><li>Frottis si le dépistage du col n'est pas à jour</li><li>Parfois une échographie de datation au cabinet</li></ul></div>
+      <div class="card blanc"><span class="tag">On organise la suite</span><h3>Ordonnances et calendrier</h3>
+        <ul><li>Prises de sang et analyse d'urines</li><li>Rendez-vous de la 1<sup>re</sup> échographie</li><li>Information sur le dépistage de la trisomie 21</li><li>Déclaration de grossesse en ligne</li><li>Acide folique, conseils alimentaires</li></ul></div>
+      <div class="card rose"><span class="tag">À apporter</span><h3>Votre petit dossier</h3>
+        <ul><li>Carte Vitale et carte de mutuelle</li><li>Liste des médicaments et compléments (ou les boîtes)</li><li>Carnet de vaccination ou carnet de santé</li><li>Résultats récents : prises de sang, frottis, groupe sanguin</li><li>Vos questions, notées à l'avance</li></ul></div>
+    </div>
+
+    <div class="alert mt">
+      <h3>Vous pouvez parler de tout</h3>
+      <p>Nausées qui vous épuisent, anxiété, grossesse non prévue, difficultés d'argent ou de logement, tensions dans le couple, violences, consommation que vous n'arrivez pas à arrêter : <b>rien n'est hors sujet</b>. Le professionnel est tenu au secret et peut vous orienter (PMI, assistante sociale, psychologue, addictologie). En cas de violences : <b>3919</b>, gratuit et anonyme.</p>
+    </div>
+
+    <div class="dark mt">
+      <span class="badge soleil">Le conseil de pro</span>
+      <h3>Ouvrez un dossier « grossesse » dès maintenant</h3>
+      <p>Un classeur ou un dossier dans votre téléphone : ordonnances, résultats, comptes rendus d'échographie, dates de rendez-vous. Vous l'emporterez à chaque consultation et à la maternité. Pensez aussi à activer <b>Mon espace santé</b>, où certains professionnels déposent vos documents.</p>
+    </div>
+  </div>
+  <div class="foot"><span>Source : ameli.fr, première consultation prénatale</span><span class="num">4</span></div>
+</section>
+
+<!-- ============ 5. MÉDICAMENTS, COMPLÉMENTS, SUBSTANCES ============ -->
+<section class="page">
+  <div class="circle" style="width:66mm;height:66mm;background:var(--miel);right:-24mm;top:-26mm"></div>
+  <div class="circle" style="width:14mm;height:14mm;background:var(--peche);right:42mm;top:12mm"></div>
+
+  <div class="content">
+    <div class="kicker">Étape 0 · Leçon 2 · Les bons réflexes</div>
+    <h2>Médicaments, compléments :<br>les bons réflexes</h2>
+
+    <div class="alert">
+      <h3>La règle d'or</h3>
+      <p>Ne commencez pas, n'arrêtez pas et ne modifiez pas un traitement <b>sans avis</b> d'un médecin, d'une sage-femme ou d'un pharmacien. Traitement au long cours (thyroïde, épilepsie, dépression, asthme…) : <b>appelez vite</b> votre prescripteur ; l'arrêter brutalement peut être plus risqué que de le poursuivre.</p>
+    </div>
+
+    <h3 class="mt" style="font-size:13pt">Les compléments utiles</h3>
+    <table>
+      <tr><th>Complément</th><th>Pourquoi</th><th>En pratique</th></tr>
+      <tr><td>Acide folique (vitamine B9)</td><td>Réduit le risque d'anomalie de fermeture du tube neural (spina bifida).</td><td><b>0,4 mg par jour</b>, idéalement dès le projet de grossesse et <b>jusqu'à 12 SA</b>. Dose plus forte (souvent 5 mg) si antécédent, traitement antiépileptique ou situation particulière : sur prescription.</td></tr>
+      <tr><td>Vitamine D</td><td>Pour les os de bébé et votre calcium.</td><td>En général <b>une dose unique</b> prescrite au début du 7<sup>e</sup> mois.</td></tr>
+      <tr><td>Fer</td><td>Prévenir l'anémie, fréquente en fin de grossesse.</td><td><b>Uniquement si la prise de sang montre un manque</b> : le fer en excès n'apporte rien et donne des troubles digestifs.</td></tr>
+      <tr><td>Iode</td><td>Pour la thyroïde et le cerveau de bébé.</td><td><b>Sel iodé</b> (sans excès), poisson, produits laitiers. Un complément peut être discuté.</td></tr>
+      <tr><td>Vitamine B12</td><td>Indispensable au développement du système nerveux.</td><td><b>Supplément indispensable</b> si vous êtes végétalienne ; à discuter si vous êtes végétarienne.</td></tr>
+    </table>
+
+    <div class="grid2 mt">
+      <div class="card peche"><h3>Contre la douleur ou la fièvre</h3>
+        <p>Le <b>paracétamol</b> est le médicament de référence, à la dose la plus faible et le moins longtemps possible. L'<b>ibuprofène</b> et les autres anti-inflammatoires (y compris en gel) et l'aspirine à dose antidouleur sont à <b>éviter pendant toute la grossesse</b> et <b>interdits à partir du 6<sup>e</sup> mois</b>.</p></div>
+      <div class="card rose"><h3>Vérifier un médicament</h3>
+        <p>Le site du <b>CRAT</b> (lecrat.fr) fait référence sur médicaments et grossesse ; votre pharmacien peut le consulter avec vous. Un <b>pictogramme « femme enceinte »</b> figure sur les boîtes des médicaments à risque. Dites toujours que vous êtes enceinte, y compris chez le dentiste. Plantes et huiles essentielles : <b>sur avis</b> aussi.</p></div>
+    </div>
+
+    <div class="card miel mt">
+      <h3>Alcool, tabac, cannabis : sans jugement, avec de l'aide</h3>
+            <p><b>Alcool</b> : il n'existe pas de dose sans risque pendant la grossesse ; le plus sûr est zéro, dès maintenant. Si vous avez bu avant de savoir que vous étiez enceinte, ne paniquez pas : arrêtez maintenant et parlez-en, le risque se discute au cas par cas.</p>
+      <p><b>Tabac et vapotage</b> : chaque cigarette en moins compte et il n'est jamais trop tard. Les <b>substituts nicotiniques</b> sont possibles pendant la grossesse et remboursés ; votre sage-femme peut les prescrire, ainsi qu'à votre partenaire. <b>Cannabis</b> : il passe aussi le placenta ; parlez-en pour être accompagnée.</p>
+      <p class="small" style="margin-top:2mm"><b>Tabac Info Service 39 89</b> · <b>Alcool Info Service 0 980 980 930</b> · <b>Drogues Info Service 0 800 23 13 13</b> — gratuits ou non surtaxés, anonymes.</p>
+    </div>
+  </div>
+  <div class="foot"><span>Sources : HAS · ANSM · CRAT · Santé publique France</span><span class="num">5</span></div>
+</section>
+
+<!-- ============ 6. ALIMENTATION 1 : BIEN MANGER ============ -->
+<section class="page">
+  <div class="circle" style="width:72mm;height:72mm;background:var(--peche);right:-24mm;top:-28mm"></div>
+  <div class="circle" style="width:16mm;height:16mm;background:var(--miel);right:46mm;top:10mm"></div>
+  <svg class="deco-ico" style="right:17mm;top:27mm" width="17mm" height="17mm" viewBox="0 0 48 48" fill="none" stroke="#3D2B1F" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M24 14c-8-6-18 0-16 12 2 10 8 16 12 16 2 0 3-1 4-1s2 1 4 1c4 0 10-6 12-16 2-12-8-18-16-12z" fill="#F6B48A"/><path d="M24 14c0-4 2-8 6-9"/></svg>
+
+  <div class="content">
+    <div class="kicker">Étape 0 · Leçon 2 · Bien manger dès maintenant</div>
+    <h2>Manger pour deux ?<br>Non : manger deux fois mieux</h2>
+    <div class="qbox"><span class="ico">?</span>Je dois manger plus ? Et s'il y a des choses que j'ai déjà mangées sans savoir ?</div>
+
+    <p class="lead">Au 1<sup>er</sup> trimestre, vos besoins en énergie <b>n'augmentent presque pas</b>. Aux 2<sup>e</sup> et 3<sup>e</sup> trimestres, ils augmentent un peu : l'équivalent d'une <b>collation</b> en plus par jour (un yaourt, un fruit et une tranche de pain, par exemple). Ce qui compte surtout, c'est la <b>qualité et la variété</b>. Et si vous avez mangé un aliment « à éviter » avant de le savoir : pas de panique, le risque est faible ; adoptez simplement les précautions à partir d'aujourd'hui.</p>
+
+    <div class="grid3">
+      <div class="card peche"><span class="tag">Chaque jour</span><h3>Fruits et légumes</h3><p>À chaque repas, crus <b>bien lavés</b> ou cuits : fibres, vitamines, B9. Au moins 5 portions par jour.</p></div>
+      <div class="card miel"><span class="tag">Chaque repas</span><h3>Féculents</h3><p>Pain, pâtes, riz, pommes de terre, de préférence <b>complets</b> : énergie durable et moins de constipation.</p></div>
+      <div class="card rose"><span class="tag">1 à 2 fois par jour</span><h3>Protéines</h3><p>Viande <b>bien cuite</b>, œufs <b>bien cuits</b>, poisson 2 fois par semaine, légumineuses (lentilles, pois chiches) : fer et protéines.</p></div>
+      <div class="card blanc"><span class="tag">2 à 3 par jour</span><h3>Produits laitiers</h3><p>Lait pasteurisé, yaourts, fromages autorisés (page 7) : calcium et iode.</p></div>
+      <div class="card peche"><span class="tag">À volonté</span><h3>De l'eau</h3><p>1,5 à 2 litres par jour, plus s'il fait chaud ou si vous vomissez. L'eau du robinet convient.</p></div>
+      <div class="card miel"><span class="tag">Avec modération</span><h3>Sucre, sel, gras</h3><p>Pâtisseries, boissons sucrées, plats tout prêts : à limiter, sans interdit. Huiles de colza et de noix : intéressantes.</p></div>
+    </div>
+
+    <div class="card miel mt">
+      <h3>Végétarienne, végétalienne, allergies, religion ?</h3>
+      <p>Une grossesse est possible avec tous les modes d'alimentation, à condition d'en parler : <b>B12 indispensable</b> si vous êtes végétalienne, attention au fer, au calcium, à l'iode et aux oméga-3. Une consultation avec une <b>diététicienne</b> peut vous être prescrite, de même qu'en cas de jeûne religieux ou de trouble alimentaire, passé ou présent.</p>
+    </div>
+
+    <div class="card blanc mt">
+      <span class="tag">Exemple, à adapter à vos goûts</span>
+      <h3>Une journée dans l'assiette</h3>
+      <table class="soft" style="font-size:8.4pt;margin-top:1mm">
+        <tr><td style="width:28mm">Petit-déjeuner</td><td>Pain complet ou flocons d'avoine, un yaourt ou un verre de lait, un fruit lavé ou une compote.</td></tr>
+        <tr><td>Déjeuner</td><td>Crudités bien lavées, poulet bien cuit, riz ou pâtes, haricots verts, un morceau de comté sans croûte.</td></tr>
+        <tr><td>Collation</td><td>Une poignée d'amandes ou de noix, un fruit, un fromage blanc : utile au 2<sup>e</sup> et au 3<sup>e</sup> trimestre.</td></tr>
+        <tr><td>Dîner</td><td>Soupe de légumes, omelette bien cuite ou lentilles, pain, un dessert lacté.</td></tr>
+      </table>
+    </div>
+  </div>
+  <div class="foot"><span>Sources : ANSES · Santé publique France (1000 premiers jours)</span><span class="num">6</span></div>
+</section>
+
+<!-- ============ 7. ALIMENTATION 2 : LES INFECTIONS ============ -->
+<section class="page">
+  <div class="circle" style="width:66mm;height:66mm;background:var(--rose);right:-24mm;top:-26mm"></div>
+  <div class="circle" style="width:14mm;height:14mm;background:var(--miel);right:42mm;top:12mm"></div>
+
+  <div class="content">
+    <div class="kicker">Étape 0 · Leçon 2 · Bien manger dès maintenant</div>
+    <h2>Ce que j'évite, et pourquoi</h2>
+    <p class="lead">Trois infections transmises par l'alimentation sont bénignes pour l'adulte mais peuvent être graves pour bébé. Quelques gestes simples suffisent à s'en protéger.</p>
+
+    <table>
+      <tr><th>Infection</th><th>À éviter</th><th>Les bons gestes</th></tr>
+      <tr><td>Toxoplasmose<br><span style="font-weight:600;font-size:7.6pt">si vous n'êtes pas immunisée (la prise de sang le dira)</span></td>
+        <td>Viande crue, saignante ou rosée (y compris tartare, carpaccio, gibier) ; charcuteries crues, fumées ou séchées (jambon cru, saucisson) ; lait de chèvre cru ; fruits, légumes et herbes mal lavés.</td>
+        <td>Viande <b>bien cuite à cœur</b>. Laver fruits, légumes et aromates, même « bio » ou en sachet. Laver mains, planches et couteaux après la viande crue. Gants pour jardiner ; litière du chat changée par quelqu'un d'autre (ou avec des gants). Prise de sang <b>chaque mois</b>.</td></tr>
+      <tr><td>Listériose<br><span style="font-weight:600;font-size:7.6pt">pour toutes</span></td>
+        <td>Fromages au lait cru et croûte de tous les fromages ; fromages râpés en sachet ; rillettes, pâtés, foie gras, produits en gelée, charcuterie à la coupe ; poisson fumé, cru (sushis), tarama, surimi ; coquillages crus ; graines germées crues.</td>
+        <td>La bactérie se développe <b>même au réfrigérateur</b> : préférer les produits préemballés, respecter les dates, consommer vite après ouverture. Réchauffer les restes jusqu'à ce qu'ils soient <b>très chauds</b>. Les aliments cuits (pizza, gratin, quiche) sont sans risque.</td></tr>
+      <tr><td>Salmonellose<br><span style="font-weight:600;font-size:7.6pt">pour toutes</span></td>
+        <td>Œufs crus ou peu cuits : mayonnaise, mousse au chocolat, tiramisu et pâtisseries crues faits maison, œufs à la coque ou mollets ; volaille insuffisamment cuite.</td>
+        <td>Œufs cuits jusqu'à ce que le blanc et le jaune soient <b>fermes</b>. Mayonnaise et desserts industriels (fabriqués avec des œufs pasteurisés) : possibles.</td></tr>
+    </table>
+
+    <div class="yesno mt">
+      <div class="col blanc">
+        <span class="pill-h" style="background:var(--terracotta)">Fromages : oui</span>
+        <ul>
+          <li>Pâtes pressées cuites, même au lait cru : <b>comté, emmental, beaufort, gruyère</b>, sans la croûte</li>
+          <li>Fromages au <b>lait pasteurisé</b>, sans la croûte</li>
+          <li>Fromages fondus, en portions, à tartiner</li>
+          <li><b>Tout fromage cuit</b> : raclette, gratin, pizza, croque</li>
+          <li>Yaourts, fromage blanc, petits-suisses</li>
+        </ul>
+      </div>
+      <div class="col miel">
+        <span class="pill-h" style="background:var(--brun)">Fromages : non</span>
+        <ul>
+          <li>Tous les autres fromages <b>au lait cru</b> (camembert, brie, reblochon, roquefort, chèvre frais au lait cru…), sauf s'ils sont cuits</li>
+          <li>La <b>croûte</b> de tous les fromages</li>
+          <li>Les fromages <b>râpés vendus en sachet</b> (à utiliser seulement en cuisson)</li>
+          <li>Le fromage à la coupe resté longtemps à l'air libre</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="card peche mt">
+      <h3>Dans la cuisine et le réfrigérateur</h3>
+      <div class="grid2" style="gap:2mm 6mm">
+        <ul class="small"><li>Réfrigérateur à <b>4 °C</b> maximum, nettoyé (avec de l'eau javellisée) deux fois par mois.</li><li>Aliments crus et cuits dans des boîtes séparées.</li></ul>
+        <ul class="small"><li>Se laver les mains avant de cuisiner et après avoir manipulé de la viande, des œufs ou de la terre.</li><li>Restes : couverts, au frais, consommés rapidement.</li></ul>
+      </div>
+    </div>
+
+    <div class="alert mt">
+      <h3>Fièvre pendant la grossesse ?</h3>
+      <p>Une fièvre à <b>38 °C ou plus</b>, même avec de simples courbatures ou des troubles digestifs, doit faire <b>consulter rapidement</b> : c'est parfois le seul signe d'une listériose, qui se soigne bien par antibiotiques si elle est prise tôt.</p>
+    </div>
+  </div>
+  <div class="foot"><span>Sources : ANSES · Santé publique France · ameli.fr</span><span class="num">7</span></div>
+</section>
+
+<!-- ============ 8. ALIMENTATION 3 : POISSONS, CAFÉINE, CMV ============ -->
+<section class="page">
+  <div class="circle" style="width:66mm;height:66mm;background:var(--miel);right:-24mm;top:-26mm"></div>
+  <div class="circle" style="width:14mm;height:14mm;background:var(--rose);right:42mm;top:12mm"></div>
+
+  <div class="content">
+    <div class="kicker">Étape 0 · Leçon 2 · Bien manger dès maintenant</div>
+    <h2>Poisson, café, tisanes :<br>les questions qu'on se pose</h2>
+
+    <div class="card peche">
+      <h3>Le poisson : oui, deux fois par semaine</h3>
+      <p>Il apporte des <b>oméga-3, de l'iode et de la vitamine D</b>, utiles au cerveau et aux yeux de bébé. Mangez-en 2 fois par semaine, <b>bien cuit</b>, dont un poisson gras (sardine, maquereau, hareng, saumon). Varier les espèces et les lieux de pêche limite les polluants.</p>
+      <div class="grid2" style="margin-top:2mm">
+        <div class="card blanc" style="padding:3mm 4mm"><span class="tag">À éviter (mercure)</span><p>Espadon, marlin, siki, requin, lamproie.</p></div>
+        <div class="card blanc" style="padding:3mm 4mm"><span class="tag">À limiter (150 g par semaine)</span><p>Thon, lotte, bar, bonite, empereur, flétan, dorade, raie, sabre, brochet.</p></div>
+      </div>
+    </div>
+
+    <div class="grid2 mt">
+      <div class="card miel">
+        <h3>Café, thé, cola : combien ?</h3>
+        <p>Repère : <b>200 mg de caféine par jour</b> au maximum.</p>
+        <table class="soft" style="font-size:8pt">
+          <tr><td style="width:30mm">Expresso</td><td>60 à 90 mg</td></tr>
+          <tr><td>Café filtre (mug)</td><td>100 à 140 mg</td></tr>
+          <tr><td>Thé (tasse)</td><td>30 à 50 mg</td></tr>
+          <tr><td>Cola (canette)</td><td>30 à 40 mg</td></tr>
+          <tr><td>Boisson énergisante</td><td>80 mg et plus : <b>à éviter</b></td></tr>
+        </table>
+        <p class="small">Soit environ 2 cafés par jour, en comptant le thé, le cola et le chocolat.</p>
+      </div>
+      <div class="card rose">
+        <h3>Tisanes, réglisse, soja</h3>
+        <ul>
+          <li>Tisanes classiques (tilleul, verveine, camomille) : avec modération.</li>
+          <li>Tisanes « médicinales », plantes en gélules, huiles essentielles : <b>seulement sur avis</b>.</li>
+          <li><b>Réglisse</b> (bonbons, boissons anisées, certaines tisanes) : à éviter en quantité, elle peut faire monter la tension.</li>
+          <li><b>Soja</b> (boissons, desserts, tofu) : pas plus d'un produit par jour.</li>
+          <li>Algues et compléments à base d'algues : prudence (excès d'iode).</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="card blanc mt">
+      <span class="tag">Si vous avez déjà un jeune enfant</span>
+      <h3>Le cytomégalovirus (CMV) : des gestes d'hygiène simples</h3>
+      <p>Ce virus très courant, souvent sans symptôme, circule beaucoup chez les enfants de moins de 3 ans (salive, urines). Contracté pendant la grossesse, il peut avoir des conséquences pour bébé. Sans vous priver des câlins :</p>
+      <ul><li>lavez-vous les mains après chaque change, mouchage ou repas de votre enfant ;</li><li>ne partagez pas sa cuillère, son verre ou sa brosse à dents, et ne terminez pas son assiette ;</li><li>évitez de mettre sa tétine dans votre bouche ; embrassez-le plutôt sur le front ou les joues.</li></ul>
+      <p class="small">Ces gestes valent aussi si vous travaillez avec de jeunes enfants (crèche, école, assistante maternelle) : parlez-en à la médecine du travail.</p>
+    </div>
+
+  </div>
+  <div class="foot"><span>Sources : ANSES · EFSA · HCSP (CMV)</span><span class="num">8</span></div>
+</section>
+
+<!-- ============ 8 bis. ALIMENTATION 4 : POIDS, NAUSÉES, DIGESTION ============ -->
+<section class="page">
+  <div class="circle" style="width:70mm;height:70mm;background:var(--rose);right:-24mm;top:-28mm"></div>
+  <div class="circle" style="width:16mm;height:16mm;background:var(--miel);right:44mm;top:10mm"></div>
+  <svg class="deco-ico" style="right:18mm;top:28mm" width="15mm" height="15mm" viewBox="0 0 48 48"><path d="M30 6a18 18 0 1 0 12 28A15 15 0 1 1 30 6z" fill="#F9C74F" stroke="#3D2B1F" stroke-width="3" stroke-linejoin="round"/></svg>
+
+  <div class="content">
+    <div class="kicker">Étape 0 · Leçon 2 · Bien manger dès maintenant</div>
+    <h2>Nausées, poids, digestion :<br>les petits tracas du début</h2>
+    <div class="qbox"><span class="ico">?</span>Je n'arrive rien à avaler le matin : est-ce que bébé manque de quelque chose ?</div>
+    <p class="lead">Rassurez-vous : au 1<sup>er</sup> trimestre, bébé puise ce dont il a besoin dans vos réserves. Les nausées touchent plus d'une femme enceinte sur deux et s'atténuent le plus souvent vers <b>12 à 16 SA</b>. L'objectif est de manger ce qui passe, sans culpabiliser.</p>
+    <div class="grid2">
+      <div class="card blanc">
+        <h3>La prise de poids : des repères, pas un objectif</h3>
+        <table class="soft" style="font-size:8.2pt">
+          <tr><td style="width:34mm">IMC avant grossesse</td><td><b>Prise de poids repère</b></td></tr>
+          <tr><td>Moins de 18,5</td><td>12,5 à 18 kg</td></tr>
+          <tr><td>18,5 à 24,9</td><td>11,5 à 16 kg</td></tr>
+          <tr><td>25 à 29,9</td><td>7 à 11,5 kg</td></tr>
+          <tr><td>30 et plus</td><td>5 à 9 kg</td></tr>
+        </table>
+        <p class="small">Jumeaux : davantage. Pas de régime pendant la grossesse ; le professionnel suit votre courbe.</p>
+      </div>
+      <div class="card rose">
+        <h3>Les nausées du début</h3>
+        <ul class="small">
+          <li>Petits repas fréquents ; ne restez pas l'estomac vide.</li>
+          <li>Quelque chose de sec (biscotte) avant de vous lever.</li>
+          <li>Boire par petites gorgées, plutôt entre les repas.</li>
+          <li>Aliments froids, peu odorants ; éviter les plats gras.</li>
+          <li>Le gingembre peut aider certaines femmes.</li>
+        </ul>
+        <p class="small"><b>Consultez</b> si vous ne gardez rien (ni eau ni aliments) pendant 24 h, si vous perdez du poids ou urinez peu : c'est soignable.</p>
+      </div>
+    </div>
+
+
+    <div class="grid2 mt">
+      <div class="card miel">
+        <h3>Constipation</h3>
+        <p>Très fréquente (les hormones ralentissent l'intestin, le fer aggrave). Buvez régulièrement, misez sur les <b>fibres</b> (légumes, fruits, pruneaux, céréales complètes, légumineuses) et bougez chaque jour. Pas de laxatif sans avis.</p>
+      </div>
+      <div class="card peche">
+        <h3>Brûlures d'estomac</h3>
+        <p>Plus fréquentes en fin de grossesse. Fractionnez les repas, évitez les plats très gras, épicés ou acides le soir, ne vous allongez pas juste après manger. Votre pharmacien peut vous conseiller un traitement adapté à la grossesse.</p>
+      </div>
+    </div>
+
+    <div class="dark mt">
+      <span class="badge soleil">L'espace du kiné</span>
+      <h3>Bouger après le repas : un petit geste qui aide</h3>
+      <p>10 à 15 minutes de marche après le déjeuner ou le dîner facilitent la digestion, limitent les remontées acides et aident à réguler le sucre dans le sang. En cas de brûlures d'estomac, évitez de vous allonger juste après manger et surélevez légèrement la tête du lit.</p>
+    </div>
+  </div>
+  <div class="foot"><span>Sources : ANSES · HAS · CNGOF</span><span class="num">9</span></div>
+</section>
+
+<!-- ============ 9. TRAVAIL, SPORT, QUOTIDIEN ============ -->
+<section class="page">
+  <div class="circle" style="width:70mm;height:70mm;background:var(--peche);right:-24mm;top:-28mm"></div>
+  <div class="circle" style="width:16mm;height:16mm;background:var(--rose);right:44mm;top:10mm"></div>
+  <svg class="deco-ico" style="right:18mm;top:28mm" width="16mm" height="16mm" viewBox="0 0 48 48" fill="none" stroke="#3D2B1F" stroke-width="3" stroke-linecap="round"><circle cx="24" cy="24" r="9" fill="#F9C74F"/><path d="M24 4v6M24 38v6M4 24h6M38 24h6M10 10l4 4M34 34l4 4M38 10l-4 4M14 34l-4 4"/></svg>
+
+  <div class="content">
+    <div class="kicker">Étape 0 · Leçon 2 · Travail, sport et quotidien</div>
+    <h2>Travail, sport, trajets :<br>faut-il tout changer ?</h2>
+    <p class="lead">Non : la plupart des activités peuvent continuer. Mais certaines situations méritent d'être signalées tôt au professionnel qui vous suit, et parfois à la médecine du travail.</p>
+
+    <div class="grid2">
+      <div class="card peche">
+        <h3>Au travail : vos protections</h3>
+        <ul>
+          <li>Vous <b>n'êtes pas obligée</b> d'annoncer votre grossesse tout de suite, ni de donner une raison à l'embauche.</li>
+          <li>Une fois l'employeur informé (idéalement par écrit, avec un certificat), vous êtes <b>protégée contre le licenciement</b>.</li>
+          <li><b>Absences autorisées et payées</b> pour les examens médicaux obligatoires ; le second parent salarié peut accompagner jusqu'à 3 de ces examens.</li>
+          <li>Travail de nuit : vous pouvez demander un <b>poste de jour</b>.</li>
+        </ul>
+      </div>
+      <div class="card miel">
+        <h3>Ce qu'il faut signaler</h3>
+        <ul>
+          <li>Produits chimiques, solvants, pesticides, plomb, rayonnements.</li>
+          <li>Port de charges lourdes, station debout prolongée, longs trajets.</li>
+          <li>Contact avec de jeunes enfants ou des malades (infections).</li>
+          <li>Horaires de nuit, stress important.</li>
+        </ul>
+        <p class="small">La <b>médecine du travail</b> peut demander un aménagement de poste. Indépendante, demandeuse d'emploi, étudiante, fonctionnaire : les règles diffèrent, renseignez-vous selon votre statut.</p>
+      </div>
+    </div>
+
+    <div class="dark mt">
+      <span class="badge soleil">L'espace du kiné</span>
+      <h3>Bouger pendant la grossesse : oui, et c'est bénéfique</h3>
+      <p>Sauf contre-indication médicale, l'activité physique réduit le mal de dos, la fatigue, le risque de diabète gestationnel et prépare le corps à l'accouchement. Repère : <b>150 minutes par semaine</b> d'activité modérée (vous pouvez parler en bougeant), par exemple 30 minutes, 5 jours sur 7.</p>
+      <ul>
+        <li><b>À privilégier</b> : marche, natation, aquagym, vélo d'appartement, yoga ou Pilates prénatal, renforcement doux.</li>
+        <li><b>À éviter</b> : sports de contact et de combat, sports à risque de chute (ski, équitation, escalade), plongée sous-marine, efforts en altitude non habituels.</li>
+        <li>Si vous étiez sportive, vous pouvez continuer en <b>réduisant l'intensité</b> ; parlez-en au professionnel qui vous suit.</li>
+        <li>Pensez au <b>périnée</b> dès maintenant : expirer en contractant le périnée avant de soulever une charge, éviter de pousser aux toilettes.</li>
+      </ul>
+    </div>
+
+    <div class="grid2 mt">
+      <div class="card rose">
+        <h3>En voiture</h3>
+        <p>La ceinture reste <b>obligatoire</b> : la sangle du bas <b>sous le ventre</b>, sur les hanches, celle du haut entre les seins. Faites une pause toutes les 2 heures pour marcher et boire.</p>
+      </div>
+      <div class="card blanc">
+        <h3>Voyages, bains, saunas</h3>
+        <p>Avion : en général possible ; vérifiez la destination (zika, paludisme) et les règles de la compagnie. Bains chauds, sauna, hammam et jacuzzi : <b>à éviter</b> au 1<sup>er</sup> trimestre (élévation de la température).</p>
+      </div>
+    </div>
+  </div>
+  <div class="foot"><span>Sources : HAS, activité physique et grossesse · service-public.fr</span><span class="num">10</span></div>
+</section>
+
+<!-- ============ 10. LE SUIVI : CALENDRIER ET EXAMENS ============ -->
+<section class="page">
+  <div class="circle" style="width:66mm;height:66mm;background:var(--miel);right:-24mm;top:-26mm"></div>
+  <div class="circle" style="width:14mm;height:14mm;background:var(--peche);right:42mm;top:12mm"></div>
+
+  <div class="content">
+    <div class="kicker">Étape 0 · Leçon 2 · Le suivi de grossesse</div>
+    <h2>Le suivi de grossesse :<br>les grands repères</h2>
+    <p class="lead">En France, le suivi comprend <b>7 consultations prénatales</b> (une au 1<sup>er</sup> trimestre, puis une par mois à partir du 4<sup>e</sup> mois) et <b>3 échographies</b>. Il peut être renforcé si besoin ; le détail est repris dans la leçon 3.</p>
+
+    <table>
+      <tr><th>Quand</th><th>Examen</th><th>À quoi il sert</th></tr>
+      <tr><td>Avant 15 SA</td><td>1<sup>re</sup> consultation et bilan sanguin</td><td>Dater la grossesse, groupe sanguin, immunités, dépistages, déclaration</td></tr>
+      <tr><td>11 à 13 SA + 6 j</td><td>1<sup>re</sup> échographie</td><td>Terme, nombre de bébés, nuque (dépistage de la trisomie 21, proposé)</td></tr>
+      <tr><td>Dès le 4<sup>e</sup> mois</td><td>Consultation prénatale mensuelle</td><td>Tension, poids, urines, croissance du ventre, cœur de bébé</td></tr>
+      <tr><td>20 à 25 SA</td><td>2<sup>e</sup> échographie, « morphologique »</td><td>Anatomie de bébé organe par organe, placenta</td></tr>
+      <tr><td>24 à 28 SA</td><td>Dépistage du diabète gestationnel</td><td>Si facteurs de risque (âge, poids, antécédents)</td></tr>
+      <tr><td>30 à 35 SA</td><td>3<sup>e</sup> échographie</td><td>Croissance, position de bébé, placenta</td></tr>
+      <tr><td>8<sup>e</sup>-9<sup>e</sup> mois</td><td>Consultation d'anesthésie</td><td>Obligatoire, même sans péridurale prévue</td></tr>
+      <tr><td>34 à 38 SA</td><td>Prélèvement vaginal</td><td>Recherche du streptocoque B</td></tr>
+    </table>
+
+    <div class="grid2 mt">
+      <div class="card peche">
+        <h3>Le bilan sanguin du début</h3>
+        <ul class="small">
+          <li><b>Groupe sanguin, rhésus</b> et recherche d'anticorps (RAI). Rhésus négatif : un test sur votre sang peut indiquer le rhésus de bébé, et une injection préventive est proposée si besoin.</li>
+          <li><b>Toxoplasmose, rubéole, syphilis, hépatite B</b>.</li>
+          <li><b>VIH, hépatite C</b> : proposés systématiquement.</li>
+          <li>Glycémie à jeun si facteurs de risque ; analyse d'urines.</li>
+        </ul>
+      </div>
+      <div class="card rose">
+        <h3>Dépistage ne veut pas dire diagnostic</h3>
+        <p class="small">Le dépistage de la trisomie 21 est <b>proposé, jamais imposé</b>. Il donne un niveau de risque, pas une certitude. Si le risque est élevé, un test ADN sur prise de sang puis, si besoin, un prélèvement (amniocentèse) peuvent être proposés. Prenez le temps de poser vos questions avant chaque étape : vous pouvez aussi choisir de ne pas faire le dépistage.</p>
+      </div>
+    </div>
+
+    <div class="card blanc mt">
+      <h3>Les vaccins recommandés pendant la grossesse</h3>
+      <p class="small"><b>Grippe</b> et <b>Covid-19</b> : pendant la saison, à n'importe quel trimestre. <b>Coqueluche</b> : à chaque grossesse, idéalement entre 20 et 36 SA, pour que bébé naisse protégé. <b>Bronchiolite (VRS)</b> : entre 32 et 36 SA pendant la campagne (de septembre à février en métropole), ou un traitement préventif donné à bébé après la naissance. Sans danger pour bébé et pris en charge.</p>
+    </div>
+
+    <div class="card miel mt">
+      <h3>L'entretien prénatal précoce : un temps pour vous</h3>
+      <p>Obligatoirement proposé et pris en charge à 100 %, avec une sage-femme ou un médecin, seule ou en couple, idéalement au 1<sup>er</sup> trimestre. <b>Ce n'est pas un examen</b> : on y parle de vos besoins, de vos peurs (accouchement, allaitement, retour à la maison), de votre santé mentale, de votre organisation et du soutien dont vous disposez.</p>
+    </div>
+  </div>
+  <div class="foot"><span>Sources : ameli.fr · HAS</span><span class="num">11</span></div>
+</section>
+
+<!-- ============ 11. DÉMARCHES, REMBOURSEMENTS, DROITS ============ -->
+<section class="page">
+  <div class="circle" style="width:66mm;height:66mm;background:var(--rose);right:-24mm;top:-26mm"></div>
+  <div class="circle" style="width:14mm;height:14mm;background:var(--miel);right:42mm;top:12mm"></div>
+
+  <div class="content">
+    <div class="kicker">Étape 0 · Leçon 2 · Démarches et droits</div>
+    <h2>Déclaration, remboursements,<br>congés : l'essentiel</h2>
+
+    <div class="card peche">
+      <h3>La déclaration de grossesse</h3>
+      <p>À faire <b>avant la fin du 3<sup>e</sup> mois</b>. Le médecin ou la sage-femme la transmet le plus souvent <b>en ligne</b> à l'Assurance Maladie et à la CAF (ou MSA) : vous n'avez rien à envoyer. Si elle est faite sur papier, envoyez les volets aux adresses indiquées. Elle ouvre vos droits : prise en charge des examens, congé maternité, prestations familiales.</p>
+    </div>
+
+    <h3 class="mt" style="font-size:13pt">Ce qui est pris en charge</h3>
+    <table class="soft">
+      <tr><td>Jusqu'à la fin du 5<sup>e</sup> mois</td><td>Les consultations et examens de biologie obligatoires sont pris en charge à 100 %. Les deux premières échographies sont remboursées à 70 %. Les autres soins le sont aux taux habituels.</td></tr>
+      <tr><td>Du 6<sup>e</sup> mois à 12 jours après la naissance</td><td><b>Tous les soins</b>, liés ou non à la grossesse, sont pris en charge à 100 % (sur la base du tarif de la Sécurité sociale), y compris la 3<sup>e</sup> échographie.</td></tr>
+      <tr><td>À tout moment</td><td>Entretien prénatal précoce, séances de préparation à la naissance, examen bucco-dentaire (du 4<sup>e</sup> mois jusqu'à 12 jours après l'accouchement), vaccins recommandés.</td></tr>
+    </table>
+    <p class="small" style="margin-top:1mm">Les dépassements d'honoraires restent à votre charge ou à celle de votre mutuelle : prévenez-la de votre grossesse (chambre particulière, forfait naissance…).</p>
+
+    <h3 class="mt" style="font-size:13pt">Vos droits et aides</h3>
+    <table>
+      <tr><td>Prime à la naissance</td><td>Versée par la CAF ou la MSA au cours du <b>7<sup>e</sup> mois</b>, sous conditions de ressources, si la grossesse a été déclarée dans les délais. Environ 1 090 € par enfant en 2026 : vérifiez le montant et les plafonds sur caf.fr.</td></tr>
+      <tr><td>Congé maternité</td><td><b>16 semaines</b> pour un 1<sup>er</sup> ou 2<sup>e</sup> enfant (6 avant, 10 après la naissance) ; 26 semaines à partir du 3<sup>e</sup> enfant ; 34 pour des jumeaux ; 46 pour des triplés. Une partie du congé prénatal peut être reportée après la naissance sur avis médical.</td></tr>
+      <tr><td>Second parent</td><td><b>Congé de naissance</b> (3 jours) + <b>congé de paternité et d'accueil</b> (25 jours, 32 pour des naissances multiples), dont 7 jours obligatoires juste après la naissance. Prévenir l'employeur au moins 1 mois avant.</td></tr>
+      <tr><td>Nouveau en 2026</td><td>Un <b>congé supplémentaire de naissance</b> d'1 ou 2 mois par parent, indemnisé (70 % du salaire net le 1<sup>er</sup> mois, 60 % le 2<sup>e</sup>), à prendre dans les 9 mois après la naissance. En vigueur depuis le 1<sup>er</sup> juillet 2026 ; vérifiez les conditions sur service-public.fr.</td></tr>
+    </table>
+
+    <div class="alert mt">
+      <h3>Important</h3>
+      <p>Les montants, délais et conditions évoluent et dépendent de votre situation (salariée, indépendante, demandeuse d'emploi, étudiante, fonctionnaire). Ce guide donne des repères, pas une décision sur vos droits : vérifiez sur <b>ameli.fr</b>, <b>caf.fr</b> ou <b>msa.fr</b> et <b>service-public.fr</b>, ou auprès de votre employeur.</p>
+    </div>
+  </div>
+  <div class="foot"><span>Sources : ameli.fr · caf.fr · service-public.fr (octobre 2026)</span><span class="num">12</span></div>
+</section>
+
+<!-- ============ 12. QUAND CONSULTER ============ -->
+<section class="page">
+  <div class="circle" style="width:70mm;height:70mm;background:var(--peche);right:-24mm;top:-28mm"></div>
+  <div class="circle" style="width:16mm;height:16mm;background:var(--miel);right:44mm;top:10mm"></div>
+  <svg class="deco-ico" style="right:18mm;top:28mm" width="15mm" height="15mm" viewBox="0 0 48 48" fill="none" stroke="#3D2B1F" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M14 6h8l3 10-5 3a24 24 0 0 0 9 9l3-5 10 3v8a4 4 0 0 1-4 4C21 38 10 27 10 10a4 4 0 0 1 4-4z" fill="#F9C74F"/></svg>
+
+  <div class="content">
+    <div class="kicker">Étape 0 · Leçon 2 · Quand consulter</div>
+    <h2>Quand demander de l'aide<br>sans attendre ?</h2>
+    <p class="lead">Ces signes ne veulent pas forcément dire qu'il y a une complication, mais ils doivent être <b>évalués rapidement</b>. Vous ne dérangez jamais : en cas de doute, appelez.</p>
+
+    <div class="urgence">
+      <div class="num15">15<small>ou le 112</small></div>
+      <div>
+        <h3>Appelez le 15 (ou le 112) ou allez aux urgences si :</h3>
+        <ul>
+          <li>douleur forte dans le ventre, surtout d'un seul côté, ou douleur à l'épaule associée à une douleur du ventre ;</li>
+          <li>saignements abondants (comme des règles ou plus), avec ou sans caillots ;</li>
+          <li>malaise, perte de connaissance, grande pâleur ;</li>
+          <li>maux de tête intenses avec troubles de la vue, gonflement brutal du visage et des mains (surtout en 2<sup>e</sup> moitié de grossesse) ;</li>
+          <li>difficultés à respirer, douleur dans la poitrine.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="alert mt">
+      <h3>Contactez votre sage-femme ou votre médecin dans la journée si :</h3>
+      <ul>
+        <li>saignements légers ou pertes brunâtres (fréquents au début et souvent sans gravité, mais toujours à signaler) ;</li>
+        <li>fièvre à 38 °C ou plus ;</li>
+        <li>brûlures en urinant, envie d'uriner très fréquente avec douleur, douleur dans le bas du dos sur le côté ;</li>
+        <li>vomissements qui empêchent de boire et de s'alimenter, perte de poids ;</li>
+        <li>pertes inhabituelles, qui sentent mauvais ou qui démangent ;</li>
+        <li>contact avec une personne atteinte de varicelle, rubéole ou d'une éruption, si vous n'êtes pas immunisée ;</li>
+        <li>tristesse persistante, anxiété qui envahit votre quotidien, idées noires.</li>
+      </ul>
+    </div>
+
+    <div class="card blanc mt">
+      <h3>Mes numéros utiles</h3>
+      <div class="lines">
+        <div>Ma sage-femme / mon médecin : ……………………………………………</div>
+        <div>Ma maternité : ……………………………………………………………………</div>
+        <div>PMI de mon secteur : …………………………………………………………</div>
+        <div>Pharmacie de garde : 3237 &nbsp;·&nbsp; Violences : 3919 &nbsp;·&nbsp; Tabac Info Service : 39 89</div>
+      </div>
+    </div>
+  </div>
+  <div class="foot"><span>Petit Bout de Famille · Étape 0 · Leçon 2</span><span class="num">13</span></div>
+</section>
+
+<!-- ============ 13. FICHE PRATIQUE : MES PREMIÈRES DÉMARCHES ============ -->
+<section class="page">
+  <div class="fiche-head">
+    <span class="badge">Fiche pratique</span>
+    <h2 style="margin:4mm 0 2mm">Mes premières démarches</h2>
+    <p style="font-weight:700;font-size:9pt">À imprimer et à cocher au fil des semaines.</p>
+    <svg style="position:absolute;right:20mm;top:15mm" width="17mm" height="17mm" viewBox="0 0 48 48"><path d="M24 4 l6 13 14 2 -10 10 3 14 -13 -7 -13 7 3 -14 -10 -10 14 -2z" fill="#F9C74F" stroke="#3D2B1F" stroke-width="3" stroke-linejoin="round"/></svg>
+  </div>
+  <div class="circle" style="width:70mm;height:70mm;background:var(--peche);left:-34mm;bottom:-38mm"></div>
+
+  <div class="content">
+    <div class="check"><span class="box"></span><span>J'ai noté le 1<sup>er</sup> jour de mes dernières règles<small>Date : ……………</small></span></div>
+    <div class="check"><span class="box"></span><span>J'ai pris rendez-vous pour la 1<sup>re</sup> consultation<small>Avec : …………………… le : ……………</small></span></div>
+    <div class="check"><span class="box"></span><span>Je prends de l'acide folique (B9)<small>Jusqu'à 12 SA, ou selon la prescription</small></span></div>
+    <div class="check"><span class="box"></span><span>J'ai fait la liste de mes médicaments, compléments et allergies<small>Traitement régulier : j'appelle mon médecin, je ne l'arrête pas seule</small></span></div>
+    <div class="check"><span class="box"></span><span>J'ai rassemblé carte Vitale, mutuelle, carnet de vaccination, résultats récents</span></div>
+    <div class="check"><span class="box"></span><span>J'applique les précautions alimentaires<small>Toxoplasmose si non immunisée · listériose · œufs crus</small></span></div>
+    <div class="check"><span class="box"></span><span>Ma déclaration de grossesse a été envoyée<small>Avant la fin du 3<sup>e</sup> mois · vérifiée sur ameli.fr le : ……………</small></span></div>
+    <div class="check"><span class="box"></span><span>J'ai pris rendez-vous pour la 1<sup>re</sup> échographie<small>Entre 11 et 13 SA + 6 j · le : ……………</small></span></div>
+    <div class="check"><span class="box"></span><span>Je suis inscrite à la maternité<small>Laquelle : ……………………………</small></span></div>
+        <div class="check"><span class="box"></span><span>J'ai signalé mes conditions de travail (nuit, charges, produits)</span></div>
+    <div class="check"><span class="box"></span><span>J'ai prévu mon entretien prénatal précoce</span></div>
+
+    <div class="card blanc" style="margin-top:4mm">
+      <h3>Mes questions pour le premier rendez-vous</h3>
+      <div class="lines"><div>&nbsp;</div><div>&nbsp;</div><div>&nbsp;</div></div>
+    </div>
+
+    <div class="card rose" style="margin-top:3.5mm;font-size:9pt">
+      Pas besoin de tout cocher en une semaine : <b>une étape à la fois</b>. Le professionnel qui vous suit est là pour vous guider.
+    </div>
+  </div>
+  <div class="foot"><span>Petit Bout de Famille</span><span>Étape 0 · Avant la naissance</span></div>
+</section>
+
+<!-- ============ 14. FICHE PRATIQUE : AU FRIGO ============ -->
+<section class="page">
+  <div class="fiche-head peche-h">
+    <span class="badge">Fiche pratique</span>
+    <h2 style="margin:4mm 0 2mm">Au frigo : oui / non</h2>
+    <p style="font-weight:700;font-size:9pt">À aimanter sur le réfrigérateur pour toute la grossesse.</p>
+    <svg style="position:absolute;right:20mm;top:15mm" width="17mm" height="17mm" viewBox="0 0 48 48" fill="none" stroke="#3D2B1F" stroke-width="3" stroke-linejoin="round"><rect x="12" y="4" width="24" height="40" rx="5" fill="#FBE3A1"/><path d="M12 18h24M17 10v4M17 23v6" stroke-linecap="round"/></svg>
+  </div>
+  <div class="circle" style="width:70mm;height:70mm;background:var(--miel);left:-34mm;bottom:-38mm"></div>
+
+  <div class="content">
+    <div class="yesno">
+      <div class="col blanc">
+        <span class="pill-h" style="background:var(--terracotta)">Oui</span>
+        <ul>
+          <li>Viande et volaille <b>bien cuites</b> à cœur</li>
+          <li>Jambon cuit préemballé</li>
+          <li>Œufs <b>durs</b>, omelette bien cuite</li>
+          <li>Poisson bien cuit, 2 fois par semaine</li>
+          <li>Poisson en conserve (sardines, maquereau)</li>
+          <li>Comté, emmental, beaufort, gruyère sans croûte</li>
+          <li>Fromages pasteurisés sans croûte</li>
+          <li>Tout fromage <b>cuit</b> (gratin, pizza, raclette)</li>
+          <li>Lait pasteurisé ou UHT, yaourts</li>
+          <li>Fruits et légumes <b>bien lavés</b></li>
+          <li>Restes réchauffés jusqu'à être très chauds</li>
+          <li>Eau à volonté</li>
+        </ul>
+      </div>
+      <div class="col miel">
+        <span class="pill-h" style="background:var(--brun)">Non</span>
+        <ul>
+          <li>Viande crue, saignante, rosée, tartare <sup>T</sup></li>
+          <li>Jambon cru, saucisson, viande séchée <sup>T</sup></li>
+          <li>Rillettes, pâtés, foie gras, charcuterie à la coupe <sup>L</sup></li>
+          <li>Œufs crus ou mollets, mayonnaise et mousse maison <sup>S</sup></li>
+          <li>Sushis, poisson cru ou fumé, tarama, surimi <sup>L</sup></li>
+          <li>Coquillages crus <sup>L</sup></li>
+          <li>Espadon, marlin, requin, siki, lamproie <sup>M</sup></li>
+          <li>Fromages au lait cru (sauf pâtes pressées cuites) <sup>L</sup></li>
+          <li>Croûte des fromages, fromage râpé en sachet <sup>L</sup></li>
+          <li>Lait cru, graines germées crues <sup>L</sup></li>
+          <li>Alcool, sous toutes ses formes</li>
+          <li>Boissons énergisantes</li>
+        </ul>
+      </div>
+    </div>
+    <p class="small" style="margin-top:2.5mm"><sup>T</sup> toxoplasmose (si non immunisée) · <sup>L</sup> listériose · <sup>S</sup> salmonellose · <sup>M</sup> mercure</p>
+
+    <div class="grid2" style="margin-top:4mm">
+      <div class="card peche"><h3>À limiter</h3><p>Café et thé (≈ 2 tasses par jour) · thon et grands poissons (150 g par semaine) · soja (1 produit par jour) · réglisse.</p></div>
+      <div class="card blanc"><h3>En cuisine</h3><p>Frigo à 4 °C, nettoyé 2 fois par mois · cru et cuit séparés · mains lavées · ustensiles lavés après la viande crue.</p></div>
+    </div>
+
+    <div class="card rose" style="margin-top:3.5mm;font-size:9pt">
+      Un écart sans le savoir ? <b>Pas de panique</b> : le risque est faible. Signalez simplement une fièvre ou un malaise.
+    </div>
+  </div>
+  <div class="foot"><span>Sources : ANSES · Santé publique France</span><span>Étape 0 · Avant la naissance</span></div>
+</section>
+
+<!-- ============ 15. SOURCES ============ -->
+<section class="page">
+  <div class="circle" style="width:66mm;height:66mm;background:var(--miel);right:-24mm;top:-26mm"></div>
+
+  <div class="content">
+    <div class="kicker">Sources et avertissement</div>
+    <h2>Pour aller plus loin</h2>
+    <p class="lead">Les informations de cette leçon s'appuient sur les sources publiques françaises, consultées en octobre 2026. Les calendriers, montants et droits peuvent évoluer : vérifiez toujours la version en vigueur.</p>
+
+    <div class="stack">
+      <div class="card blanc small">
+        <ul>
+          <li><b>Assurance Maladie (ameli.fr)</b> : grossesse, démarches et accompagnement ; première consultation ; suivi mensuel ; déclarer sa grossesse ; entretien prénatal précoce ; examen bucco-dentaire.</li>
+          <li><b>Haute Autorité de Santé (HAS)</b> : suivi et orientation des femmes enceintes ; dépistage de la trisomie 21 ; activité physique et grossesse ; vaccination.</li>
+          <li><b>Santé publique France · 1000-premiers-jours.fr</b> : alimentation pendant la grossesse, alcool, tabac.</li>
+          <li><b>ANSES</b> : recommandations sur la listériose, la toxoplasmose, la consommation de poissons, la caféine.</li>
+          <li><b>CRAT (lecrat.fr)</b> et <b>ANSM</b> : médicaments et grossesse, anti-inflammatoires.</li>
+          <li><b>Haut Conseil de la santé publique</b> : prévention du cytomégalovirus pendant la grossesse.</li>
+          <li><b>Service-public.fr</b> : congé maternité, congé de paternité et d'accueil, congé supplémentaire de naissance, protection de la salariée enceinte.</li>
+          <li><b>CAF (caf.fr) et MSA (msa.fr)</b> : prime à la naissance, prestations familiales.</li>
+        </ul>
+      </div>
+
+      <div class="alert">
+        <h3>Note de prudence</h3>
+        <p>Ce document est un support d'information. Il ne remplace pas une consultation médicale, une prescription, ni une réponse personnalisée de l'Assurance Maladie, de la CAF ou de la MSA, ou de votre employeur.</p>
+      </div>
+
+      <div class="card" style="background:var(--terracotta);color:#fff">
+        <div class="kicker" style="margin-bottom:2mm">Dans la prochaine leçon</div>
+        <h3 style="font-size:16pt;color:#fff">Leçon 3 · Les rendez-vous et examens</h3>
+        <p style="font-style:italic">« C'est quoi tous ces examens ? Ils sont obligatoires ? »</p>
+      </div>
+    </div>
+  </div>
+  <div class="foot"><span>Petit Bout de Famille · Étape 0 · Leçon 2</span><span class="num">16</span></div>
+</section>
+
+</body>
+</html>
