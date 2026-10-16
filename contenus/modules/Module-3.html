@@ -1,0 +1,301 @@
+<!doctype html>
+<html lang="fr"><head><meta charset="utf-8">
+<title>Petit Bout de Famille — Module 3 · Le post-partum</title>
+<link rel="stylesheet" href="fonts/fonts-local.css">
+<style>
+:root{--creme:#FFF4E8;--blanc:#FFFFFF;--brun:#3D2B1F;--terracotta:#B9502C;--brique:#8A3A1F;--soleil:#F9C74F;--abricot:#F6B48A;--peche:#FCD9C4;--miel:#FBE3A1;--rose:#F8D5CF;--framboise:#9E3D57;--canard:#2E6670;--brume:#D6E8EA;--accent:var(--terracotta);--accent-surface:var(--peche)}
+@page{size:A4;margin:15mm 16mm 19mm;background:#FFF4E8;
+  @bottom-left{content:"Petit Bout de Famille · Module 3 · Le post-partum";font-family:"Nunito ExtraLight",Nunito;font-weight:400;font-size:7pt;color:#3D2B1F;vertical-align:middle}
+  @bottom-right{content:counter(page);font-family:"Nunito ExtraLight",Nunito;font-weight:800;font-size:7.5pt;color:#fff;background:#B9502C;border-radius:50%;width:7mm;height:7mm;text-align:center;vertical-align:middle;margin-top:5mm;margin-bottom:7mm}}
+@page full{margin:0;@bottom-left{content:none}@bottom-right{content:none;background:none}}
+*{box-sizing:border-box;margin:0;padding:0}
+html{background:#FFF4E8}
+body{font-family:'Nunito',sans-serif;color:var(--brun);font-size:9.6pt;line-height:1.5}
+.framboise{--accent:var(--framboise);--accent-surface:var(--rose)}
+.canard{--accent:var(--canard);--accent-surface:var(--brume)}
+h1,h2,h3{font-family:'Fredoka',sans-serif;font-weight:700;line-height:1.15}
+h2{font-size:21pt;margin:1mm 0 0;max-width:140mm}
+h3{font-size:11.5pt;font-weight:600;margin-bottom:1.5mm;break-after:avoid}
+p+p{margin-top:1.8mm}
+b{font-weight:800}
+sup{line-height:0;font-size:.7em}
+ul,ol{padding-left:4.5mm;margin-top:1mm}
+li{margin:.8mm 0}
+li::marker{color:var(--accent);font-weight:800}
+li ul{margin-top:.5mm}
+p+ul,p+ol,ul+p,ol+p,table+p,p+table{margin-top:1.8mm}
+.small{font-size:8.4pt}
+.kicker{font-weight:800;font-size:7pt;letter-spacing:.12em;text-transform:uppercase;margin:2mm 0 2.5mm;color:var(--brun)}
+.badge{display:inline-block;background:var(--accent);color:#fff;font-weight:800;font-size:7.5pt;letter-spacing:.1em;text-transform:uppercase;padding:1.6mm 4mm;border-radius:999px}
+.badge.soleil{background:var(--soleil);color:var(--brun);margin-bottom:2mm}
+.tag{display:block;font-weight:800;font-size:7pt;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);margin-bottom:1.2mm}
+.circle{position:absolute;border-radius:50%;z-index:-1}
+.dashed{position:absolute;border-radius:50%;border:2px dashed var(--accent);opacity:.6}
+/* Chapitres */
+.chap{break-before:page;position:relative}
+.chap-head{position:relative;padding:4mm 32mm 5mm 0;min-height:30mm;overflow:hidden}
+.chap-head .c1{width:62mm;height:62mm;background:var(--accent-surface);right:-30mm;top:-34mm}
+.chap-head .c2{width:14mm;height:14mm;background:var(--miel);right:36mm;top:-4mm}
+.chap.framboise .chap-head .c2,.chap.canard .chap-head .c2{background:var(--miel)}
+.chap-head .deco-ico{position:absolute;right:4mm;top:6mm}
+.stack>*+*{margin-top:3.5mm}
+.card{border-radius:14px;padding:4mm 5mm;box-decoration-break:clone;-webkit-box-decoration-break:clone}
+.avoid{break-inside:avoid}
+.blanc{background:var(--blanc)}.peche{background:var(--peche)}.miel{background:var(--miel)}.rose{background:var(--rose)}.acc-surf{background:var(--accent-surface)}
+.lead{font-size:10pt}
+.dark{background:var(--brun);color:#FFF4E8;border-radius:14px;padding:4.5mm 6mm;box-decoration-break:clone;-webkit-box-decoration-break:clone}
+.dark li::marker{color:var(--soleil)}
+.dark i{color:var(--soleil);font-style:normal;font-family:'Fredoka';font-weight:600;font-size:11pt}
+.alert{background:var(--blanc);border:1.5px solid var(--accent);border-radius:14px;padding:4mm 5.5mm;box-decoration-break:clone;-webkit-box-decoration-break:clone}
+.alert h3{color:var(--accent)}
+.urgence{background:var(--brique);color:#fff;border-radius:14px;padding:4.5mm 6mm;display:flex;gap:5mm;align-items:flex-start}
+.urgence .num15{flex:none;width:18mm;height:18mm;border-radius:50%;background:#fff;color:var(--brique);display:grid;place-items:center;text-align:center;font-family:'Fredoka';font-weight:700;font-size:19pt;line-height:.9}
+.urgence .num15 small{display:block;font-family:'Nunito';font-size:6.5pt;font-weight:800}
+.urgence h3{color:#fff}.urgence li::marker{color:var(--soleil)}
+.next{background:var(--terracotta);color:#fff}.next h3{color:#fff;font-size:15pt}.next .kicker{color:#fff;margin:0 0 1mm}
+.verif{display:inline-block;background:var(--soleil);color:var(--brun);font-size:7pt;font-weight:800;padding:.3mm 2mm;border-radius:999px;line-height:1.5;vertical-align:1px}
+.verif-line{margin-top:1.5mm}
+.relecture{border:1.5px dashed var(--abricot);border-radius:12px;padding:2.5mm 4mm;font-size:8.4pt;background:rgba(255,255,255,.5)}
+.relecture .tag{color:var(--brique)}
+ol.steps{list-style:none;padding:0;counter-reset:st}
+ol.steps>li{counter-increment:st;position:relative;padding-left:9mm;margin:2mm 0}
+ol.steps>li::before{content:counter(st);position:absolute;left:0;top:-.3mm;width:6.5mm;height:6.5mm;border-radius:50%;background:var(--accent);color:#fff;font-weight:800;font-size:8pt;display:grid;place-items:center}
+.dark ol.steps>li::before{background:var(--soleil);color:var(--brun)}
+table{width:100%;border-collapse:separate;border-spacing:0 1.3mm;font-size:8.6pt;line-height:1.4;margin-top:1mm}
+thead{display:table-header-group}
+tr{break-inside:avoid}
+th{text-align:left;font-weight:800;font-size:7.6pt;padding:0 3mm;color:var(--accent);text-transform:uppercase;letter-spacing:.05em}
+td{background:var(--creme);padding:2.2mm 3mm;vertical-align:top}
+.card.blanc td,.alert td{background:var(--creme)}
+.card.miel td,.card.rose td,.card.acc-surf td,.card.peche td{background:var(--blanc)}
+td:first-child{border-radius:10px 0 0 10px;font-weight:800}
+.chap table:not(.grid) td:first-child{background:var(--accent);color:#fff}
+td:last-child{border-radius:0 10px 10px 0}
+/* Couverture */
+.cover{page:full;position:relative;width:210mm;height:297mm;overflow:hidden;background:var(--creme)}
+.cover .circle{z-index:0}
+.cover-in{position:relative;z-index:1;padding:20mm 16mm 0}
+.cover .mobile{position:absolute;right:14mm;top:86mm;z-index:1}
+.sub{font-weight:700;font-size:8.5pt;margin-left:2mm}
+.cover-title{font-size:46pt;margin:12mm 0 6mm;max-width:125mm}
+.cover-title em{font-style:normal;color:var(--accent)}
+.question{font-style:italic;font-size:13pt;max-width:115mm}
+.objectif{max-width:118mm;margin-top:5mm;font-size:9.4pt}
+.draft{display:inline-block;margin-top:4mm;font-size:7.5pt;font-weight:800;background:var(--soleil);padding:1mm 3mm;border-radius:999px}
+.in-module{position:absolute;left:16mm;right:16mm;top:170mm}
+.in-module h4{font-weight:800;font-size:10pt;margin-bottom:3mm}
+.in-module .grid2{display:grid;grid-template-columns:1fr 1fr;gap:2.5mm}
+.in-module .card{padding:2.4mm 4mm;font-weight:700;font-size:8.6pt;border-radius:12px;line-height:1.3}
+.in-module .card b{color:var(--accent);margin-right:1.5mm}
+/* Fiches */
+.fiche .fiche-head{position:relative;border-radius:18px;padding:6mm 34mm 6mm 6mm;margin-bottom:5mm}
+.fiche-head h2{margin:3mm 0 1.5mm;font-size:20pt}
+.fiche-head p{font-weight:700;font-size:9pt}
+.fiche-head .deco-ico{position:absolute;right:8mm;top:8mm}
+.fiche>*+*{margin-top:3.5mm}
+.fiche .grid2{display:grid;grid-template-columns:1fr 1fr;gap:4mm}
+.check{display:flex;gap:3.5mm;align-items:center;background:var(--blanc);border-radius:11px;padding:2.4mm 4mm;margin-bottom:2mm;font-size:9pt}
+.box{display:inline-block;flex:none;width:4.6mm;height:4.6mm;border:1.8px solid var(--terracotta);border-radius:4px;vertical-align:middle}
+.lines div{border-bottom:1.5px dotted var(--abricot);padding:3.6mm 0 1mm;font-size:9pt}
+.tight{padding:3mm 5mm}.tight h3{margin-bottom:0}
+.fiche .card.tight+.card.tight{margin-top:2.5mm}
+table.grid td{background:var(--blanc);height:8.5mm}
+table.grid td:first-child{background:var(--peche);color:var(--brun)}
+table.grid td:has(.box){text-align:center}
+.pill-h{display:inline-block;color:#fff;font-weight:800;font-size:7.5pt;letter-spacing:.08em;text-transform:uppercase;padding:1.2mm 3.5mm;border-radius:999px;margin-bottom:2mm}
+ol.big-steps{list-style:none;padding:0;counter-reset:bs}
+ol.big-steps>li{counter-increment:bs;position:relative;background:var(--blanc);border-radius:14px;padding:4mm 5mm 4mm 17mm;margin-bottom:3mm;font-size:10pt}
+ol.big-steps>li::before{content:counter(bs);position:absolute;left:4mm;top:3.5mm;width:9mm;height:9mm;border-radius:50%;background:var(--terracotta);color:#fff;font-family:'Fredoka';font-weight:700;font-size:13pt;display:grid;place-items:center}
+/* Chapitre 1.1 inséré (pages fixes) */
+.c11{page:full}
+.c11 .page{margin:0 !important;break-after:page}
+</style></head>
+<body>
+
+<section class="cover">
+  <div class="circle" style="width:150mm;height:150mm;background:var(--peche);right:-55mm;top:-30mm"></div>
+  <div class="circle" style="width:62mm;height:62mm;background:var(--miel);right:58mm;top:-26mm"></div>
+  <div class="circle" style="width:85mm;height:85mm;background:var(--rose);left:-38mm;bottom:-42mm"></div>
+  <div class="dashed" style="width:26mm;height:26mm;right:22mm;top:118mm"></div>
+  <svg class="mobile" width="62mm" height="55mm" viewBox="0 0 200 180" fill="none" stroke="#3D2B1F" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round">
+    <line x1="100" y1="0" x2="100" y2="22" stroke="#B9502C"/><path d="M18 40 Q100 4 182 40" stroke="#B9502C"/>
+    <line x1="30" y1="36" x2="30" y2="92" stroke="#B9502C" stroke-dasharray="4 5"/><line x1="100" y1="22" x2="100" y2="112" stroke="#B9502C" stroke-dasharray="4 5"/><line x1="170" y1="36" x2="170" y2="76" stroke="#B9502C" stroke-dasharray="4 5"/>
+    <path d="M30 92 l6 13 14 2 -10 10 2 14 -12 -7 -12 7 2 -14 -10 -10 14 -2z" fill="#F9C74F"/>
+    <path d="M112 116 a20 20 0 1 0 6 30 a16 16 0 1 1 -6 -30z" fill="#F6B48A"/>
+    <path d="M152 92 a10 10 0 0 1 10 -14 a13 13 0 0 1 24 4 a9 9 0 0 1 2 18 h-32 a8 8 0 0 1 -4 -8z" fill="#FFFFFF"/>
+  </svg>
+  <div class="cover-in">
+    <span class="badge">Module 3</span><span class="sub">Prendre soin de soi</span>
+    <h1 class="cover-title">Le <em>post-partum</em></h1>
+    <p class="question">« Et moi, comment je vais ? »</p>
+    <p class="objectif">Ne pas oublier le parent derrière le bébé. Les changements physiques, hormonaux et émotionnels après la naissance méritent autant d'attention que les soins du nouveau-né. Ce module porte la <b>signature kiné</b> de la formation (périnée, abdominaux, reprise du sport).</p>
+    <p class="draft">Version de travail du 16/10/2026 · à relire avant la vente</p>
+    <div class="in-module"><h4>Dans ce module</h4><div class="grid2"><div class="card peche"><b>3.1</b> Et moi, comment vais-je après l'accouchement ?</div><div class="card miel"><b>3.2</b> Comment récupérer après une césarienne ou une déchirure ?</div><div class="card blanc"><b>3.3</b> Pourquoi est-ce que je me sens si bouleversée ?</div><div class="card rose"><b>3.4</b> Comment prendre soin de moi pendant la récupération ?</div><div class="card peche"><b>3.5</b> Quel suivi médical après la naissance ?</div><div class="card miel"><b>3.6</b> Comment trouver notre rythme en famille ?</div><div class="card blanc"><b>3.7</b> Comment préserver notre couple et notre équilibre ?</div><div class="card rose"><b>3.8</b> Quand consulter et fiches à imprimer</div></div></div>
+  </div>
+</section>
+
+
+<section class="chap framboise">
+  <header class="chap-head">
+    <div class="circle c1"></div><div class="circle c2"></div><svg class="deco-ico" width="15mm" height="15mm" viewBox="0 0 48 48" stroke="#3D2B1F" stroke-width="3" stroke-linejoin="round"><path d="M24 4 l6 13 14 2 -10 10 3 14 -13 -7 -13 7 3 -14 -10 -10 14 -2z" fill="#F9C74F"/></svg>
+    <span class="badge">Vous, les parents</span>
+    <div class="kicker">Module 3 · Chapitre 3.1 · Le post-partum</div>
+    <h2>« Et moi, comment vais-je après l'accouchement ? »</h2>
+  </header>
+  <div class="stack"><div class="card acc-surf lead avoid"><span class="tag">Ce qu'il faut savoir</span><p>Votre corps a porté un bébé pendant neuf mois et l'a mis au monde. Il lui faut <b>plusieurs semaines, souvent plusieurs mois</b>, pour récupérer. On parle souvent des « 40 jours » après la naissance, mais chaque femme a son rythme. Ce qui suit est fréquent ; ce qui doit alerter est indiqué à la fin.</p></div>
+<div class="card blanc avoid"><h3>Les saignements (les lochies)</h3><ul><li>Ils durent en général <b>4 à 6 semaines</b>.</li><li>Abondants et rouges les premiers jours, ils diminuent puis deviennent rosés, bruns, puis jaunâtres.</li><li>Une reprise de saignements plus rouges vers le 10e-15<sup>e</sup> jour (le « petit retour de couches ») peut être normale si elle est brève.</li><li>Utilisez des serviettes hygiéniques, <b>pas de tampons ni de cup</b> pendant cette période.</li></ul></div>
+<div class="card acc-surf avoid"><h3>Les contractions de l'utérus (les « tranchées »)</h3><p>L'utérus se rétracte pour retrouver sa taille d'avant. Ces contractions peuvent être douloureuses, surtout pendant les tétées (l'allaitement libère de l'ocytocine) et après un deuxième bébé. Elles durent quelques jours. Le paracétamol et une bouillotte tiède peuvent soulager.</p></div>
+<div class="card miel avoid"><h3>Les autres changements fréquents</h3><ul><li><b>Fatigue intense</b> : la récupération physique, les nuits hachées, l'émotion. Elle est attendue.</li><li><b>Montée de lait</b> entre le 2<sup>e</sup> et le 4<sup>e</sup> jour : seins gonflés, tendus, parfois chauds, même si vous n'allaitez pas.</li><li><b>Transpiration abondante</b>, surtout la nuit, et envies fréquentes d'uriner : le corps élimine l'eau accumulée pendant la grossesse.</li><li><b>Constipation</b>, appréhension d'aller à la selle (surtout avec des points), <b>hémorroïdes</b>.</li><li><b>Ventre encore rond</b> et mou : l'utérus met environ 6 semaines à reprendre sa place, les muscles plus longtemps.</li><li><b>Chute de cheveux</b> vers le 3<sup>e</sup> ou 4<sup>e</sup> mois : fréquente, temporaire.</li><li><b>Le retour de couches</b> (premières règles) : vers 6 à 8 semaines si vous n'allaitez pas, souvent plus tard si vous allaitez. Attention, <b>l'ovulation peut revenir avant les règles</b> (voir chapitre 3.5).</li></ul></div>
+<div class="alert avoid"><h3>Quand consulter</h3><p><b>En urgence (15 ou maternité)</b> :</p>
+<ul><li>saignements très abondants : une serviette remplie en moins d'une heure, gros caillots, ou saignements qui augmentent au lieu de diminuer ;</li><li>malaise, essoufflement, douleur dans la poitrine ;</li><li>maux de tête violents, troubles de la vue (risque de pré-éclampsie, même après la naissance) ;</li><li>mollet rouge, chaud, gonflé et douloureux (risque de phlébite).</li></ul>
+<p><b>Dans la journée (sage-femme ou médecin)</b> :</p>
+<ul><li>fièvre à 38 °C ou plus ;</li><li>saignements qui sentent mauvais ;</li><li>douleur du ventre qui augmente ;</li><li>brûlures en urinant, impossibilité d'uriner ;</li><li>sein rouge, chaud, douloureux, avec fièvre.</li></ul></div></div>
+</section>
+
+<section class="chap framboise">
+  <header class="chap-head">
+    <div class="circle c1"></div><div class="circle c2"></div><svg class="deco-ico" width="15mm" height="15mm" viewBox="0 0 48 48" stroke="#3D2B1F" stroke-width="3" stroke-linejoin="round"><path d="M24 42S6 31 6 18a9 9 0 0 1 18-4 9 9 0 0 1 18 4c0 13-18 24-18 24z" fill="#F6B48A"/></svg>
+    <span class="badge">Vous, les parents</span>
+    <div class="kicker">Module 3 · Chapitre 3.2 · Le post-partum</div>
+    <h2>« Comment récupérer après une césarienne ou une déchirure ? »</h2>
+  </header>
+  <div class="stack"><div class="card acc-surf lead avoid"><span class="tag">Ce qu'il faut savoir</span><p>Une césarienne est une opération du ventre, et une déchirure ou une épisiotomie est une plaie dans une zone sensible. Dans les deux cas, la cicatrisation demande du temps et quelques précautions simples. La douleur doit être soulagée : ne restez pas avec une douleur forte, demandez un traitement adapté (compatible avec l'allaitement).</p></div>
+<div class="card blanc"><h3>Après une césarienne</h3><ul><li><b>Les premiers jours</b> : on vous aide à vous lever dès le lendemain, voire le jour même. Bouger tôt limite le risque de phlébite et relance le transit.</li><li><b>La cicatrice</b> : gardez-la propre et sèche. Douche possible dès le lendemain ou le surlendemain selon les consignes ; séchez en tapotant. Les fils ou agrafes sont retirés vers le 5e-10<sup>e</sup> jour s'ils ne sont pas résorbables. <span class="verif">À vérifier</span></li><li><b>Les gestes du quotidien</b> :<ul><li>pour sortir du lit, tournez-vous sur le côté, puis poussez avec les bras pour vous asseoir ;</li><li>pour tousser, éternuer ou rire, maintenez la cicatrice avec un coussin ou vos mains ;</li><li>ne portez rien de plus lourd que bébé pendant 4 à 6 semaines ;</li><li>allaitez en position couchée sur le côté ou avec bébé sous le bras (position « ballon de rugby ») pour éviter d'appuyer sur la cicatrice.</li></ul></li><li><b>La reprise</b> : la conduite est possible quand vous pouvez freiner brusquement sans douleur (souvent après 3 à 4 semaines ; vérifiez auprès de votre assurance) ; les activités reprennent progressivement sur 6 à 8 semaines.</li><li><b>La cicatrice à long terme</b> : elle peut rester insensible, tirer ou gratter quelques mois. Une fois bien fermée (après 4 à 6 semaines), le <b>massage de la cicatrice</b> l'assouplit (voir l'espace du kiné).</li></ul></div>
+<div class="card acc-surf avoid"><h3>Après une déchirure ou une épisiotomie</h3><ul><li><b>Hygiène</b> : rincez à l'eau claire après chaque passage aux toilettes (une petite bouteille d'eau tiède aide), séchez en tamponnant ou au sèche-cheveux en air froid. Changez souvent de serviette.</li><li><b>La douleur assise</b> : asseyez-vous sur un coussin, les fesses serrées au moment de vous asseoir ; alternez les positions ; allaitez couchée sur le côté. Du froid (poche de glace enveloppée dans un linge, 10 minutes) soulage les premiers jours.</li><li><b>Aller à la selle</b> : buvez, mangez des fibres, posez les pieds sur un petit tabouret, maintenez le périnée avec une compresse en vous présentant, ne poussez pas fort. Un laxatif doux peut être prescrit.</li><li>Les points se résorbent seuls en 2 à 3 semaines. Une gêne peut persister quelques semaines, notamment pendant les rapports : parlez-en si elle dure.</li></ul></div>
+<div class="dark avoid"><span class="badge soleil">L'espace du kiné</span><p><i>Masser sa cicatrice de césarienne (à partir de 4 à 6 semaines, cicatrice bien fermée et sans croûte, après accord de la sage-femme ou du médecin)</i> : avec la pulpe de deux doigts et un peu de crème neutre, faites de petits cercles sur et autour de la cicatrice, puis faites-la glisser doucement dans toutes les directions, sans douleur. 5 minutes par jour. Le but : éviter que la peau colle aux plans profonds et retrouver la sensibilité.</p>
+<p><i>Se relever sans pousser sur le ventre ni sur le périnée</i> : sur le côté, genoux pliés, puis poussez avec les bras. Avant tout effort (porter bébé, se lever), <b>expirez en contractant le périnée et en rentrant doucement le bas du ventre</b>.</p></div>
+<div class="alert avoid"><h3>Quand consulter</h3><ul><li>Cicatrice rouge, chaude, gonflée, qui suinte ou s'ouvre.</li><li>Fièvre.</li><li>Douleur qui augmente au lieu de diminuer.</li><li>Écoulement qui sent mauvais.</li><li>Impossibilité de retenir les gaz ou les selles, ou de contrôler les urines au-delà des premiers jours.</li></ul></div></div>
+</section>
+
+<section class="chap framboise">
+  <header class="chap-head">
+    <div class="circle c1"></div><div class="circle c2"></div><svg class="deco-ico" width="15mm" height="15mm" viewBox="0 0 48 48" stroke="#3D2B1F" stroke-width="3" stroke-linejoin="round"><path d="M30 6a18 18 0 1 0 12 28A15 15 0 1 1 30 6z" fill="#F9C74F"/></svg>
+    <span class="badge">Vous, les parents</span>
+    <div class="kicker">Module 3 · Chapitre 3.3 · Le post-partum</div>
+    <h2>« Pourquoi est-ce que je me sens si bouleversée ? »</h2>
+  </header>
+  <div class="stack"><div class="card acc-surf lead avoid"><span class="tag">Ce qu'il faut savoir</span><p>Après la naissance, les hormones de la grossesse chutent brutalement. Ajoutées à la fatigue, au manque de sommeil et à l'immensité de ce qui vient de se passer, elles rendent les émotions très instables. <b>Pleurer sans raison, se sentir dépassée, irritable ou vide</b> est fréquent les premiers jours. Mais il faut savoir distinguer ce qui passe seul de ce qui demande de l'aide.</p></div>
+<div class="card blanc avoid"><h3>Le baby blues</h3><ul><li>Il touche <b>la majorité des mères</b> (de 50 à 80 % selon les études). <span class="verif">À vérifier</span></li><li>Il apparaît entre le <b>3<sup>e</sup> et le 10<sup>e</sup> jour</b>, souvent au moment de la montée de lait.</li><li>Larmes, hypersensibilité, sautes d'humeur, inquiétude, sentiment de ne pas être à la hauteur.</li><li>Il <b>passe seul en quelques jours</b>, au maximum deux semaines, avec du repos, du soutien et de l'écoute.</li></ul></div>
+<div class="card acc-surf avoid"><h3>La dépression du post-partum</h3><ul><li>Elle concerne environ <b>une mère sur six</b> et peut toucher <b>l'autre parent</b> (jusqu'à un père sur dix). <span class="verif">À vérifier</span></li><li>Elle peut apparaître dans les semaines ou les mois qui suivent la naissance (jusqu'à un an), parfois progressivement.</li><li>Signes : tristesse ou vide qui durent <b>plus de deux semaines</b>, perte d'intérêt pour tout, épuisement qui ne cède pas au repos, troubles du sommeil (même quand bébé dort), anxiété envahissante, sentiment de culpabilité ou d'être une mauvaise mère, difficulté à s'occuper de bébé ou à ressentir du lien, pensées négatives sur soi ou l'avenir.</li><li>Chez les pères, elle se manifeste souvent autrement : irritabilité, colère, fuite dans le travail, l'alcool ou les écrans, retrait.</li><li><b>Ce n'est pas une faiblesse ni un manque d'amour. Cela se soigne</b>, et plus tôt c'est pris en charge, plus vite on va mieux.</li></ul></div>
+<div class="card miel avoid"><h3>Les autres difficultés possibles</h3><ul><li><b>Anxiété post-partum</b> : inquiétude permanente pour bébé, vérifications répétées, pensées effrayantes qui s'imposent (« et s'il tombait ? »). Ces pensées sont fréquentes et ne signifient pas que vous allez passer à l'acte ; elles se soignent.</li><li><b>Stress après un accouchement difficile</b> : images qui reviennent, cauchemars, évitement (voir chapitre 2.4).</li><li><b>Psychose puerpérale</b> : rare (1 à 2 naissances sur 1 000) mais urgente : confusion, propos étranges, idées délirantes, agitation, insomnie totale dans les premières semaines. <b>Appelez le 15.</b></li></ul></div>
+<div class="card rose avoid"><h3>Ce qui aide</h3><ul><li><b>Dormir</b> : se relayer la nuit, faire des siestes, déléguer.</li><li><b>Parler</b> : au partenaire, à une amie, à la sage-femme ; dire ce que l'on ressent vraiment, sans se forcer à être heureuse.</li><li><b>Accepter l'aide</b> et réduire les exigences (maison, visites).</li><li><b>Sortir un peu</b> chaque jour, même 15 minutes.</li><li><b>L'entretien postnatal précoce</b> (voir chapitre 3.5) est fait pour repérer ces difficultés.</li></ul></div>
+<div class="alert avoid"><h3>Quand et à qui demander de l'aide</h3><ul><li>Si les difficultés durent plus de deux semaines, ou si elles vous empêchent de fonctionner : <b>sage-femme, médecin traitant, PMI</b>. Ils peuvent vous orienter vers un psychologue (des séances sont prises en charge) ou une équipe de psychiatrie périnatale. Des unités mère-bébé existent.</li><li>Si vous avez des <b>idées noires</b>, l'envie de disparaître ou de vous faire du mal, ou de faire du mal à bébé : <b>appelez le 3114</b> (prévention du suicide, gratuit, 24 h/24) ou le <b>15</b>, maintenant.</li><li>L'autre parent et l'entourage : si vous voyez la jeune mère (ou le père) changer, isolé, en larmes, épuisé, <b>ne pas attendre qu'elle demande</b> : proposez de l'accompagner chez le médecin.</li></ul>
+<p><b>Fiche pratique</b> : « Baby blues ou dépression ? Les signes à repérer » (à afficher, et à donner à l'entourage).</p></div></div>
+</section>
+
+<section class="chap framboise">
+  <header class="chap-head">
+    <div class="circle c1"></div><div class="circle c2"></div><svg class="deco-ico" width="15mm" height="15mm" viewBox="0 0 48 48" stroke="#3D2B1F" stroke-width="3" stroke-linejoin="round"><circle cx="24" cy="24" r="9" fill="#F9C74F"/><path d="M24 4v6M24 38v6M4 24h6M38 24h6M10 10l4 4M34 34l4 4M38 10l-4 4M14 34l-4 4" fill="none" stroke-linecap="round"/></svg>
+    <span class="badge">Vous, les parents</span>
+    <div class="kicker">Module 3 · Chapitre 3.4 · Le post-partum</div>
+    <h2>« Comment prendre soin de moi pendant la récupération ? »</h2>
+  </header>
+  <div class="stack"><div class="card acc-surf lead avoid"><span class="tag">Ce qu'il faut savoir</span><p>On attend souvent des jeunes mères qu'elles « retrouvent leur corps » vite. Ce n'est ni réaliste ni souhaitable. La récupération se fait par étapes : d'abord <b>se reposer et cicatriser</b>, puis <b>rééduquer le périnée</b>, puis <b>renforcer les abdominaux profonds</b>, et seulement ensuite <b>reprendre le sport</b>. Brûler les étapes expose aux fuites urinaires, aux descentes d'organes et au mal de dos.</p></div>
+<div class="card blanc avoid"><h3>Le repos malgré les réveils</h3><ul><li>Dormez quand bébé dort, au moins une sieste par jour.</li><li>Organisez les nuits à deux (voir chapitre 3.6).</li><li>Les premières semaines, restez le plus possible allongée ou assise, en limitant les longues stations debout et les charges : votre périnée et vos organes reprennent leur place.</li></ul></div>
+<div class="card acc-surf avoid"><h3>L'alimentation et l'hydratation</h3><ul><li>Mangez varié et suffisamment, surtout si vous allaitez : ce n'est pas le moment d'un régime.</li><li>Gardez de l'eau et une collation à portée de main pendant les tétées.</li><li>Le fer (lentilles, viande, épinards) et les fibres sont vos alliés.</li><li>Si vous allaitez : alcool à éviter, café avec modération, pas de médicament sans avis.</li></ul></div>
+<div class="card miel avoid"><h3>Le soutien de l'entourage</h3><p>Acceptez les repas, les courses, le linge, la garde des aînés. Demandez précisément ce dont vous avez besoin : les proches aident plus volontiers quand on leur dit quoi faire.</p></div>
+<div class="card rose avoid"><h3>Le périnée et sa rééducation</h3><ul><li>Après la naissance, le périnée est étiré, parfois blessé. Des petites fuites, une sensation de lourdeur ou de « béance » sont fréquentes au début.</li><li>La <b>rééducation du périnée</b> est prescrite après la <b>consultation postnatale</b> (6 à 8 semaines) si besoin. Elle est réalisée par une <b>sage-femme ou un kinésithérapeute</b>, et <b>prise en charge</b> (en général 10 séances, renouvelables). <span class="verif">À vérifier</span></li><li>Elle commence par un bilan, puis des exercices pour apprendre à contracter et relâcher le périnée au bon moment (lors de la toux, du port de charge, de l'effort). Différentes techniques existent (exercices manuels, biofeedback, électrostimulation).</li><li><b>Avant même la rééducation</b>, dès les premiers jours : contractez doucement le périnée (comme pour retenir une envie d'uriner) en expirant, quelques secondes, puis relâchez complètement. 5 à 10 fois, plusieurs fois par jour, sans forcer.</li></ul></div>
+<div class="card blanc avoid"><h3>Le ventre et les abdominaux</h3><ul><li>Pendant la grossesse, les muscles grands droits de l'abdomen s'écartent pour laisser la place à bébé : c'est le <b>diastasis</b>. Il se resserre en partie seul dans les semaines qui suivent.</li><li><b>À éviter les premiers mois</b> : les abdominaux classiques (crunchs, relevés de buste), qui poussent sur le périnée et peuvent aggraver le diastasis ; les efforts en bloquant la respiration.</li><li><b>À privilégier</b> : le réveil du muscle profond (transverse) par la respiration, puis un renforcement progressif, de préférence guidé par un professionnel après la rééducation du périnée.</li></ul></div>
+<div class="card acc-surf avoid"><h3>La reprise du sport</h3><table><thead><tr><th>Période (repères)</th><th>Ce qui est possible</th></tr></thead><tbody><tr><td>Dès les premiers jours</td><td>Respiration, contractions douces du périnée, marche courte</td></tr><tr><td>Premières semaines</td><td>Marche progressive (poussette ou portage), étirements doux</td></tr><tr><td>Après la consultation postnatale et le début de la rééducation</td><td>Natation (une fois les saignements terminés), vélo, renforcement doux, Pilates postnatal</td></tr><tr><td>Après la rééducation, avec un périnée « testé » (souvent pas avant 3 à 4 mois)</td><td>Course à pied, sports avec sauts, sports collectifs, reprise de l'intensité</td></tr></tbody></table>
+<p class="verif-line"><span class="verif">À vérifier : repères à harmoniser avec les recommandations HAS/CNSF</span></p>
+<p>Signaux d'alerte pendant l'effort : fuites urinaires, sensation de pesanteur ou de boule dans le vagin, douleur du bassin ou du dos, bombement au milieu du ventre. Si l'un d'eux apparaît : on réduit l'intensité et on en parle.</p></div>
+<div class="dark avoid"><span class="badge soleil">L'espace du kiné</span><p><i>Trois exercices pour les premières semaines (sans douleur)</i> :</p>
+<ol class="steps"><li><b>La respiration abdominale</b> : allongée sur le dos, genoux pliés, une main sur le ventre. Inspirez par le nez en laissant le ventre se gonfler ; expirez lentement par la bouche en rentrant doucement le nombril vers la colonne. 10 respirations.</li><li><b>Le réveil du périnée</b> : même position. En expirant, contractez le périnée (comme pour retenir une envie d'uriner et un gaz), tenez 3 à 5 secondes, puis relâchez complètement sur l'inspiration. 10 fois.</li><li><b>La bascule du bassin</b> : même position. En expirant, rentrez le ventre et collez doucement le bas du dos au sol ; en inspirant, relâchez. 10 fois.</li></ol>
+<p>Et un réflexe à garder toute la vie : <b>« je souffle avant l'effort »</b>. Avant de porter bébé, le siège auto, les courses, de tousser ou d'éternuer, expirez en contractant le périnée et en rentrant le bas du ventre.</p></div></div>
+</section>
+
+<section class="chap framboise">
+  <header class="chap-head">
+    <div class="circle c1"></div><div class="circle c2"></div><svg class="deco-ico" width="15mm" height="15mm" viewBox="0 0 48 48" stroke="#3D2B1F" stroke-width="3" stroke-linejoin="round"><path d="M12 36a9 9 0 0 1 1-18 12 12 0 0 1 23 2 8 8 0 0 1 1 16z" fill="#FFFFFF"/></svg>
+    <span class="badge">Vous, les parents</span>
+    <div class="kicker">Module 3 · Chapitre 3.5 · Le post-partum</div>
+    <h2>« Quel suivi médical après la naissance ? »</h2>
+  </header>
+  <div class="stack"><div class="card acc-surf lead avoid"><span class="tag">Ce qu'il faut savoir</span><p>Après la naissance, le suivi se poursuit pour vous, pas seulement pour bébé. Ces rendez-vous sont pris en charge et vous permettent de parler de votre corps, de votre moral et de votre vie intime.</p></div>
+<div class="card blanc avoid"><h3>Le calendrier du suivi</h3><table><thead><tr><th>Quand</th><th>Quoi</th><th>Avec qui</th></tr></thead><tbody><tr><td>Dans les jours qui suivent la sortie</td><td>Visites à domicile : récupération, saignements, cicatrice, allaitement, moral, poids de bébé</td><td>Sage-femme (libérale ou programme de retour à domicile)</td></tr><tr><td>Entre la 4<sup>e</sup> et la 8<sup>e</sup> semaine</td><td><b>Entretien postnatal précoce</b> (obligatoirement proposé) : un temps d'échange sur votre état émotionnel, la fatigue, le couple, les besoins d'aide ; un 2<sup>e</sup> entretien peut être proposé vers la 10e-14<sup>e</sup> semaine</td><td>Sage-femme ou médecin</td></tr><tr><td>Entre la 6<sup>e</sup> et la 8<sup>e</sup> semaine</td><td><b>Consultation postnatale</b> obligatoire : examen gynécologique, périnée, cicatrice, tension, contraception, frottis si besoin, prescription de la rééducation</td><td>Sage-femme, médecin généraliste ou gynécologue</td></tr><tr><td>Ensuite</td><td>Rééducation du périnée (et abdominale si besoin)</td><td>Sage-femme ou kinésithérapeute</td></tr></tbody></table>
+<p class="verif-line"><span class="verif">À vérifier : calendrier des entretiens postnataux en vigueur</span></p></div>
+<div class="card acc-surf avoid"><h3>Les sujets à aborder (sans gêne)</h3><ul><li>Les saignements, les douleurs, la cicatrice.</li><li>Les fuites (urines, gaz, selles), la sensation de lourdeur.</li><li>L'allaitement : douleurs, crevasses, inquiétudes sur la quantité.</li><li>Le sommeil, le moral, l'anxiété.</li><li>La reprise des rapports et les douleurs pendant les rapports.</li><li>La contraception.</li><li>Si vous avez eu un diabète gestationnel : le contrôle de la glycémie.</li><li>Si l'accouchement a été difficile : le besoin d'en reparler.</li></ul></div>
+<div class="card miel avoid"><h3>La sexualité et le rapport au corps</h3><ul><li>Il n'y a <b>pas de délai obligatoire</b> pour reprendre les rapports : c'est quand vous vous sentez prête, physiquement et psychologiquement. Beaucoup de couples attendent plusieurs semaines, voire plusieurs mois.</li><li>La baisse du désir est très fréquente (fatigue, hormones, allaitement, image du corps). Elle se discute dans le couple, sans pression.</li><li>La <b>sécheresse vaginale</b> est fréquente, surtout en allaitant : un lubrifiant aide.</li><li>Une douleur pendant les rapports qui persiste se signale : la rééducation du périnée peut aider.</li><li>Votre corps a changé ; il peut mettre du temps à redevenir « le vôtre ». Soyez bienveillante envers vous-même.</li></ul></div>
+<div class="card rose avoid"><h3>La contraception</h3><ul><li><b>L'ovulation peut revenir dès la 3<sup>e</sup> semaine</b> après l'accouchement si vous n'allaitez pas, <b>avant même les premières règles</b>. Une grossesse est donc possible très tôt.</li><li>Si vous allaitez, l'allaitement peut protéger (méthode MAMA) <b>seulement si toutes les conditions sont réunies</b> : allaitement exclusif, jour et nuit, tétées rapprochées (pas plus de 6 heures la nuit), pas de retour de couches, et pendant les 6 premiers mois. Sinon, il ne protège pas. <span class="verif">À vérifier</span></li><li>Plusieurs méthodes sont possibles selon votre situation et l'allaitement (pilule progestative, implant, stérilet, préservatif…) : parlez-en <b>avant la sortie de la maternité</b> ou au plus tard lors de la consultation postnatale.</li></ul></div>
+<div class="card blanc avoid"><h3>Les symptômes qui demandent un avis rapide</h3><p>Voir chapitre 3.1, et aussi : sein rouge, chaud et douloureux avec fièvre (mastite) ; fuites d'urines ou de selles importantes ; tristesse qui dure plus de deux semaines.</p>
+<p><b>Fiche pratique</b> : « Mon calendrier de suivi postnatal » et « Mes questions pour la consultation postnatale ».</p></div></div>
+</section>
+
+<section class="chap canard">
+  <header class="chap-head">
+    <div class="circle c1"></div><div class="circle c2"></div><svg class="deco-ico" width="15mm" height="15mm" viewBox="0 0 48 48" stroke="#3D2B1F" stroke-width="3" stroke-linejoin="round"><rect x="8" y="10" width="32" height="30" rx="5" fill="#FBE3A1"/><path d="M8 19h32M16 6v8M32 6v8" fill="none" stroke-linecap="round"/><circle cx="24" cy="29" r="3" fill="#F6B48A"/></svg>
+    <span class="badge">Vous, les parents</span>
+    <div class="kicker">Module 3 · Chapitre 3.6 · Le post-partum</div>
+    <h2>« Comment trouver notre rythme en famille ? »</h2>
+  </header>
+  <div class="stack"><div class="card acc-surf lead avoid"><span class="tag">Ce qu'il faut savoir</span><p>Les premières semaines avec un nouveau-né ne ressemblent à aucune autre période : pas d'horaires, peu de sommeil, beaucoup d'émotions. Il n'y a pas de rythme « normal » à atteindre vite. L'objectif est simple : <b>que chacun puisse dormir, manger et souffler un peu</b>, et que la charge soit partagée.</p></div>
+<div class="card blanc avoid"><h3>Partager les nuits</h3><ul><li><b>Bébé allaité</b> : le partenaire se lève, change bébé, l'apporte pour la tétée, le recouche ; il peut aussi prendre le relais pour un câlin au petit matin, permettant un sommeil plus long à la mère.</li><li><b>Bébé au biberon</b> : chacun une demi-nuit « de garde », l'autre dort avec des bouchons d'oreille (ou dans une autre pièce).</li><li>Le week-end : chacun s'offre une grasse matinée à tour de rôle.</li></ul></div>
+<div class="card acc-surf avoid"><h3>Partager les tâches</h3><ul><li>Faites une liste des tâches (repas, courses, linge, ménage, rendez-vous, papiers, soins de bébé) et répartissez-les <b>entièrement</b> : celui qui prend une tâche y pense, l'organise et la fait.</li><li>Simplifiez : repas simples ou congelés, courses en ligne, ménage minimum. <b>La maison peut attendre.</b></li><li>Le parent qui reprend le travail plus tôt reste pleinement parent le soir et la nuit.</li></ul></div>
+<div class="card miel avoid"><h3>Les visites et les conseils contradictoires</h3><ul><li>Vous avez le <b>droit de refuser des visites</b>, de les limiter (une heure, l'après-midi), ou de les reporter.</li><li>Les bonnes visites sont celles qui aident : qui apportent un plat, étendent une lessive, tiennent bébé pendant que vous prenez une douche.</li><li>Face aux conseils contradictoires (« il faut le laisser pleurer », « il a faim », « tu le portes trop ») : remerciez, et suivez les recommandations de votre sage-femme ou de votre médecin. Une phrase utile : « Merci, on en parlera avec notre sage-femme. »</li></ul></div>
+<div class="card rose avoid"><h3>Les congés</h3><ul><li><b>Congé maternité</b> : 10 semaines après la naissance pour un 1<sup>er</sup> ou 2<sup>e</sup> enfant.</li><li><b>Congé de naissance</b> (3 jours) et <b>congé de paternité et d'accueil de l'enfant</b> (25 jours, dont 4 obligatoires juste après les 3 jours de naissance) pour le second parent.</li><li><b>Congé supplémentaire de naissance</b> : 1 ou 2 mois par parent, indemnisé, à prendre dans les 9 mois. <span class="verif">À vérifier : conditions et enfants concernés</span></li><li>Le <b>congé parental</b> reste possible ensuite.</li></ul></div>
+<div class="card blanc avoid"><h3>Retrouver un équilibre progressivement</h3><p>Vers 6 à 12 semaines, la plupart des familles trouvent des repères : bébé a des moments d'éveil plus réguliers, les parents connaissent mieux ses signaux. Ce n'est pas linéaire : il y aura des bonds en arrière (pics de croissance, maladies, vaccins). Ce qui compte, c'est d'ajuster ensemble.</p>
+<p><b>Fiche pratique</b> : « Notre répartition des tâches et des nuits ».</p></div></div>
+</section>
+
+<section class="chap canard">
+  <header class="chap-head">
+    <div class="circle c1"></div><div class="circle c2"></div><svg class="deco-ico" width="15mm" height="15mm" viewBox="0 0 48 48" stroke="#3D2B1F" stroke-width="3" stroke-linejoin="round"><path d="M24 14c-8-6-18 0-16 12 2 10 8 16 12 16 2 0 3-1 4-1s2 1 4 1c4 0 10-6 12-16 2-12-8-18-16-12z" fill="#F6B48A"/><path d="M24 14c0-4 2-8 6-9" fill="none" stroke-linecap="round"/></svg>
+    <span class="badge">Vous, les parents</span>
+    <div class="kicker">Module 3 · Chapitre 3.7 · Le post-partum</div>
+    <h2>« Comment préserver notre couple et notre équilibre ? »</h2>
+  </header>
+  <div class="stack"><div class="card acc-surf lead avoid"><span class="tag">Ce qu'il faut savoir</span><p>L'arrivée d'un enfant est l'un des moments où les couples sont le plus mis à l'épreuve : fatigue, moins de temps à deux, rôles qui changent, désaccords sur les soins. Les tensions sont fréquentes et ne veulent pas dire que le couple va mal. Elles demandent simplement d'être dites.</p></div>
+<div class="card blanc avoid"><h3>Communiquer quand on est fatigués</h3><ul><li>Parlez de <b>ce que vous ressentez</b> plutôt que de ce que l'autre fait mal : « Je suis épuisée, j'ai besoin de dormir deux heures » plutôt que « Tu ne fais jamais rien ».</li><li>Évitez les grandes discussions à 3 heures du matin : notez le sujet et reprenez-le à tête reposée.</li><li>Un point rapide chaque jour (5 minutes) : comment ça va, de quoi as-tu besoin demain ?</li><li>Reconnaissez ce que fait l'autre : un merci compte beaucoup.</li></ul></div>
+<div class="card acc-surf avoid"><h3>La charge mentale</h3><p>C'est le fait de penser à tout, tout le temps : le rendez-vous chez le pédiatre, la taille de body suivante, le lait qui manque. Elle repose souvent sur une seule personne, sans que l'autre s'en rende compte. <b>Rendez-la visible</b> en écrivant tout ce qui est à penser et à faire, puis partagez des domaines entiers (« toi tu gères les rendez-vous médicaux, moi les courses et les repas »).</p></div>
+<div class="card miel avoid"><h3>Du temps pour soi, du temps à deux</h3><ul><li>Chacun a besoin d'un moment pour lui chaque semaine : une sortie, une douche longue, du sport, voir un ami. Organisez-le pour l'autre.</li><li>Le temps à deux n'a pas besoin d'être une grande sortie : un repas ensemble quand bébé dort, une promenade, un film.</li><li>La tendresse et l'intimité reviennent progressivement, sans pression (voir chapitre 3.5).</li></ul></div>
+<div class="card rose avoid"><h3>Les désaccords sur les soins</h3><p>Il est normal de ne pas faire les choses de la même façon. Tant que bébé est en sécurité, laissez l'autre parent faire « à sa manière » : c'est ainsi qu'il prend confiance et trouve sa place. Sur les sujets importants (sommeil, alimentation, éducation), décidez ensemble, en vous appuyant sur les recommandations des professionnels.</p></div>
+<div class="card blanc avoid"><h3>Rester une équipe sans viser la perfection</h3><p>Il n'existe pas de parents parfaits ni de couple parfait. Vous allez vous tromper, vous fâcher, vous réconcilier. L'important est de <b>réparer</b> : s'excuser, en parler, recommencer.</p></div>
+<div class="alert avoid"><h3>Quand demander de l'aide</h3><p>Si les disputes deviennent quotidiennes, si l'un des deux se sent seul ou en danger, si la communication est rompue : une <b>consultation de couple</b>, la <b>PMI</b> ou un <b>médiateur familial</b> peuvent aider. En cas de violences (verbales, physiques, psychologiques, économiques) : <b>3919</b>, gratuit et anonyme, ou le <b>17</b> en cas de danger immédiat.</p></div></div>
+</section>
+
+<section class="chap ">
+  <header class="chap-head">
+    <div class="circle c1"></div><div class="circle c2"></div><svg class="deco-ico" width="15mm" height="15mm" viewBox="0 0 48 48" stroke="#3D2B1F" stroke-width="3" stroke-linejoin="round"><rect x="8" y="16" width="32" height="24" rx="5" fill="#FBE3A1"/><path d="M17 16v-4a7 7 0 0 1 14 0v4" fill="none"/></svg>
+    
+    <div class="kicker">Module 3 · Chapitre 3.8 · Le post-partum</div>
+    <h2>Quand consulter et fiches à imprimer</h2>
+  </header>
+  <div class="stack"><div class="urgence avoid"><div class="num15">15<small>ou le 112</small></div><div><h3>Appelez le 15 sans attendre</h3><ul><li>Saignements très abondants (une serviette remplie en moins d'une heure, gros caillots).</li><li>Malaise, essoufflement, douleur dans la poitrine.</li><li>Maux de tête violents, troubles de la vue.</li><li>Confusion, propos étranges, agitation, insomnie totale (psychose puerpérale).</li><li>Idées de vous faire du mal ou de faire du mal à bébé (ou 3114).</li></ul></div></div>
+<div class="alert avoid"><h3>Consultez dans la journée</h3><ul><li>Fièvre à 38 °C ou plus.</li><li>Mollet rouge, chaud, douloureux.</li><li>Cicatrice rouge, gonflée, qui suinte.</li><li>Saignements qui sentent mauvais, douleur qui augmente.</li><li>Sein rouge, chaud, douloureux.</li><li>Impossibilité d'uriner, perte du contrôle des selles.</li></ul></div>
+<div class="alert avoid"><h3>Parlez-en au prochain rendez-vous (ou plus tôt si cela vous inquiète)</h3><ul><li>Tristesse, anxiété ou épuisement qui durent plus de deux semaines.</li><li>Fuites urinaires, sensation de lourdeur dans le vagin.</li><li>Douleurs pendant les rapports.</li><li>Bombement au milieu du ventre, mal de dos persistant.</li></ul>
+<p><b>Numéros utiles</b> : 15 (SAMU), 112, 3114 (prévention du suicide), 3919 (violences), 17 (police), votre maternité, votre sage-femme, votre PMI.</p></div>
+<div class="card miel avoid"><span class="tag">À imprimer</span><h3>Les fiches à imprimer du module 3</h3><ol class="steps"><li>Checklist du retour à la maison</li><li>Mon calendrier de suivi postnatal — chapitre 3.5</li><li>Mes questions pour la consultation postnatale — chapitre 3.5</li><li>Baby blues ou dépression ? Les signes à repérer — chapitre 3.3</li><li>Les signes d'alerte chez la mère après la naissance — chapitres 3.1 et 3.8</li><li>Notre répartition des tâches et des nuits — chapitre 3.6</li><li>Les personnes à contacter (relais, professionnels, numéros) — chapitre 3.8</li><li>Mes exercices des premières semaines (respiration, périnée, bascule) — chapitre 3.4</li></ol></div></div>
+</section>
+
+<section class="chap fiche">
+  <div class="fiche-head peche"><span class="badge">Fiche pratique</span><h2>Les signes d'alerte après la naissance</h2><p>À afficher et à montrer à l'entourage. Ces signes ne veulent pas forcément dire qu'il y a un problème, mais ils doivent être évalués vite.</p><svg class="deco-ico" width="16mm" height="16mm" viewBox="0 0 48 48" stroke="#3D2B1F" stroke-width="3" stroke-linejoin="round"><path d="M14 6h8l3 10-5 3a24 24 0 0 0 9 9l3-5 10 3v8a4 4 0 0 1-4 4C21 38 10 27 10 10a4 4 0 0 1 4-4z" fill="#F9C74F"/></svg></div>
+  <div class="urgence avoid"><div class="num15">15<small>ou le 112</small></div><div><h3>Appelez le 15 sans attendre</h3><ul><li>Saignements très abondants : une serviette remplie en moins d'une heure, gros caillots.</li><li>Malaise, essoufflement, douleur dans la poitrine.</li><li>Maux de tête violents, troubles de la vue.</li><li>Confusion, propos étranges, agitation, plus de sommeil du tout.</li><li>Idées de se faire du mal ou de faire du mal à bébé (ou le 3114).</li></ul></div></div>
+      <div class="alert avoid"><h3>Consultez dans la journée</h3><ul><li>Fièvre à 38 °C ou plus.</li><li>Mollet rouge, chaud, douloureux.</li><li>Cicatrice rouge, gonflée, qui suinte.</li><li>Saignements qui sentent mauvais, douleur qui augmente.</li><li>Sein rouge, chaud, douloureux.</li><li>Impossibilité d'uriner, perte du contrôle des selles.</li></ul></div>
+      <div class="card blanc tight"><h3>Mes numéros</h3><div class="lines"><div>Ma sage-femme : ……………………………………………</div><div>Ma maternité : ……………………………………………</div><div>Ma PMI : ……………………………………………</div><div>3114 (prévention du suicide) · 3919 (violences) · 3237 (pharmacie de garde)</div></div></div>
+</section>
+
+<section class="chap fiche">
+  <div class="fiche-head miel"><span class="badge">Fiche pratique</span><h2>Baby blues ou dépression ?</h2><p>Pour repérer ce qui passe seul et ce qui demande de l'aide. À partager avec l'autre parent et l'entourage.</p><svg class="deco-ico" width="16mm" height="16mm" viewBox="0 0 48 48" stroke="#3D2B1F" stroke-width="3" stroke-linejoin="round"><path d="M12 36a9 9 0 0 1 1-18 12 12 0 0 1 23 2 8 8 0 0 1 1 16z" fill="#FFFFFF"/></svg></div>
+  <div class="grid2"><div class="card miel"><span class="pill-h" style="background:var(--terracotta)">Baby blues</span><ul><li>Très fréquent : la majorité des mères.</li><li>Entre le 3<sup>e</sup> et le 10<sup>e</sup> jour.</li><li>Larmes, sautes d'humeur, inquiétude.</li><li>Passe seul en quelques jours, deux semaines au maximum.</li><li>Ce qui aide : repos, soutien, écoute.</li></ul></div><div class="card rose"><span class="pill-h" style="background:var(--brun)">Il faut en parler</span><ul><li>Tristesse ou vide plus de deux semaines.</li><li>Plus de plaisir pour rien.</li><li>Épuisement qui ne cède pas au repos.</li><li>Anxiété envahissante, pensées effrayantes.</li><li>Culpabilité, sentiment d'être une mauvaise mère.</li><li>Chez l'autre parent : irritabilité, retrait, fuite dans le travail ou l'alcool.</li></ul></div></div><div class="alert avoid"><h3>À qui en parler ?</h3><p>Sage-femme, médecin traitant, PMI. Idées noires : <b>3114</b>, gratuit, 24 h/24, ou le <b>15</b>. Cela se soigne, et plus tôt on en parle, plus vite on va mieux.</p></div>
+</section>
+
+<section class="chap fiche">
+  <div class="fiche-head peche"><span class="badge">Fiche pratique</span><h2>Notre répartition des tâches et des nuits</h2><p>À remplir à deux. Celui qui prend une tâche y pense, l'organise et la fait. On réajuste chaque semaine.</p><svg class="deco-ico" width="16mm" height="16mm" viewBox="0 0 48 48" stroke="#3D2B1F" stroke-width="3" stroke-linejoin="round"><path d="M8 22 24 8l16 14v18H8z" fill="#FCD9C4"/><rect x="20" y="28" width="8" height="12" fill="#F9C74F"/></svg></div>
+  <table class="grid"><thead><tr><th style="width:32%">Tâche</th><th style="width:18%">Qui ?</th><th style="width:20%">Quand ?</th><th style="width:30%">Remarques</th></tr></thead><tbody><tr><td>Nuits (semaine)</td><td></td><td></td><td></td></tr><tr><td>Nuits (week-end)</td><td></td><td></td><td></td></tr><tr><td>Repas</td><td></td><td></td><td></td></tr><tr><td>Courses</td><td></td><td></td><td></td></tr><tr><td>Linge</td><td></td><td></td><td></td></tr><tr><td>Ménage</td><td></td><td></td><td></td></tr><tr><td>Rendez-vous médicaux</td><td></td><td></td><td></td></tr><tr><td>Papiers (CAF, mutuelle…)</td><td></td><td></td><td></td></tr><tr><td>Bain et change de bébé</td><td></td><td></td><td></td></tr><tr><td>Visites et famille</td><td></td><td></td><td></td></tr><tr><td>Aînés, animaux</td><td></td><td></td><td></td></tr><tr><td>Un moment pour chacun</td><td></td><td></td><td></td></tr></tbody></table>
+</section>
+
+<section class="chap fiche">
+  <div class="fiche-head miel"><span class="badge">Fiche pratique</span><h2>Mes exercices des premières semaines</h2><p>Allongée sur le dos, genoux pliés, sans douleur. Cochez chaque jour : 5 minutes suffisent.</p><svg class="deco-ico" width="16mm" height="16mm" viewBox="0 0 48 48" stroke="#3D2B1F" stroke-width="3" stroke-linejoin="round"><circle cx="24" cy="24" r="9" fill="#F9C74F"/><path d="M24 4v6M24 38v6M4 24h6M38 24h6M10 10l4 4M34 34l4 4M38 10l-4 4M14 34l-4 4" fill="none" stroke-linecap="round"/></svg></div>
+  <ol class="big-steps"><li><b>La respiration abdominale</b> : inspirez en laissant le ventre se gonfler, expirez lentement en rentrant doucement le nombril. 10 respirations.</li><li><b>Le réveil du périnée</b> : en expirant, contractez comme pour retenir une envie d'uriner, tenez 3 à 5 secondes, relâchez complètement. 10 fois.</li><li><b>La bascule du bassin</b> : en expirant, rentrez le ventre et collez doucement le bas du dos au sol ; relâchez en inspirant. 10 fois.</li></ol><table class="grid"><thead><tr><th style="width:auto">Semaine</th><th style="width:auto">L</th><th style="width:auto">M</th><th style="width:auto">M</th><th style="width:auto">J</th><th style="width:auto">V</th><th style="width:auto">S</th><th style="width:auto">D</th></tr></thead><tbody><tr><td>Semaine 1</td><td><span class="box"></span></td><td><span class="box"></span></td><td><span class="box"></span></td><td><span class="box"></span></td><td><span class="box"></span></td><td><span class="box"></span></td><td><span class="box"></span></td></tr><tr><td>Semaine 2</td><td><span class="box"></span></td><td><span class="box"></span></td><td><span class="box"></span></td><td><span class="box"></span></td><td><span class="box"></span></td><td><span class="box"></span></td><td><span class="box"></span></td></tr><tr><td>Semaine 3</td><td><span class="box"></span></td><td><span class="box"></span></td><td><span class="box"></span></td><td><span class="box"></span></td><td><span class="box"></span></td><td><span class="box"></span></td><td><span class="box"></span></td></tr><tr><td>Semaine 4</td><td><span class="box"></span></td><td><span class="box"></span></td><td><span class="box"></span></td><td><span class="box"></span></td><td><span class="box"></span></td><td><span class="box"></span></td><td><span class="box"></span></td></tr><tr><td>Semaine 5</td><td><span class="box"></span></td><td><span class="box"></span></td><td><span class="box"></span></td><td><span class="box"></span></td><td><span class="box"></span></td><td><span class="box"></span></td><td><span class="box"></span></td></tr><tr><td>Semaine 6</td><td><span class="box"></span></td><td><span class="box"></span></td><td><span class="box"></span></td><td><span class="box"></span></td><td><span class="box"></span></td><td><span class="box"></span></td><td><span class="box"></span></td></tr></tbody></table><div class="card rose small" style="margin-top:3mm">Le réflexe à garder : <b>je souffle avant l'effort</b>. Avant de porter bébé, de tousser ou de soulever, expirez en contractant le périnée.</div>
+</section>
+
+<section class="chap end">
+  <header class="chap-head"><div class="circle c1"></div>
+    <div class="kicker">Sources et avertissement</div><h2>Pour aller plus loin</h2></header>
+  <div class="stack">
+    <div class="card blanc"><h3>Sources officielles</h3><p>Haute Autorité de Santé (sortie de maternité, rééducation périnéale, dépression du post-partum), Assurance Maladie (examen postnatal, entretien postnatal précoce, rééducation), CNGOF et Collège national des sages-femmes (post-partum), Santé publique France et 1000-premiers-jours.fr, Service-public.fr (congés). Ce contenu est un support d'information et ne remplace pas l'avis d'un professionnel de santé.</p><p class="small">Les calendriers, montants et droits évoluent : vérifiez toujours la version en vigueur sur ameli.fr, service-public.fr, caf.fr et has-sante.fr.</p></div>
+    <div class="alert"><h3>Note de prudence</h3><p>Ce module est un support d'information. Il ne remplace pas une consultation, une prescription ni l'avis d'une sage-femme, d'un médecin ou d'un professionnel de santé. En cas d'urgence, appelez le <b>15</b> ou le <b>112</b>.</p></div>
+    <div class="card next"><div class="kicker">Dans le prochain module</div><h3>Module 4 · Le nouveau-né</h3><p><i>« Il pleure sans arrêt, c'est normal ? »</i></p></div>
+  </div>
+</section>
+</body></html>

@@ -1,0 +1,305 @@
+<!doctype html>
+<html lang="fr"><head><meta charset="utf-8">
+<title>Petit Bout de Famille — Module 2 · L'accouchement</title>
+<link rel="stylesheet" href="fonts/fonts-local.css">
+<style>
+:root{--creme:#FFF4E8;--blanc:#FFFFFF;--brun:#3D2B1F;--terracotta:#B9502C;--brique:#8A3A1F;--soleil:#F9C74F;--abricot:#F6B48A;--peche:#FCD9C4;--miel:#FBE3A1;--rose:#F8D5CF;--framboise:#9E3D57;--canard:#2E6670;--brume:#D6E8EA;--accent:var(--terracotta);--accent-surface:var(--peche)}
+@page{size:A4;margin:15mm 16mm 19mm;background:#FFF4E8;
+  @bottom-left{content:"Petit Bout de Famille · Module 2 · L'accouchement";font-family:"Nunito ExtraLight",Nunito;font-weight:400;font-size:7pt;color:#3D2B1F;vertical-align:middle}
+  @bottom-right{content:counter(page);font-family:"Nunito ExtraLight",Nunito;font-weight:800;font-size:7.5pt;color:#fff;background:#B9502C;border-radius:50%;width:7mm;height:7mm;text-align:center;vertical-align:middle;margin-top:5mm;margin-bottom:7mm}}
+@page full{margin:0;@bottom-left{content:none}@bottom-right{content:none;background:none}}
+*{box-sizing:border-box;margin:0;padding:0}
+html{background:#FFF4E8}
+body{font-family:'Nunito',sans-serif;color:var(--brun);font-size:9.6pt;line-height:1.5}
+.framboise{--accent:var(--framboise);--accent-surface:var(--rose)}
+.canard{--accent:var(--canard);--accent-surface:var(--brume)}
+h1,h2,h3{font-family:'Fredoka',sans-serif;font-weight:700;line-height:1.15}
+h2{font-size:21pt;margin:1mm 0 0;max-width:140mm}
+h3{font-size:11.5pt;font-weight:600;margin-bottom:1.5mm;break-after:avoid}
+p+p{margin-top:1.8mm}
+b{font-weight:800}
+sup{line-height:0;font-size:.7em}
+ul,ol{padding-left:4.5mm;margin-top:1mm}
+li{margin:.8mm 0}
+li::marker{color:var(--accent);font-weight:800}
+li ul{margin-top:.5mm}
+p+ul,p+ol,ul+p,ol+p,table+p,p+table{margin-top:1.8mm}
+.small{font-size:8.4pt}
+.kicker{font-weight:800;font-size:7pt;letter-spacing:.12em;text-transform:uppercase;margin:2mm 0 2.5mm;color:var(--brun)}
+.badge{display:inline-block;background:var(--accent);color:#fff;font-weight:800;font-size:7.5pt;letter-spacing:.1em;text-transform:uppercase;padding:1.6mm 4mm;border-radius:999px}
+.badge.soleil{background:var(--soleil);color:var(--brun);margin-bottom:2mm}
+.tag{display:block;font-weight:800;font-size:7pt;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);margin-bottom:1.2mm}
+.circle{position:absolute;border-radius:50%;z-index:-1}
+.dashed{position:absolute;border-radius:50%;border:2px dashed var(--accent);opacity:.6}
+/* Chapitres */
+.chap{break-before:page;position:relative}
+.chap-head{position:relative;padding:4mm 32mm 5mm 0;min-height:30mm;overflow:hidden}
+.chap-head .c1{width:62mm;height:62mm;background:var(--accent-surface);right:-30mm;top:-34mm}
+.chap-head .c2{width:14mm;height:14mm;background:var(--miel);right:36mm;top:-4mm}
+.chap.framboise .chap-head .c2,.chap.canard .chap-head .c2{background:var(--miel)}
+.chap-head .deco-ico{position:absolute;right:4mm;top:6mm}
+.stack>*+*{margin-top:3.5mm}
+.card{border-radius:14px;padding:4mm 5mm;box-decoration-break:clone;-webkit-box-decoration-break:clone}
+.avoid{break-inside:avoid}
+.blanc{background:var(--blanc)}.peche{background:var(--peche)}.miel{background:var(--miel)}.rose{background:var(--rose)}.acc-surf{background:var(--accent-surface)}
+.lead{font-size:10pt}
+.dark{background:var(--brun);color:#FFF4E8;border-radius:14px;padding:4.5mm 6mm;box-decoration-break:clone;-webkit-box-decoration-break:clone}
+.dark li::marker{color:var(--soleil)}
+.dark i{color:var(--soleil);font-style:normal;font-family:'Fredoka';font-weight:600;font-size:11pt}
+.alert{background:var(--blanc);border:1.5px solid var(--accent);border-radius:14px;padding:4mm 5.5mm;box-decoration-break:clone;-webkit-box-decoration-break:clone}
+.alert h3{color:var(--accent)}
+.urgence{background:var(--brique);color:#fff;border-radius:14px;padding:4.5mm 6mm;display:flex;gap:5mm;align-items:flex-start}
+.urgence .num15{flex:none;width:18mm;height:18mm;border-radius:50%;background:#fff;color:var(--brique);display:grid;place-items:center;text-align:center;font-family:'Fredoka';font-weight:700;font-size:19pt;line-height:.9}
+.urgence .num15 small{display:block;font-family:'Nunito';font-size:6.5pt;font-weight:800}
+.urgence h3{color:#fff}.urgence li::marker{color:var(--soleil)}
+.next{background:var(--terracotta);color:#fff}.next h3{color:#fff;font-size:15pt}.next .kicker{color:#fff;margin:0 0 1mm}
+.verif{display:inline-block;background:var(--soleil);color:var(--brun);font-size:7pt;font-weight:800;padding:.3mm 2mm;border-radius:999px;line-height:1.5;vertical-align:1px}
+.verif-line{margin-top:1.5mm}
+.relecture{border:1.5px dashed var(--abricot);border-radius:12px;padding:2.5mm 4mm;font-size:8.4pt;background:rgba(255,255,255,.5)}
+.relecture .tag{color:var(--brique)}
+ol.steps{list-style:none;padding:0;counter-reset:st}
+ol.steps>li{counter-increment:st;position:relative;padding-left:9mm;margin:2mm 0}
+ol.steps>li::before{content:counter(st);position:absolute;left:0;top:-.3mm;width:6.5mm;height:6.5mm;border-radius:50%;background:var(--accent);color:#fff;font-weight:800;font-size:8pt;display:grid;place-items:center}
+.dark ol.steps>li::before{background:var(--soleil);color:var(--brun)}
+table{width:100%;border-collapse:separate;border-spacing:0 1.3mm;font-size:8.6pt;line-height:1.4;margin-top:1mm}
+thead{display:table-header-group}
+tr{break-inside:avoid}
+th{text-align:left;font-weight:800;font-size:7.6pt;padding:0 3mm;color:var(--accent);text-transform:uppercase;letter-spacing:.05em}
+td{background:var(--creme);padding:2.2mm 3mm;vertical-align:top}
+.card.blanc td,.alert td{background:var(--creme)}
+.card.miel td,.card.rose td,.card.acc-surf td,.card.peche td{background:var(--blanc)}
+td:first-child{border-radius:10px 0 0 10px;font-weight:800}
+.chap table:not(.grid) td:first-child{background:var(--accent);color:#fff}
+td:last-child{border-radius:0 10px 10px 0}
+/* Couverture */
+.cover{page:full;position:relative;width:210mm;height:297mm;overflow:hidden;background:var(--creme)}
+.cover .circle{z-index:0}
+.cover-in{position:relative;z-index:1;padding:20mm 16mm 0}
+.cover .mobile{position:absolute;right:14mm;top:86mm;z-index:1}
+.sub{font-weight:700;font-size:8.5pt;margin-left:2mm}
+.cover-title{font-size:46pt;margin:12mm 0 6mm;max-width:125mm}
+.cover-title em{font-style:normal;color:var(--accent)}
+.question{font-style:italic;font-size:13pt;max-width:115mm}
+.objectif{max-width:118mm;margin-top:5mm;font-size:9.4pt}
+.draft{display:inline-block;margin-top:4mm;font-size:7.5pt;font-weight:800;background:var(--soleil);padding:1mm 3mm;border-radius:999px}
+.in-module{position:absolute;left:16mm;right:16mm;top:170mm}
+.in-module h4{font-weight:800;font-size:10pt;margin-bottom:3mm}
+.in-module .grid2{display:grid;grid-template-columns:1fr 1fr;gap:2.5mm}
+.in-module .card{padding:2.4mm 4mm;font-weight:700;font-size:8.6pt;border-radius:12px;line-height:1.3}
+.in-module .card b{color:var(--accent);margin-right:1.5mm}
+/* Fiches */
+.fiche .fiche-head{position:relative;border-radius:18px;padding:6mm 34mm 6mm 6mm;margin-bottom:5mm}
+.fiche-head h2{margin:3mm 0 1.5mm;font-size:20pt}
+.fiche-head p{font-weight:700;font-size:9pt}
+.fiche-head .deco-ico{position:absolute;right:8mm;top:8mm}
+.fiche>*+*{margin-top:3.5mm}
+.fiche .grid2{display:grid;grid-template-columns:1fr 1fr;gap:4mm}
+.check{display:flex;gap:3.5mm;align-items:center;background:var(--blanc);border-radius:11px;padding:2.4mm 4mm;margin-bottom:2mm;font-size:9pt}
+.box{display:inline-block;flex:none;width:4.6mm;height:4.6mm;border:1.8px solid var(--terracotta);border-radius:4px;vertical-align:middle}
+.lines div{border-bottom:1.5px dotted var(--abricot);padding:3.6mm 0 1mm;font-size:9pt}
+.tight{padding:3mm 5mm}.tight h3{margin-bottom:0}
+.fiche .card.tight+.card.tight{margin-top:2.5mm}
+table.grid td{background:var(--blanc);height:8.5mm}
+table.grid td:first-child{background:var(--peche);color:var(--brun)}
+table.grid td:has(.box){text-align:center}
+.pill-h{display:inline-block;color:#fff;font-weight:800;font-size:7.5pt;letter-spacing:.08em;text-transform:uppercase;padding:1.2mm 3.5mm;border-radius:999px;margin-bottom:2mm}
+ol.big-steps{list-style:none;padding:0;counter-reset:bs}
+ol.big-steps>li{counter-increment:bs;position:relative;background:var(--blanc);border-radius:14px;padding:4mm 5mm 4mm 17mm;margin-bottom:3mm;font-size:10pt}
+ol.big-steps>li::before{content:counter(bs);position:absolute;left:4mm;top:3.5mm;width:9mm;height:9mm;border-radius:50%;background:var(--terracotta);color:#fff;font-family:'Fredoka';font-weight:700;font-size:13pt;display:grid;place-items:center}
+/* Chapitre 1.1 inséré (pages fixes) */
+.c11{page:full}
+.c11 .page{margin:0 !important;break-after:page}
+</style></head>
+<body>
+
+<section class="cover">
+  <div class="circle" style="width:150mm;height:150mm;background:var(--peche);right:-55mm;top:-30mm"></div>
+  <div class="circle" style="width:62mm;height:62mm;background:var(--miel);right:58mm;top:-26mm"></div>
+  <div class="circle" style="width:85mm;height:85mm;background:var(--rose);left:-38mm;bottom:-42mm"></div>
+  <div class="dashed" style="width:26mm;height:26mm;right:22mm;top:118mm"></div>
+  <svg class="mobile" width="62mm" height="55mm" viewBox="0 0 200 180" fill="none" stroke="#3D2B1F" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round">
+    <line x1="100" y1="0" x2="100" y2="22" stroke="#B9502C"/><path d="M18 40 Q100 4 182 40" stroke="#B9502C"/>
+    <line x1="30" y1="36" x2="30" y2="92" stroke="#B9502C" stroke-dasharray="4 5"/><line x1="100" y1="22" x2="100" y2="112" stroke="#B9502C" stroke-dasharray="4 5"/><line x1="170" y1="36" x2="170" y2="76" stroke="#B9502C" stroke-dasharray="4 5"/>
+    <path d="M30 92 l6 13 14 2 -10 10 2 14 -12 -7 -12 7 2 -14 -10 -10 14 -2z" fill="#F9C74F"/>
+    <path d="M112 116 a20 20 0 1 0 6 30 a16 16 0 1 1 -6 -30z" fill="#F6B48A"/>
+    <path d="M152 92 a10 10 0 0 1 10 -14 a13 13 0 0 1 24 4 a9 9 0 0 1 2 18 h-32 a8 8 0 0 1 -4 -8z" fill="#FFFFFF"/>
+  </svg>
+  <div class="cover-in">
+    <span class="badge">Module 2</span><span class="sub">La naissance et la maternité</span>
+    <h1 class="cover-title">L'<em>accouchement</em></h1>
+    <p class="question">« Comment je vais savoir que c'est le moment ? »</p>
+    <p class="objectif">Expliquer le déroulement possible d'un accouchement et des premiers jours, pour que les parents sachent à quoi s'attendre, <b>sans présenter un scénario unique comme la norme</b>. Chaque naissance est différente, et il n'y a pas de « bon » ou de « mauvais » accouchement.</p>
+    <p class="draft">Version de travail du 16/10/2026 · à relire avant la vente</p>
+    <div class="in-module"><h4>Dans ce module</h4><div class="grid2"><div class="card peche"><b>2.1</b> Comment reconnaître le début du travail ?</div><div class="card miel"><b>2.2</b> Comment se déroule un accouchement ?</div><div class="card blanc"><b>2.3</b> J'ai peur d'avoir mal</div><div class="card rose"><b>2.4</b> Et si l'accouchement ne se passe pas comme prévu ?</div><div class="card peche"><b>2.5</b> Et si on accouche à la maison ?</div><div class="card miel"><b>2.6</b> Que se passe-t-il juste après la naissance ?</div><div class="card blanc"><b>2.7</b> Comment se passent les jours à la maternité ?</div><div class="card rose"><b>2.8</b> Comment préparer le retour à la maison ?</div><div class="card peche"><b>2.9</b> Quand consulter et fiches à imprimer</div></div></div>
+  </div>
+</section>
+
+
+<section class="chap ">
+  <header class="chap-head">
+    <div class="circle c1"></div><div class="circle c2"></div><svg class="deco-ico" width="15mm" height="15mm" viewBox="0 0 48 48" stroke="#3D2B1F" stroke-width="3" stroke-linejoin="round"><path d="M24 4 l6 13 14 2 -10 10 3 14 -13 -7 -13 7 3 -14 -10 -10 14 -2z" fill="#F9C74F"/></svg>
+    
+    <div class="kicker">Module 2 · Chapitre 2.1 · L'accouchement</div>
+    <h2>« Comment reconnaître le début du travail ? »</h2>
+  </header>
+  <div class="stack"><div class="card acc-surf lead avoid"><span class="tag">Ce qu'il faut savoir</span><p>La peur de « ne pas reconnaître le moment » est très fréquente. En réalité, le travail s'installe le plus souvent progressivement, et les équipes de maternité sont habituées à recevoir des appels et des visites « pour rien » : en cas de doute, appelez.</p></div>
+<div class="card blanc avoid"><h3>Les contractions : fausses ou vraies ?</h3><table><thead><tr><th>Contractions de préparation (« fausses »)</th><th>Contractions de travail (« vraies »)</th></tr></thead><tbody><tr><td>Irrégulières, espacées</td><td>Régulières, de plus en plus rapprochées</td></tr><tr><td>Peu ou pas douloureuses</td><td>De plus en plus longues et intenses</td></tr><tr><td>Se calment au repos, avec une douche chaude ou en changeant de position</td><td>Ne se calment pas, même au repos ou dans un bain</td></tr><tr><td>Le ventre durcit sans douleur de dos</td><td>Douleur qui part souvent du dos et irradie vers le ventre</td></tr></tbody></table>
+<p>Pour savoir où vous en êtes, notez pendant une heure <b>l'heure de début de chaque contraction</b> et sa durée. Des applications existent, un papier suffit.</p></div>
+<div class="alert avoid"><h3>Quand partir à la maternité ?</h3><ul><li><b>Premier bébé</b> : quand les contractions reviennent <b>toutes les 5 minutes environ, depuis 1 à 2 heures</b>, et qu'elles vous obligent à vous arrêter pour respirer.</li><li><b>Bébé suivant</b> : plus tôt, souvent quand elles reviennent toutes les 10 minutes, car le travail peut aller plus vite.</li><li><b>Toujours partir sans attendre</b> en cas de :<ul><li><b>perte des eaux</b> (écoulement de liquide clair, en grande quantité ou goutte à goutte continu), même sans contraction ;</li><li>liquide <b>teinté, vert ou marron</b> ;</li><li><b>saignements</b> (au-delà de quelques traces rosées) ;</li><li><b>bébé qui bouge moins</b> ;</li><li>fièvre, malaise, douleur intense et continue ;</li><li>contractions régulières <b>avant 37 SA</b>.</li></ul></li><li>Les consignes peuvent être différentes selon votre situation (maternité éloignée, accouchement précédent rapide, bébé en siège, streptocoque B) : demandez à votre sage-femme les règles qui s'appliquent à vous.</li></ul></div>
+<div class="card acc-surf avoid"><h3>Les autres signes possibles</h3><ul><li><b>La perte du bouchon muqueux</b> : glaires épaisses, parfois rosées ou brunâtres. Elle signifie que le col travaille, mais l'accouchement peut avoir lieu le jour même ou plusieurs jours après. Ce n'est pas une raison de partir à elle seule.</li><li>Mal de dos inhabituel, besoin de rester seule, envie de ranger, digestion perturbée : des signes que certaines femmes remarquent avant le travail.</li></ul></div>
+<div class="card miel avoid"><h3>Gérer l'attente à la maison</h3><ul><li>Une <b>douche ou un bain chaud</b> (si la poche des eaux n'est pas rompue) détend et aide à distinguer les fausses contractions des vraies.</li><li><b>Bouger</b> : marcher, se balancer, s'asseoir sur un ballon, se mettre à quatre pattes.</li><li><b>Respirer</b> lentement, en allongeant l'expiration pendant la contraction.</li><li>Manger léger et boire, se reposer entre les contractions.</li><li>Porter des <b>vêtements amples</b> et confortables, préparer les derniers objets de la valise.</li><li>Prévenir les personnes concernées (accompagnant, garde des aînés).</li></ul></div>
+<div class="dark avoid"><span class="badge soleil">L'espace du kiné</span><p><i>Les positions qui soulagent pendant les contractions</i> : penchée en avant, mains appuyées sur une table ou sur le partenaire, bassin qui se balance ; à quatre pattes ; assise à califourchon sur une chaise, face au dossier ; sur le ballon, avec des cercles du bassin. Le partenaire peut appuyer fermement avec les paumes sur le bas du dos (le sacrum) pendant la contraction.</p>
+<p><b>Fiche pratique</b> : « Les signes du travail : quand partir ? » (avec un tableau pour noter les contractions).</p></div></div>
+</section>
+
+<section class="chap ">
+  <header class="chap-head">
+    <div class="circle c1"></div><div class="circle c2"></div><svg class="deco-ico" width="15mm" height="15mm" viewBox="0 0 48 48" stroke="#3D2B1F" stroke-width="3" stroke-linejoin="round"><path d="M24 42S6 31 6 18a9 9 0 0 1 18-4 9 9 0 0 1 18 4c0 13-18 24-18 24z" fill="#F6B48A"/></svg>
+    
+    <div class="kicker">Module 2 · Chapitre 2.2 · L'accouchement</div>
+    <h2>« Comment se déroule un accouchement ? »</h2>
+  </header>
+  <div class="stack"><div class="card acc-surf lead avoid"><span class="tag">Ce qu'il faut savoir</span><p>Un accouchement par voie basse se déroule en trois étapes. Leur durée varie beaucoup d'une femme à l'autre : pour un premier bébé, le travail dure en moyenne <b>8 à 12 heures</b>, souvent moins pour les suivants. <span class="verif">À vérifier</span></p></div>
+<div class="card blanc avoid"><h3>1. Le travail (la dilatation du col)</h3><ul><li><b>La phase de latence</b> : le col s'efface puis commence à s'ouvrir, jusqu'à environ 5-6 cm. Elle peut être longue (plusieurs heures), avec des contractions encore irrégulières. Elle se passe souvent à la maison ou en salle de pré-travail.</li><li><b>La phase active</b> : le col s'ouvre plus vite jusqu'à 10 cm (dilatation complète). Les contractions sont régulières et intenses.</li><li>La sage-femme surveille l'ouverture du col par des touchers vaginaux, le cœur de bébé et les contractions par un <b>monitoring</b> (capteurs sur le ventre), en continu ou par moments selon la situation.</li><li>La poche des eaux peut se rompre spontanément ou être rompue par la sage-femme si besoin.</li></ul></div>
+<div class="card acc-surf avoid"><h3>2. La naissance (l'expulsion)</h3><ul><li>Quand le col est complètement ouvert, bébé descend dans le bassin. On attend souvent qu'il soit bien descendu avant de pousser.</li><li>Vous poussez pendant les contractions, guidée par la sage-femme : en bloquant la respiration ou en soufflant, selon ce qui vous convient. Cette phase dure de quelques minutes à une heure ou plus.</li><li>Bébé naît ; il est posé sur votre ventre si tout va bien.</li></ul></div>
+<div class="card miel avoid"><h3>3. La délivrance</h3><ul><li>Dans les 30 minutes qui suivent, le placenta se décolle et sort, avec une ou deux contractions. Une injection d'ocytocine est souvent faite pour limiter le risque d'hémorragie.</li><li>La sage-femme vérifie le périnée et fait des points si nécessaire, sous anesthésie locale ou péridurale.</li><li>Vous restez environ <b>2 heures en salle de naissance</b> sous surveillance, avec bébé en peau à peau.</li></ul></div>
+<div class="card rose avoid"><h3>Les positions pendant le travail et la naissance</h3><p>Bouger aide le bébé à descendre et soulage. Debout, assise sur le ballon, à quatre pattes, sur le côté, accroupie avec soutien : la plupart des maternités proposent différentes positions, y compris avec une péridurale (sur le côté, avec un coussin entre les jambes). Pour la naissance elle-même, la position sur le dos n'est pas la seule possible : parlez-en dans votre projet de naissance.</p></div>
+<div class="card blanc avoid"><h3>Qui est là ?</h3><ul><li><b>La sage-femme</b> suit votre travail et réalise la plupart des accouchements.</li><li><b>L'auxiliaire de puériculture</b> s'occupe des premiers soins de bébé.</li><li><b>Le gynécologue-obstétricien</b> intervient si besoin (aide instrumentale, césarienne, complication).</li><li><b>L'anesthésiste</b> pose la péridurale.</li><li><b>Le pédiatre</b> peut être appelé si bébé a besoin d'une surveillance particulière.</li></ul></div>
+<div class="card acc-surf avoid"><h3>La place de l'accompagnant</h3><p>Partenaire, mère, amie : l'accompagnant peut rester pendant tout le travail et la naissance (sauf exception en urgence). Son rôle : rassurer, encourager, masser, aider à changer de position, donner à boire, rappeler vos souhaits à l'équipe, et couper le cordon s'il le souhaite. Il a aussi le droit de sortir respirer.</p></div></div>
+</section>
+
+<section class="chap ">
+  <header class="chap-head">
+    <div class="circle c1"></div><div class="circle c2"></div><svg class="deco-ico" width="15mm" height="15mm" viewBox="0 0 48 48" stroke="#3D2B1F" stroke-width="3" stroke-linejoin="round"><path d="M30 6a18 18 0 1 0 12 28A15 15 0 1 1 30 6z" fill="#F9C74F"/></svg>
+    
+    <div class="kicker">Module 2 · Chapitre 2.3 · L'accouchement</div>
+    <h2>« J'ai peur d'avoir mal »</h2>
+  </header>
+  <div class="stack"><div class="card acc-surf lead avoid"><span class="tag">Ce qu'il faut savoir</span><p>La douleur de l'accouchement est réelle, et chaque femme la vit différemment. Il n'y a <b>aucune médaille à souffrir</b>, ni aucun échec à demander une péridurale. Il existe plusieurs moyens de soulager la douleur, qui peuvent se combiner. L'important est de les connaître à l'avance pour choisir en connaissance de cause, et de garder le droit de changer d'avis le jour J.</p></div>
+<div class="card blanc avoid"><h3>La péridurale</h3><ul><li>C'est une anesthésie locale de la partie basse du corps : un anesthésiste place un tout petit tuyau (cathéter) dans le dos, entre deux vertèbres, par lequel on diffuse un produit anesthésiant pendant tout le travail.</li><li>Environ <b>8 femmes sur 10</b> en bénéficient en France. <span class="verif">À vérifier : chiffre ENP récent</span></li><li>Elle peut être posée dès que le travail est installé, sur votre demande. Elle met 15 à 20 minutes à agir.</li><li>Elle soulage la douleur des contractions tout en vous laissant sentir une pression. Souvent, vous pouvez régler vous-même les doses avec une pompe (péridurale « autocontrôlée »).</li><li>Effets possibles : baisse de tension, démangeaisons, fièvre, travail parfois plus long ; rarement, maux de tête après l'accouchement. Elle demande une perfusion et un monitoring continu.</li><li>Elle se prépare lors de la <b>consultation d'anesthésie</b> du 8<sup>e</sup> mois.</li></ul></div>
+<div class="card acc-surf avoid"><h3>Les autres moyens de soulager la douleur</h3><table><thead><tr><th>Moyen</th><th>Comment ça marche</th></tr></thead><tbody><tr><td>Le mouvement et les positions</td><td>Bouger, se balancer, marcher, utiliser le ballon : la douleur est souvent plus supportable en mouvement</td></tr><tr><td>L'eau chaude</td><td>Bain ou douche pendant le travail, si la maternité le propose</td></tr><tr><td>La respiration</td><td>Allonger l'expiration, souffler pendant la contraction, se concentrer sur le rythme</td></tr><tr><td>Les massages et la chaleur</td><td>Pression sur le bas du dos, bouillotte, massage par l'accompagnant</td></tr><tr><td>Le protoxyde d'azote (MEOPA)</td><td>Un gaz à respirer au masque pendant les contractions, qui détend et atténue la douleur, d'action rapide et courte</td></tr><tr><td>La sophrologie, l'hypnose</td><td>Techniques de relaxation et de concentration, apprises pendant la préparation</td></tr><tr><td>L'acupuncture</td><td>Proposée dans certaines maternités, par des sages-femmes formées</td></tr><tr><td>La neurostimulation (TENS)</td><td>Petits courants électriques sur le dos, que l'on règle soi-même</td></tr></tbody></table></div>
+<div class="card miel avoid"><span class="tag">Concrètement</span><ul><li>Renseignez-vous auprès de votre maternité : toutes ne proposent pas les mêmes options (salle nature, baignoire, MEOPA, acupuncture).</li><li>Notez vos souhaits dans le projet de naissance (« je souhaite essayer sans péridurale, mais je veux pouvoir la demander à tout moment », par exemple).</li><li>Si vous ne souhaitez pas de péridurale, la consultation d'anesthésie reste obligatoire.</li></ul></div></div>
+</section>
+
+<section class="chap ">
+  <header class="chap-head">
+    <div class="circle c1"></div><div class="circle c2"></div><svg class="deco-ico" width="15mm" height="15mm" viewBox="0 0 48 48" stroke="#3D2B1F" stroke-width="3" stroke-linejoin="round"><circle cx="24" cy="24" r="9" fill="#F9C74F"/><path d="M24 4v6M24 38v6M4 24h6M38 24h6M10 10l4 4M34 34l4 4M38 10l-4 4M14 34l-4 4" fill="none" stroke-linecap="round"/></svg>
+    
+    <div class="kicker">Module 2 · Chapitre 2.4 · L'accouchement</div>
+    <h2>« Et si l'accouchement ne se passe pas comme prévu ? »</h2>
+  </header>
+  <div class="stack"><div class="card acc-surf lead avoid"><span class="tag">Ce qu'il faut savoir</span><p>Une partie des accouchements demande une intervention : déclencher le travail, aider bébé à sortir, ou faire une césarienne. Ces gestes sont réalisés pour votre sécurité et celle de bébé. Les connaître à l'avance permet de mieux les vivre s'ils arrivent : c'est souvent l'inconnu qui fait le plus peur.</p>
+<div class="relecture"><span class="tag">Note de relecture</span>Note pour la relecture : ce chapitre peut être anxiogène. Ton à soigner : informer simplement, sans détails techniques inutiles, et toujours expliquer « pourquoi » on le fait.</div></div>
+<div class="card blanc avoid"><h3>Le déclenchement</h3><ul><li>C'est provoquer le travail quand il ne démarre pas seul et qu'il est préférable que bébé naisse : terme dépassé (en général entre 41 et 42 SA), poche des eaux rompue sans contractions, diabète, hypertension, bébé qui grossit peu…</li><li>Comment : un gel ou un comprimé (prostaglandines) qui assouplit le col, un petit ballonnet placé dans le col, puis si besoin une perfusion d'ocytocine pour provoquer les contractions.</li><li>Cela peut prendre du temps (parfois un à deux jours) avant que le travail ne démarre vraiment. Prévoyez de quoi vous occuper.</li></ul></div>
+<div class="card acc-surf avoid"><h3>L'aide instrumentale : ventouse, forceps, spatules</h3><ul><li>Utilisée au moment de la naissance, quand bébé a besoin d'aide pour sortir : il fatigue (son cœur ralentit), il ne descend plus, ou vous êtes épuisée.</li><li>Concerne environ <b>un accouchement sur dix</b>. <span class="verif">À vérifier</span></li><li>Le geste est rapide, sous péridurale ou anesthésie locale. Bébé peut garder une petite bosse ou des marques sur la tête pendant quelques jours : elles disparaissent.</li></ul></div>
+<div class="card miel avoid"><h3>L'épisiotomie et les déchirures</h3><ul><li><b>Les déchirures</b> du périnée sont fréquentes, surtout pour un premier bébé. La grande majorité sont <b>superficielles</b> et cicatrisent bien en quelques semaines, avec ou sans points.</li><li><b>L'épisiotomie</b> est une incision du périnée faite par la sage-femme ou le médecin au moment de la naissance, sous anesthésie. Elle n'est plus systématique depuis longtemps et concerne aujourd'hui moins d'un accouchement sur dix en France. <span class="verif">À vérifier</span> Vous pouvez en parler dans votre projet de naissance.</li><li>Les points se résorbent seuls ; les soins sont simples (voir module 3).</li></ul></div>
+<div class="card rose avoid"><h3>La césarienne</h3><ul><li>Environ <b>un accouchement sur cinq</b> en France se fait par césarienne. <span class="verif">À vérifier</span></li><li><b>Programmée</b> : décidée avant le travail (bébé en siège dans certains cas, placenta mal placé, césariennes antérieures, jumeaux selon les cas…). Elle a lieu en général vers 39 SA.</li><li><b>En cours de travail ou en urgence</b> : quand le travail n'avance plus ou que bébé montre des signes de fatigue.</li><li><b>Comment ça se passe</b> : le plus souvent sous <b>péridurale ou rachianesthésie</b> (vous êtes éveillée, vous ne sentez pas la douleur, mais des pressions). Un champ est posé devant vous. L'intervention dure environ 45 minutes, bébé naît dans les 10 premières minutes. Votre accompagnant peut souvent être présent, sauf urgence ou anesthésie générale.</li><li>Le peau à peau est souvent possible en salle d'opération ou juste après, avec vous ou avec l'autre parent.</li><li>La récupération est plus longue qu'après une voie basse (voir module 3). Un accouchement par voie basse reste souvent possible pour un bébé suivant.</li></ul></div>
+<div class="card blanc avoid"><h3>Vivre un accouchement différent de ce que l'on imaginait</h3><p>Il est fréquent de ressentir de la déception, de la colère, de la tristesse ou un sentiment d'échec après un accouchement qui ne s'est pas passé comme prévu, même si tout va bien pour bébé. Ces émotions sont légitimes.</p>
+<ul><li>Vous pouvez demander à <b>revoir l'équipe</b> (sage-femme, obstétricien) pour comprendre ce qui s'est passé, quelques jours ou semaines après.</li><li>Parlez-en lors de l'entretien postnatal précoce.</li><li>Si les images reviennent en boucle, si vous évitez tout ce qui rappelle l'accouchement ou si vous avez des cauchemars après plusieurs semaines, consultez : un <b>accouchement vécu comme traumatique</b> peut se soigner.</li></ul></div></div>
+</section>
+
+<section class="chap ">
+  <header class="chap-head">
+    <div class="circle c1"></div><div class="circle c2"></div><svg class="deco-ico" width="15mm" height="15mm" viewBox="0 0 48 48" stroke="#3D2B1F" stroke-width="3" stroke-linejoin="round"><path d="M12 36a9 9 0 0 1 1-18 12 12 0 0 1 23 2 8 8 0 0 1 1 16z" fill="#FFFFFF"/></svg>
+    
+    <div class="kicker">Module 2 · Chapitre 2.5 · L'accouchement</div>
+    <h2>« Et si on accouche à la maison ? »</h2>
+  </header>
+  <div class="stack"><div class="plain"><div class="relecture"><span class="tag">Note de relecture</span>Note pour la relecture : sujet sensible, à faire relire par une sage-femme pratiquant l'accouchement à domicile.</div></div>
+<div class="card acc-surf lead avoid"><span class="tag">Ce qu'il faut savoir</span><p>En France, la très grande majorité des naissances ont lieu à la maternité. L'<b>accouchement accompagné à domicile</b> reste possible, mais il est rare et encadré. Il existe aussi des <b>maisons de naissance</b>, gérées par des sages-femmes, attenantes à une maternité. <span class="verif">À vérifier : cadre légal et assurance des sages-femmes, critères</span></p></div>
+<div class="card blanc avoid"><h3>L'accouchement accompagné à domicile : pour qui ?</h3><ul><li>Pour une grossesse <b>à bas risque</b> : une seule grossesse, bébé tête en bas, à terme (entre 37 et 42 SA), sans maladie de la mère, sans césarienne antérieure en général.</li><li>Avec une <b>sage-femme libérale</b> qui pratique l'accouchement à domicile et qui assure le suivi de la grossesse.</li><li>Avec une <b>maternité de proximité</b> identifiée en cas de transfert (temps de trajet raisonnable).</li><li>La décision se prend tout au long de la grossesse : si un risque apparaît, l'accouchement aura lieu à la maternité.</li></ul></div>
+<div class="card acc-surf avoid"><h3>Se préparer, si c'est votre projet</h3><ul><li>La sage-femme vous donne la liste du matériel : alèses, serviettes, bâches pour protéger le lit et le sol, sacs-poubelle, linge pour bébé, bassine, lampe.</li><li>Pour le confort : une pièce chauffée, la lumière tamisée, de quoi boire et manger, un ballon, éventuellement une piscine d'accouchement si la sage-femme le permet.</li><li>Prévoir la garde des aînés et des animaux, la voiture prête en cas de transfert, le dossier de grossesse à portée de main.</li></ul></div>
+<div class="card miel avoid"><h3>Et si bébé arrive avant d'avoir pu partir ?</h3><p>C'est rare, mais cela arrive, surtout pour un bébé suivant. Gardez votre calme :</p>
+<ol class="steps"><li><b>Appelez le 15</b> : le médecin régulateur vous guide au téléphone et envoie une équipe.</li><li>Installez-vous dans une position confortable (semi-assise, sur le côté ou à quatre pattes), sur des serviettes propres.</li><li><b>Ne tirez jamais sur bébé</b> ni sur le cordon : laissez-le sortir à son rythme.</li><li>Dès la naissance, posez bébé <b>en peau à peau</b> sur le ventre de sa mère, séchez-le, couvrez-le (y compris la tête), vérifiez qu'il respire bien et que son visage est dégagé.</li><li>Ne coupez pas le cordon : l'équipe s'en chargera. Ne cherchez pas à faire sortir le placenta.</li></ol>
+<p><b>Fiche pratique</b> : « Accouchement inopiné : les 5 gestes » (à afficher près du téléphone en fin de grossesse).</p></div></div>
+</section>
+
+<section class="chap ">
+  <header class="chap-head">
+    <div class="circle c1"></div><div class="circle c2"></div><svg class="deco-ico" width="15mm" height="15mm" viewBox="0 0 48 48" stroke="#3D2B1F" stroke-width="3" stroke-linejoin="round"><rect x="8" y="10" width="32" height="30" rx="5" fill="#FBE3A1"/><path d="M8 19h32M16 6v8M32 6v8" fill="none" stroke-linecap="round"/><circle cx="24" cy="29" r="3" fill="#F6B48A"/></svg>
+    
+    <div class="kicker">Module 2 · Chapitre 2.6 · L'accouchement</div>
+    <h2>« Que se passe-t-il juste après la naissance ? »</h2>
+  </header>
+  <div class="stack"><div class="card acc-surf lead avoid"><span class="tag">Ce qu'il faut savoir</span><p>Les premières heures sont un moment de rencontre. Si tout va bien pour vous et pour bébé, les soins peuvent attendre : la priorité est au contact, au calme et à la chaleur.</p></div>
+<div class="card blanc avoid"><h3>« Est-ce que je vais l'aimer tout de suite ? »</h3><p>Certains parents ressentent un amour immédiat, intense. D'autres se sentent d'abord épuisés, sonnés, étrangers à ce petit être, ou simplement soulagés que ce soit fini. <b>Les deux sont normaux.</b> Le lien d'attachement se construit jour après jour, en prenant soin de bébé, en le regardant, en le portant. Il n'est pas « raté » s'il n'est pas là au premier regard. Si, après quelques semaines, vous ne ressentez toujours rien ou un rejet, parlez-en : c'est fréquent, et on peut vous aider.</p></div>
+<div class="card acc-surf avoid"><h3>Le peau à peau</h3><ul><li>Bébé, nu (avec une couche et un bonnet), est posé sur votre poitrine nue, recouvert d'une couverture chaude.</li><li>Il régule sa température, son rythme cardiaque et sa respiration, il est rassuré par votre odeur et votre voix, et il cherche spontanément le sein.</li><li>Idéalement <b>au moins une heure</b>, sans interruption, dès la naissance si tout va bien. L'autre parent peut aussi le faire, notamment après une césarienne.</li><li>Restez attentifs : le visage de bébé doit rester visible et dégagé, ses voies respiratoires libres.</li></ul></div>
+<div class="card miel avoid"><h3>La première tétée</h3><ul><li>Dans l'heure qui suit la naissance, bébé est souvent éveillé et prêt à téter. Laissez-le chercher et trouver le sein, à son rythme. La sage-femme peut vous aider à l'installer.</li><li>Il reçoit le <b>colostrum</b>, en petite quantité (quelques millilitres), parfaitement adapté à son petit estomac.</li><li>Si cela ne marche pas tout de suite : <b>c'est normal</b>. Prenez le temps, réessayez, demandez de l'aide. Bébé a des réserves pour les premières heures.</li></ul></div>
+<div class="card rose avoid"><h3>Le premier biberon</h3><ul><li>Si vous ne souhaitez pas allaiter, ou en complément : la maternité fournit en général le lait infantile.</li><li>Le lait peut être donné <b>à température ambiante</b> : le chauffer n'est pas nécessaire, c'est une question d'habitude. S'il est réchauffé, vérifiez toujours la température sur l'intérieur du poignet (tiède, jamais chaud) et évitez le micro-ondes, qui chauffe de façon inégale.</li><li>Tenez bébé semi-assis, contre vous, et laissez-le faire des pauses.</li></ul></div>
+<div class="card blanc avoid"><h3>Les premiers examens de bébé</h3><ul><li><b>Le score d'Apgar</b>, à 1, 5 et 10 minutes : la sage-femme observe sa respiration, son cœur, sa couleur, son tonus et ses réactions, le plus souvent pendant qu'il est sur vous.</li><li>La pesée, la mesure, les premiers soins : souvent après le peau à peau.</li><li>La <b>vitamine K</b>, donnée par la bouche, pour prévenir les saignements ; elle sera redonnée dans les premières semaines.</li><li>Un <b>examen complet par un pédiatre ou un médecin</b> dans les premiers jours (examen obligatoire du 8<sup>e</sup> jour, souvent fait à la maternité).</li></ul></div>
+<div class="card acc-surf avoid"><h3>Le premier pipi et les premières selles</h3><ul><li>Bébé fait en général son <b>premier pipi dans les 24 premières heures</b>.</li><li>Ses premières selles, le <b>méconium</b>, sont noires-vertes, épaisses et collantes. Elles sortent dans les 24 à 48 premières heures, puis deviennent progressivement vertes, puis jaunes (jaune d'or et grumeleuses pour un bébé allaité).</li><li>L'équipe note ces étapes : signalez-les.</li></ul></div></div>
+</section>
+
+<section class="chap ">
+  <header class="chap-head">
+    <div class="circle c1"></div><div class="circle c2"></div><svg class="deco-ico" width="15mm" height="15mm" viewBox="0 0 48 48" stroke="#3D2B1F" stroke-width="3" stroke-linejoin="round"><path d="M24 14c-8-6-18 0-16 12 2 10 8 16 12 16 2 0 3-1 4-1s2 1 4 1c4 0 10-6 12-16 2-12-8-18-16-12z" fill="#F6B48A"/><path d="M24 14c0-4 2-8 6-9" fill="none" stroke-linecap="round"/></svg>
+    
+    <div class="kicker">Module 2 · Chapitre 2.7 · L'accouchement</div>
+    <h2>« Comment se passent les jours à la maternité ? »</h2>
+  </header>
+  <div class="stack"><div class="card acc-surf lead avoid"><span class="tag">Ce qu'il faut savoir</span><p>Le séjour dure en général <b>2 à 4 jours</b> après un accouchement par voie basse et <b>3 à 5 jours</b> après une césarienne. <span class="verif">À vérifier</span> C'est un temps pour récupérer, apprendre à connaître bébé et poser toutes vos questions à l'équipe.</p></div>
+<div class="card blanc avoid"><h3>Les soins et la surveillance</h3><ul><li><b>Pour vous</b> : la sage-femme vérifie plusieurs fois par jour les saignements, l'utérus qui se rétracte, la tension, la température, la cicatrice ou le périnée, la douleur. Demandez des antidouleurs sans attendre que la douleur soit forte.</li><li><b>Pour bébé</b> : poids (il perd normalement jusqu'à 7 à 10 % de son poids de naissance les premiers jours, puis le reprend en une dizaine de jours), température, alimentation, couches, couleur de la peau (jaunisse).</li><li><b>Le dépistage néonatal</b> : vers le 3<sup>e</sup> jour, quelques gouttes de sang prélevées au talon sur un papier buvard permettent de dépister plusieurs maladies rares mais graves, qui se soignent mieux si elles sont détectées tôt. Un <b>test de l'audition</b> est aussi proposé. <span class="verif">À vérifier : liste actuelle des maladies dépistées</span></li></ul></div>
+<div class="card acc-surf avoid"><h3>Le premier bain et la peau de bébé</h3><ul><li>Le premier bain n'est pas urgent : la substance blanche qui recouvre parfois bébé (le vernix) protège sa peau et s'absorbe d'elle-même. Beaucoup de maternités attendent au moins 24 heures.</li><li>L'auxiliaire de puériculture vous montre le bain, le change, les soins du cordon et du visage. Faites-le vous-même sous son regard : c'est le meilleur moyen de prendre confiance.</li><li>La peau du nouveau-né est fine et fragile : eau à 37 °C, savon doux sans parfum, pas de produits inutiles. Une peau qui pèle les premiers jours est normale.</li></ul></div>
+<div class="card miel avoid"><h3>Repas, sommeil, prendre ses marques</h3><ul><li><b>Dormez dès que bébé dort</b>, même en journée. Les nuits à la maternité sont rarement reposantes.</li><li>Mangez et buvez bien ; gardez des collations à portée de main.</li><li>Bébé peut téter très souvent, notamment la 2<sup>e</sup> nuit (souvent agitée) : c'est normal, cela stimule la montée de lait, qui arrive en général entre le 2<sup>e</sup> et le 4<sup>e</sup> jour.</li><li>Notez les tétées ou biberons et les couches si cela vous rassure, ou si l'équipe vous le demande.</li></ul></div>
+<div class="card rose avoid"><h3>Les visites : savoir poser ses limites</h3><ul><li>Vous avez le droit de <b>limiter les visites</b> à la maternité, de les écourter ou de les reporter au retour à la maison. Ce n'est pas impoli : c'est protéger votre repos et vos débuts avec bébé.</li><li>Des phrases simples : « On préfère être tranquilles les premiers jours, on vous envoie des photos » ; « Passez demain 30 minutes, on sera ravis ».</li><li>Demandez aux visiteurs de se laver les mains, de ne pas venir s'ils sont malades, de ne pas embrasser bébé sur le visage.</li><li>L'<b>autre parent</b> peut souvent rester (selon les maternités, parfois la nuit) : renseignez-vous.</li></ul></div>
+<div class="card blanc avoid"><h3>La rencontre avec les frères et sœurs</h3><p>Préparez la visite des aînés : que bébé ne soit pas dans vos bras quand ils arrivent, pour qu'ils puissent d'abord vous retrouver ; un petit cadeau « de la part de bébé » peut aider. Laissez-les le toucher, le regarder, poser des questions, à leur rythme.</p></div>
+<div class="card acc-surf avoid"><h3>Les questions à poser à l'équipe</h3><ul><li>Comment savoir si bébé mange assez ?</li><li>Comment le coucher en toute sécurité ?</li><li>Comment soigner le cordon, le périnée ou la cicatrice ?</li><li>Quels médicaments puis-je prendre (et en allaitant) ?</li><li>Quand revoir une sage-femme, un médecin ? Qui appeler en cas de souci ?</li><li>Quels signes chez moi ou chez bébé doivent me faire revenir ?</li></ul>
+<p><b>Fiche pratique</b> : « Mes questions à l'équipe de la maternité ».</p></div></div>
+</section>
+
+<section class="chap ">
+  <header class="chap-head">
+    <div class="circle c1"></div><div class="circle c2"></div><svg class="deco-ico" width="15mm" height="15mm" viewBox="0 0 48 48" stroke="#3D2B1F" stroke-width="3" stroke-linejoin="round"><rect x="8" y="16" width="32" height="24" rx="5" fill="#FBE3A1"/><path d="M17 16v-4a7 7 0 0 1 14 0v4" fill="none"/></svg>
+    
+    <div class="kicker">Module 2 · Chapitre 2.8 · L'accouchement</div>
+    <h2>« Comment préparer le retour à la maison ? »</h2>
+  </header>
+  <div class="stack"><div class="card acc-surf lead avoid"><span class="tag">Ce qu'il faut savoir</span><p>La sortie de la maternité est un moment de joie et souvent d'appréhension : vous serez « seuls » avec bébé. Vous ne l'êtes pas vraiment : un suivi existe, et quelques préparatifs facilitent beaucoup les premiers jours.</p></div>
+<div class="card blanc avoid"><h3>Avant de partir</h3><ul><li>Vérifiez que vous avez : le <b>carnet de santé</b> de bébé (rempli par l'équipe), les ordonnances (pour vous et pour bébé), le compte rendu de sortie, les résultats importants.</li><li><b>La déclaration de naissance</b> doit être faite à la mairie du lieu de naissance <b>dans les 5 jours</b> qui suivent. Dans beaucoup de maternités, elle peut se faire sur place : renseignez-vous. <span class="verif">À vérifier</span></li><li>Pensez à déclarer la naissance à la CAF et à l'Assurance Maladie (et à la mutuelle) pour rattacher bébé.</li><li>Le <b>siège auto</b> est installé dos à la route dans la voiture ; bébé y est attaché avec le harnais bien ajusté, sans manteau épais.</li></ul></div>
+<div class="card acc-surf avoid"><h3>Le suivi à domicile</h3><ul><li>Une <b>sage-femme</b> passe à domicile dans les jours qui suivent la sortie (programme de retour à domicile de l'Assurance Maladie ou sage-femme libérale de votre choix) : elle pèse bébé, vérifie l'alimentation, la jaunisse, votre récupération et répond à vos questions.</li><li>La <b>PMI</b> peut aussi proposer une visite et des consultations gratuites.</li><li>Le premier rendez-vous chez le <b>pédiatre ou le médecin généraliste</b> a lieu dans les premières semaines (examens obligatoires de la 2<sup>e</sup> semaine et du 1<sup>er</sup> mois). <span class="verif">À vérifier : calendrier des examens obligatoires</span></li></ul></div>
+<div class="card miel avoid"><h3>Préparer la rencontre avec les animaux de compagnie</h3><ul><li><b>Avant le retour</b> : faites sentir à votre chien ou votre chat un vêtement ou un linge porté par bébé à la maternité.</li><li><b>À l'arrivée</b> : saluez d'abord l'animal sans bébé dans les bras, puis laissez-le approcher et renifler calmement, sous surveillance.</li><li><b>Règles de sécurité</b> : ne laissez <b>jamais</b> bébé seul avec un animal, même gentil ; la chambre de bébé reste fermée aux animaux ; pas d'animal dans le lit ou le couffin.</li><li>Gardez à l'animal ses habitudes et du temps avec lui : il a lui aussi besoin de repères.</li></ul></div>
+<div class="card rose avoid"><h3>Les premiers jours à la maison</h3><ul><li>Limitez les visites et acceptez l'aide concrète (repas, courses, linge).</li><li>Gardez à portée de main les numéros utiles et les consignes de sortie.</li><li>Dormez quand bébé dort, et relayez-vous.</li></ul>
+<p><b>Fiche pratique</b> : « Documents et affaires pour la sortie de la maternité ».</p></div></div>
+</section>
+
+<section class="chap ">
+  <header class="chap-head">
+    <div class="circle c1"></div><div class="circle c2"></div><svg class="deco-ico" width="15mm" height="15mm" viewBox="0 0 48 48" stroke="#3D2B1F" stroke-width="3" stroke-linejoin="round"><path d="M8 22 24 8l16 14v18H8z" fill="#FCD9C4"/><rect x="20" y="28" width="8" height="12" fill="#F9C74F"/></svg>
+    
+    <div class="kicker">Module 2 · Chapitre 2.9 · L'accouchement</div>
+    <h2>Quand consulter et fiches à imprimer</h2>
+  </header>
+  <div class="stack"><div class="alert avoid"><h3>Pendant la fin de grossesse : partez à la maternité si</h3><ul><li>Contractions régulières et douloureuses (toutes les 5 minutes depuis 1 à 2 heures pour un premier bébé, plus tôt pour les suivants).</li><li>Perte des eaux, liquide teinté ou vert.</li><li>Saignements.</li><li>Bébé bouge moins.</li><li>Fièvre, douleur intense et continue, malaise.</li></ul></div>
+<div class="urgence avoid"><div class="num15">15<small>ou le 112</small></div><div><h3>Après la naissance, chez la mère : appelez le 15 ou retournez à la maternité si</h3><ul><li>Saignements très abondants (une serviette remplie en moins d'une heure, gros caillots).</li><li>Fièvre à 38 °C ou plus.</li><li>Maux de tête violents, troubles de la vue, essoufflement, douleur dans la poitrine.</li><li>Mollet rouge, chaud, douloureux.</li></ul></div></div>
+<div class="alert avoid"><h3>Chez bébé : consultez en urgence si</h3><ul><li>Il a de la fièvre (38 °C ou plus) ou au contraire une température basse.</li><li>Il respire mal, devient bleu ou très pâle.</li><li>Il refuse de boire, est très mou, difficile à réveiller.</li><li>Sa peau devient très jaune, surtout dans les 24 premières heures, ou ses selles sont décolorées.</li></ul></div>
+<div class="card miel avoid"><span class="tag">À imprimer</span><h3>Les fiches à imprimer du module 2</h3><ol class="steps"><li>Les signes du travail : quand partir ? (avec tableau des contractions) — chapitre 2.1</li><li>Mon projet de naissance (repris du module 1) — chapitres 2.2 et 2.3</li><li>Accouchement inopiné : les 5 gestes — chapitre 2.5</li><li>Mes questions à l'équipe de la maternité — chapitre 2.7</li><li>Documents et affaires pour la sortie — chapitre 2.8</li></ol></div></div>
+</section>
+
+<section class="chap fiche">
+  <div class="fiche-head miel"><span class="badge">Fiche pratique</span><h2>Les signes du travail : quand partir ?</h2><p>À afficher dans l'entrée en fin de grossesse. En cas de doute, appelez la maternité : vous ne dérangez jamais.</p><svg class="deco-ico" width="16mm" height="16mm" viewBox="0 0 48 48" stroke="#3D2B1F" stroke-width="3" stroke-linejoin="round"><path d="M14 6h8l3 10-5 3a24 24 0 0 0 9 9l3-5 10 3v8a4 4 0 0 1-4 4C21 38 10 27 10 10a4 4 0 0 1 4-4z" fill="#F9C74F"/></svg></div>
+  <div class="urgence avoid"><div class="num15">!</div><div><h3>Partez sans attendre si :</h3><ul><li>vous perdez les eaux, même sans contraction ;</li><li>le liquide est teinté, vert ou marron ;</li><li>vous saignez ;</li><li>bébé bouge moins ;</li><li>vous avez de la fièvre, un malaise, une douleur intense et continue ;</li><li>les contractions sont régulières avant 37 SA.</li></ul></div></div>
+      <div class="card miel avoid"><h3>Les contractions</h3><p><b>Premier bébé</b> : toutes les 5 minutes environ depuis 1 à 2 heures. <b>Bébé suivant</b> : souvent dès qu'elles reviennent toutes les 10 minutes.</p></div>
+      <div class="card blanc"><h3>Je note mes contractions</h3><table class="grid"><thead><tr><th style="width:auto">Heure de début</th><th style="width:auto">Durée</th><th style="width:auto">Écart avec la précédente</th><th style="width:auto">Intensité (1 à 5)</th></tr></thead><tbody><tr><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td></tr></tbody></table></div>
+      <div class="card blanc tight"><h3>Ma maternité</h3><div class="lines"><div>&nbsp;</div></div></div>
+</section>
+
+<section class="chap fiche">
+  <div class="fiche-head peche"><span class="badge">Fiche pratique</span><h2>Accouchement inopiné : les 5 gestes</h2><p>Rare, mais possible. À garder près du téléphone dans les dernières semaines.</p><svg class="deco-ico" width="16mm" height="16mm" viewBox="0 0 48 48" stroke="#3D2B1F" stroke-width="3" stroke-linejoin="round"><path d="M24 4 l6 13 14 2 -10 10 3 14 -13 -7 -13 7 3 -14 -10 -10 14 -2z" fill="#F9C74F"/></svg></div>
+  <ol class="big-steps"><li><b>Appelez le 15.</b> Le médecin vous guide au téléphone et envoie une équipe.</li><li><b>Installez-vous</b> confortablement (semi-assise, sur le côté ou à quatre pattes), sur des serviettes propres.</li><li><b>Ne tirez jamais</b> sur bébé ni sur le cordon : laissez-le sortir à son rythme.</li><li><b>Peau à peau</b> : posez bébé sur le ventre de sa mère, séchez-le, couvrez-le avec la tête, vérifiez que son visage est dégagé et qu'il respire.</li><li><b>Ne coupez pas le cordon</b> et n'essayez pas de faire sortir le placenta : l'équipe s'en charge.</li></ol><div class="card rose small">Restez calme et parlez à bébé : votre voix le rassure. L'équipe arrive.</div>
+</section>
+
+<section class="chap fiche">
+  <div class="fiche-head miel"><span class="badge">Fiche pratique</span><h2>Mes questions à la maternité</h2><p>À cocher pendant le séjour, et à compléter avec vos propres questions.</p><svg class="deco-ico" width="16mm" height="16mm" viewBox="0 0 48 48" stroke="#3D2B1F" stroke-width="3" stroke-linejoin="round"><path d="M12 36a9 9 0 0 1 1-18 12 12 0 0 1 23 2 8 8 0 0 1 1 16z" fill="#FFFFFF"/></svg></div>
+  <div class="grid2"><div><h3>À demander à l'équipe</h3><div class="check"><span class="box"></span><span>Comment savoir si bébé mange assez ?</span></div><div class="check"><span class="box"></span><span>Comment le coucher en sécurité ?</span></div><div class="check"><span class="box"></span><span>Comment soigner le cordon ?</span></div><div class="check"><span class="box"></span><span>Comment soigner mon périnée ou ma cicatrice ?</span></div><div class="check"><span class="box"></span><span>Quels médicaments puis-je prendre (et en allaitant) ?</span></div><div class="check"><span class="box"></span><span>Quand revoir une sage-femme, un médecin ?</span></div><div class="check"><span class="box"></span><span>Qui appeler en cas de souci ?</span></div><div class="check"><span class="box"></span><span>Quels signes doivent me faire revenir ?</span></div></div><div><h3>Avant la sortie</h3><div class="check"><span class="box"></span><span>Carnet de santé de bébé rempli</span></div><div class="check"><span class="box"></span><span>Ordonnances pour moi et pour bébé</span></div><div class="check"><span class="box"></span><span>Compte rendu de sortie et résultats</span></div><div class="check"><span class="box"></span><span>Déclaration de naissance faite (5 jours)</span></div><div class="check"><span class="box"></span><span>Rendez-vous sage-femme à domicile</span></div><div class="check"><span class="box"></span><span>Rendez-vous pédiatre ou médecin</span></div><div class="check"><span class="box"></span><span>Siège auto installé dos à la route</span></div><div class="check"><span class="box"></span><span>Contraception discutée</span></div></div></div><div class="card blanc tight"><h3>Mes autres questions</h3><div class="lines"><div>&nbsp;</div><div>&nbsp;</div><div>&nbsp;</div><div>&nbsp;</div></div></div>
+</section>
+
+<section class="chap end">
+  <header class="chap-head"><div class="circle c1"></div>
+    <div class="kicker">Sources et avertissement</div><h2>Pour aller plus loin</h2></header>
+  <div class="stack">
+    <div class="card blanc"><h3>Sources officielles</h3><p>Haute Autorité de Santé (accouchement normal, sortie de maternité), CNGOF, Collège national des sages-femmes, Enquête nationale périnatale, Assurance Maladie, Service-public.fr (déclaration de naissance), Santé publique France. Ce contenu est un support d'information et ne remplace pas l'avis d'un professionnel de santé.</p><p class="small">Les calendriers, montants et droits évoluent : vérifiez toujours la version en vigueur sur ameli.fr, service-public.fr, caf.fr et has-sante.fr.</p></div>
+    <div class="alert"><h3>Note de prudence</h3><p>Ce module est un support d'information. Il ne remplace pas une consultation, une prescription ni l'avis d'une sage-femme, d'un médecin ou d'un professionnel de santé. En cas d'urgence, appelez le <b>15</b> ou le <b>112</b>.</p></div>
+    <div class="card next"><div class="kicker">Dans le prochain module</div><h3>Module 3 · Le post-partum</h3><p><i>« Et moi, comment je vais ? »</i></p></div>
+  </div>
+</section>
+</body></html>
